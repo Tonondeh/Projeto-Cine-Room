@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZHt-Ek-aE6">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Watch List-->
+        <scene sceneID="q7T-bc-M8J">
+            <objects>
+                <viewController id="p5k-mq-rqG" customClass="WatchListViewController" customModule="Cine_Room" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2z0-zv-9aH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ihq-4F-d6B">
+                                <rect key="frame" x="92" y="74" width="230" height="31"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="230" id="6qL-Vg-ZY0"/>
+                                    <constraint firstAttribute="height" constant="30" id="WLK-TV-elY"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Favorito"/>
+                                    <segment title="Quero Assistir"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" name="mainColor"/>
+                                <connections>
+                                    <action selector="didTapList:" destination="p5k-mq-rqG" eventType="valueChanged" id="Qgq-d1-erF"/>
+                                </connections>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hgL-ZL-ygo">
+                                <rect key="frame" x="0.0" y="134" width="414" height="679"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="NLp-mU-8dc"/>
+                        <color key="backgroundColor" name="backgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ihq-4F-d6B" firstAttribute="top" secondItem="NLp-mU-8dc" secondAttribute="top" constant="30" id="B8t-KC-R7O"/>
+                            <constraint firstItem="NLp-mU-8dc" firstAttribute="trailing" secondItem="hgL-ZL-ygo" secondAttribute="trailing" id="KZT-y1-tDJ"/>
+                            <constraint firstItem="NLp-mU-8dc" firstAttribute="bottom" secondItem="hgL-ZL-ygo" secondAttribute="bottom" id="Lb5-Ae-uEt"/>
+                            <constraint firstItem="hgL-ZL-ygo" firstAttribute="leading" secondItem="NLp-mU-8dc" secondAttribute="leading" id="OXH-tx-c8m"/>
+                            <constraint firstItem="Ihq-4F-d6B" firstAttribute="centerX" secondItem="2z0-zv-9aH" secondAttribute="centerX" id="W0a-2h-zc5"/>
+                            <constraint firstItem="hgL-ZL-ygo" firstAttribute="top" secondItem="Ihq-4F-d6B" secondAttribute="bottom" constant="30" id="kZd-tJ-6vi"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Watch List" image="applewatch.watchface" catalog="system" id="zMA-Og-vsK"/>
+                    <navigationItem key="navigationItem" title="Watch List" id="cYq-AE-EZ8"/>
+                    <connections>
+                        <outlet property="listSegmented" destination="Ihq-4F-d6B" id="Q6q-2E-ewH"/>
+                        <outlet property="tableView" destination="hgL-ZL-ygo" id="7rM-s8-61Z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4ab-53-Dlk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="845" y="849"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="6Tc-IR-Wta">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="ZHt-Ek-aE6" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="sdJ-Ko-wz1"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="j0L-w8-icj">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="dUE-JA-7pj" kind="relationship" relationship="viewControllers" id="7wm-Wc-HAk"/>
+                        <segue destination="p5k-mq-rqG" kind="relationship" relationship="viewControllers" id="iJu-nX-jr8"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yNB-XK-cCv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="844.92753623188412" y="160.71428571428569"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="EdP-rN-AXd">
+            <objects>
+                <viewController id="dUE-JA-7pj" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mv8-HT-nGH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="tcn-5E-ra2"/>
+                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="homekit" catalog="system" id="pwp-nX-XK3"/>
+                    <navigationItem key="navigationItem" title="Home" id="kNs-XI-ILw"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rMG-OE-ijp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1543" y="161"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="applewatch.watchface" catalog="system" width="114" height="128"/>
+        <image name="homekit" catalog="system" width="128" height="106"/>
+        <namedColor name="backgroundColor">
+            <color red="0.0080000003799796104" green="0.15299999713897705" blue="0.3529999852180481" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="mainColor">
+            <color red="1" green="0.4309999942779541" blue="0.18799999356269836" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
