@@ -15,7 +15,7 @@ struct WatchListFilme {
 }
 
 
-class WatchListViewController: UIViewController {
+class WatchListVC: UIViewController {
 	
 	// MARK: - IBOutlet
 	@IBOutlet weak var listSegmented: UISegmentedControl!
@@ -92,7 +92,7 @@ class WatchListViewController: UIViewController {
 
 
 // MARK: - Extension -> TableView
-extension WatchListViewController: UITableViewDelegate, UITableViewDataSource {
+extension WatchListVC: UITableViewDelegate, UITableViewDataSource {
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return quantidadeLinhas
