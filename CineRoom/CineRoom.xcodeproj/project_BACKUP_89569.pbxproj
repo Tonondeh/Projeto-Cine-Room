@@ -14,6 +14,7 @@
 		65E8D31D25E89BE50078BBE9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E8D31C25E89BE50078BBE9 /* ViewController.swift */; };
 		65E8D32225E89BEA0078BBE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65E8D32125E89BEA0078BBE9 /* Assets.xcassets */; };
 		65E8D32525E89BEA0078BBE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65E8D32325E89BEA0078BBE9 /* LaunchScreen.storyboard */; };
+<<<<<<< HEAD
 		B27DEAF325EBF9E800E501F5 /* PerfilStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B27DEAF125EBF9E800E501F5 /* PerfilStoryboard.storyboard */; };
 		B27DEAF425EBF9E800E501F5 /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27DEAF225EBF9E800E501F5 /* PerfilViewController.swift */; };
 		B27DEAFE25EBFBC800E501F5 /* EsqueciSenha.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B27DEAFB25EBFBC800E501F5 /* EsqueciSenha.storyboard */; };
@@ -29,16 +30,20 @@
 		BC90FC9225E961880092A52B /* CriarConta.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC90FC9125E961880092A52B /* CriarConta.storyboard */; };
 		BC90FC9525E961990092A52B /* CriarContaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC90FC9425E961990092A52B /* CriarContaVC.swift */; };
 		BC90FC9825E961B60092A52B /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC90FC9725E961B60092A52B /* Alert.swift */; };
+=======
 		BC90FC9225E961880092A52B /* CriarConta.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC90FC9125E961880092A52B /* CriarConta.storyboard */; };
 		BC90FC9525E961990092A52B /* CriarContaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC90FC9425E961990092A52B /* CriarContaVC.swift */; };
 		BC90FC9825E961B60092A52B /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC90FC9725E961B60092A52B /* Alert.swift */; };
 		BC90FC9C25E9630B0092A52B /* ConfirmarSenhaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC90FC9B25E9630B0092A52B /* ConfirmarSenhaViewController.swift */; };
 		BC90FC9F25E963150092A52B /* EsqueciSenha.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC90FC9E25E963150092A52B /* EsqueciSenha.storyboard */; };
+>>>>>>> 2daaec57996f68352d990fc7b16b5de1ec86bbec
 		BC90FCA225E963200092A52B /* EsqueciSenhaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC90FCA125E963200092A52B /* EsqueciSenhaViewController.swift */; };
 		BCA744B925E947DE00A5B402 /* WatchList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCA744B825E947DE00A5B402 /* WatchList.storyboard */; };
 		BCA744BC25E9487100A5B402 /* WatchListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA744BB25E9487100A5B402 /* WatchListVC.swift */; };
 		BCA744C025E948E000A5B402 /* WatchListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA744BE25E948E000A5B402 /* WatchListTableViewCell.swift */; };
 		BCA744C125E948E000A5B402 /* WatchListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCA744BF25E948E000A5B402 /* WatchListTableViewCell.xib */; };
+<<<<<<< HEAD
+=======
 		D3694EAE25EBFA7C00D57CFB /* Catalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3694EAD25EBFA7C00D57CFB /* Catalog.swift */; };
 		D3694EB225EBFAC800D57CFB /* VerticalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3694EB025EBFAC800D57CFB /* VerticalTableViewCell.swift */; };
 		D3694EB325EBFAC800D57CFB /* VerticalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3694EB125EBFAC800D57CFB /* VerticalTableViewCell.xib */; };
@@ -50,6 +55,7 @@
 		D3694EC225EBFBB100D57CFB /* CartazVCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3694EC025EBFBB100D57CFB /* CartazVCollectionViewCell.xib */; };
 		D3694EC525EBFC3200D57CFB /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3694EC425EBFC3200D57CFB /* Home.storyboard */; };
 		D3694EC825EBFCBD00D57CFB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3694EC725EBFCBD00D57CFB /* HomeViewController.swift */; };
+>>>>>>> 2daaec57996f68352d990fc7b16b5de1ec86bbec
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +68,7 @@
 		65E8D32125E89BEA0078BBE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65E8D32425E89BEA0078BBE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		65E8D32625E89BEA0078BBE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		B27DEAF125EBF9E800E501F5 /* PerfilStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PerfilStoryboard.storyboard; sourceTree = "<group>"; };
 		B27DEAF225EBF9E800E501F5 /* PerfilViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
 		B27DEAFB25EBFBC800E501F5 /* EsqueciSenha.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EsqueciSenha.storyboard; sourceTree = "<group>"; };
@@ -77,16 +84,20 @@
 		BC90FC9125E961880092A52B /* CriarConta.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CriarConta.storyboard; sourceTree = "<group>"; };
 		BC90FC9425E961990092A52B /* CriarContaVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CriarContaVC.swift; sourceTree = "<group>"; };
 		BC90FC9725E961B60092A52B /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+=======
 		BC90FC9125E961880092A52B /* CriarConta.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CriarConta.storyboard; sourceTree = "<group>"; };
 		BC90FC9425E961990092A52B /* CriarContaVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CriarContaVC.swift; sourceTree = "<group>"; };
 		BC90FC9725E961B60092A52B /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		BC90FC9B25E9630B0092A52B /* ConfirmarSenhaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmarSenhaViewController.swift; sourceTree = "<group>"; };
 		BC90FC9E25E963150092A52B /* EsqueciSenha.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EsqueciSenha.storyboard; sourceTree = "<group>"; };
+>>>>>>> 2daaec57996f68352d990fc7b16b5de1ec86bbec
 		BC90FCA125E963200092A52B /* EsqueciSenhaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EsqueciSenhaViewController.swift; sourceTree = "<group>"; };
 		BCA744B825E947DE00A5B402 /* WatchList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WatchList.storyboard; sourceTree = "<group>"; };
 		BCA744BB25E9487100A5B402 /* WatchListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListVC.swift; sourceTree = "<group>"; };
 		BCA744BE25E948E000A5B402 /* WatchListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListTableViewCell.swift; sourceTree = "<group>"; };
 		BCA744BF25E948E000A5B402 /* WatchListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WatchListTableViewCell.xib; sourceTree = "<group>"; };
+<<<<<<< HEAD
+=======
 		D3694EAD25EBFA7C00D57CFB /* Catalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Catalog.swift; sourceTree = "<group>"; };
 		D3694EB025EBFAC800D57CFB /* VerticalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalTableViewCell.swift; sourceTree = "<group>"; };
 		D3694EB125EBFAC800D57CFB /* VerticalTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerticalTableViewCell.xib; sourceTree = "<group>"; };
@@ -98,6 +109,7 @@
 		D3694EC025EBFBB100D57CFB /* CartazVCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartazVCollectionViewCell.xib; sourceTree = "<group>"; };
 		D3694EC425EBFC3200D57CFB /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		D3694EC725EBFCBD00D57CFB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+>>>>>>> 2daaec57996f68352d990fc7b16b5de1ec86bbec
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +142,7 @@
 		65E8D31725E89BE50078BBE9 /* CineRoom */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				B2FD94FB25EBFF90000BDD6F /* Elenco.swift */,
 				B2FD94FC25EBFF90000BDD6F /* ElencoCollectionViewCell.swift */,
 				B2FD94FA25EBFF90000BDD6F /* ElencoCollectionViewCell.xib */,
@@ -143,8 +156,13 @@
 				13FFA77825EB2493008053C0 /* Main.storyboard */,
 				13FFA77525EB246B008053C0 /* LoginViewController.swift */,
 				BC90FCA125E963200092A52B /* EsqueciSenhaViewController.swift */,
+				B27DEAFC25EBFBC800E501F5 /* ConfirmarSenhaViewController.swift */,
+				B27DEAFB25EBFBC800E501F5 /* EsqueciSenha.storyboard */,
+=======
+				BC90FCA125E963200092A52B /* EsqueciSenhaViewController.swift */,
 				BC90FC9E25E963150092A52B /* EsqueciSenha.storyboard */,
 				BC90FC9B25E9630B0092A52B /* ConfirmarSenhaViewController.swift */,
+>>>>>>> 2daaec57996f68352d990fc7b16b5de1ec86bbec
 				BC90FC9725E961B60092A52B /* Alert.swift */,
 				BC90FC9425E961990092A52B /* CriarContaVC.swift */,
 				BC90FC9125E961880092A52B /* CriarConta.storyboard */,
@@ -234,14 +252,25 @@
 				D3694EB825EBFB2700D57CFB /* HorizontalTableViewCell.xib in Resources */,
 				D3694EC525EBFC3200D57CFB /* Home.storyboard in Resources */,
 				BCA744C125E948E000A5B402 /* WatchListTableViewCell.xib in Resources */,
+<<<<<<< HEAD
 				13FFA77925EB2493008053C0 /* Main.storyboard in Resources */,
 				B2FD94F325EBFF5F000BDD6F /* DetalheFilme.storyboard in Resources */,
+				65E8D32225E89BEA0078BBE9 /* Assets.xcassets in Resources */,
+				B27DEAF325EBF9E800E501F5 /* PerfilStoryboard.storyboard in Resources */,
+				B27DEAFE25EBFBC800E501F5 /* EsqueciSenha.storyboard in Resources */,
+				B2FD94F825EBFF7E000BDD6F /* TrailerFilmeTableViewCell.xib in Resources */,
+=======
 				D3694EBD25EBFB6C00D57CFB /* CartazHCollectionViewCell.xib in Resources */,
 				65E8D32225E89BEA0078BBE9 /* Assets.xcassets in Resources */,
 				D3694EC225EBFBB100D57CFB /* CartazVCollectionViewCell.xib in Resources */,
+>>>>>>> 2daaec57996f68352d990fc7b16b5de1ec86bbec
 				BCA744B925E947DE00A5B402 /* WatchList.storyboard in Resources */,
 				BC90FC9225E961880092A52B /* CriarConta.storyboard in Resources */,
+<<<<<<< HEAD
+				B2FD94FD25EBFF90000BDD6F /* ElencoCollectionViewCell.xib in Resources */,
+=======
 				D3694EB325EBFAC800D57CFB /* VerticalTableViewCell.xib in Resources */,
+>>>>>>> 2daaec57996f68352d990fc7b16b5de1ec86bbec
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +286,10 @@
 				BCA744C025E948E000A5B402 /* WatchListTableViewCell.swift in Sources */,
 				BC90FCA225E963200092A52B /* EsqueciSenhaViewController.swift in Sources */,
 				65E8D31D25E89BE50078BBE9 /* ViewController.swift in Sources */,
+<<<<<<< HEAD
+				B27DEAFF25EBFBC800E501F5 /* ConfirmarSenhaViewController.swift in Sources */,
+				BC90FC9525E961990092A52B /* CriarContaVC.swift in Sources */,
+=======
 				BC90FC9525E961990092A52B /* CriarContaVC.swift in Sources */,
 				D3694EC825EBFCBD00D57CFB /* HomeViewController.swift in Sources */,
 				D3694EB725EBFB2700D57CFB /* HorizontalTableViewCell.swift in Sources */,
@@ -264,6 +297,7 @@
 				D3694EBC25EBFB6C00D57CFB /* CartazHCollectionViewCell.swift in Sources */,
 				D3694EB225EBFAC800D57CFB /* VerticalTableViewCell.swift in Sources */,
 				D3694EAE25EBFA7C00D57CFB /* Catalog.swift in Sources */,
+>>>>>>> 2daaec57996f68352d990fc7b16b5de1ec86bbec
 				65E8D31925E89BE50078BBE9 /* AppDelegate.swift in Sources */,
 				B27DEAF425EBF9E800E501F5 /* PerfilViewController.swift in Sources */,
 				65E8D31B25E89BE50078BBE9 /* SceneDelegate.swift in Sources */,
