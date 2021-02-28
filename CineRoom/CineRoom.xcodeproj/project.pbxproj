@@ -16,11 +16,11 @@
 		65E8D32525E89BEA0078BBE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65E8D32325E89BEA0078BBE9 /* LaunchScreen.storyboard */; };
 		B27DEAF325EBF9E800E501F5 /* PerfilStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B27DEAF125EBF9E800E501F5 /* PerfilStoryboard.storyboard */; };
 		B27DEAF425EBF9E800E501F5 /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27DEAF225EBF9E800E501F5 /* PerfilViewController.swift */; };
+		B27DEAFE25EBFBC800E501F5 /* EsqueciSenha.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B27DEAFB25EBFBC800E501F5 /* EsqueciSenha.storyboard */; };
+		B27DEAFF25EBFBC800E501F5 /* ConfirmarSenhaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27DEAFC25EBFBC800E501F5 /* ConfirmarSenhaViewController.swift */; };
 		BC90FC9225E961880092A52B /* CriarConta.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC90FC9125E961880092A52B /* CriarConta.storyboard */; };
 		BC90FC9525E961990092A52B /* CriarContaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC90FC9425E961990092A52B /* CriarContaVC.swift */; };
 		BC90FC9825E961B60092A52B /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC90FC9725E961B60092A52B /* Alert.swift */; };
-		BC90FC9C25E9630B0092A52B /* ConfirmarSenhaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC90FC9B25E9630B0092A52B /* ConfirmarSenhaViewController.swift */; };
-		BC90FC9F25E963150092A52B /* EsqueciSenha.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC90FC9E25E963150092A52B /* EsqueciSenha.storyboard */; };
 		BC90FCA225E963200092A52B /* EsqueciSenhaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC90FCA125E963200092A52B /* EsqueciSenhaViewController.swift */; };
 		BCA744B925E947DE00A5B402 /* WatchList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCA744B825E947DE00A5B402 /* WatchList.storyboard */; };
 		BCA744BC25E9487100A5B402 /* WatchListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA744BB25E9487100A5B402 /* WatchListVC.swift */; };
@@ -40,11 +40,11 @@
 		65E8D32625E89BEA0078BBE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B27DEAF125EBF9E800E501F5 /* PerfilStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PerfilStoryboard.storyboard; sourceTree = "<group>"; };
 		B27DEAF225EBF9E800E501F5 /* PerfilViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
+		B27DEAFB25EBFBC800E501F5 /* EsqueciSenha.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EsqueciSenha.storyboard; sourceTree = "<group>"; };
+		B27DEAFC25EBFBC800E501F5 /* ConfirmarSenhaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmarSenhaViewController.swift; sourceTree = "<group>"; };
 		BC90FC9125E961880092A52B /* CriarConta.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CriarConta.storyboard; sourceTree = "<group>"; };
 		BC90FC9425E961990092A52B /* CriarContaVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CriarContaVC.swift; sourceTree = "<group>"; };
 		BC90FC9725E961B60092A52B /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
-		BC90FC9B25E9630B0092A52B /* ConfirmarSenhaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmarSenhaViewController.swift; sourceTree = "<group>"; };
-		BC90FC9E25E963150092A52B /* EsqueciSenha.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EsqueciSenha.storyboard; sourceTree = "<group>"; };
 		BC90FCA125E963200092A52B /* EsqueciSenhaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EsqueciSenhaViewController.swift; sourceTree = "<group>"; };
 		BCA744B825E947DE00A5B402 /* WatchList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WatchList.storyboard; sourceTree = "<group>"; };
 		BCA744BB25E9487100A5B402 /* WatchListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListVC.swift; sourceTree = "<group>"; };
@@ -87,8 +87,8 @@
 				13FFA77825EB2493008053C0 /* Main.storyboard */,
 				13FFA77525EB246B008053C0 /* LoginViewController.swift */,
 				BC90FCA125E963200092A52B /* EsqueciSenhaViewController.swift */,
-				BC90FC9E25E963150092A52B /* EsqueciSenha.storyboard */,
-				BC90FC9B25E9630B0092A52B /* ConfirmarSenhaViewController.swift */,
+				B27DEAFC25EBFBC800E501F5 /* ConfirmarSenhaViewController.swift */,
+				B27DEAFB25EBFBC800E501F5 /* EsqueciSenha.storyboard */,
 				BC90FC9725E961B60092A52B /* Alert.swift */,
 				BC90FC9425E961990092A52B /* CriarContaVC.swift */,
 				BC90FC9125E961880092A52B /* CriarConta.storyboard */,
@@ -163,12 +163,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC90FC9F25E963150092A52B /* EsqueciSenha.storyboard in Resources */,
 				65E8D32525E89BEA0078BBE9 /* LaunchScreen.storyboard in Resources */,
 				BCA744C125E948E000A5B402 /* WatchListTableViewCell.xib in Resources */,
 				13FFA77925EB2493008053C0 /* Main.storyboard in Resources */,
 				65E8D32225E89BEA0078BBE9 /* Assets.xcassets in Resources */,
 				B27DEAF325EBF9E800E501F5 /* PerfilStoryboard.storyboard in Resources */,
+				B27DEAFE25EBFBC800E501F5 /* EsqueciSenha.storyboard in Resources */,
 				BCA744B925E947DE00A5B402 /* WatchList.storyboard in Resources */,
 				BC90FC9225E961880092A52B /* CriarConta.storyboard in Resources */,
 			);
@@ -185,10 +185,10 @@
 				BCA744C025E948E000A5B402 /* WatchListTableViewCell.swift in Sources */,
 				BC90FCA225E963200092A52B /* EsqueciSenhaViewController.swift in Sources */,
 				65E8D31D25E89BE50078BBE9 /* ViewController.swift in Sources */,
+				B27DEAFF25EBFBC800E501F5 /* ConfirmarSenhaViewController.swift in Sources */,
 				BC90FC9525E961990092A52B /* CriarContaVC.swift in Sources */,
 				65E8D31925E89BE50078BBE9 /* AppDelegate.swift in Sources */,
 				B27DEAF425EBF9E800E501F5 /* PerfilViewController.swift in Sources */,
-				BC90FC9C25E9630B0092A52B /* ConfirmarSenhaViewController.swift in Sources */,
 				65E8D31B25E89BE50078BBE9 /* SceneDelegate.swift in Sources */,
 				13FFA77625EB246B008053C0 /* LoginViewController.swift in Sources */,
 				BC90FC9825E961B60092A52B /* Alert.swift in Sources */,
