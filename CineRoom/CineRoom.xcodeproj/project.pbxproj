@@ -21,6 +21,7 @@
 		B2FD94FF25EBFF90000BDD6F /* ElencoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FD94FC25EBFF90000BDD6F /* ElencoCollectionViewCell.swift */; };
 		B2FD950225EBFFBC000BDD6F /* DetalheFilmeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FD950125EBFFBC000BDD6F /* DetalheFilmeVC.swift */; };
 		B2FD950D25EC0192000BDD6F /* ConfirmarSenhaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC90FC9B25E9630B0092A52B /* ConfirmarSenhaViewController.swift */; };
+		B2FD951B25EC0E0B000BDD6F /* Perfil.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2FD951A25EC0E0B000BDD6F /* Perfil.storyboard */; };
 		BC90FC9225E961880092A52B /* CriarConta.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC90FC9125E961880092A52B /* CriarConta.storyboard */; };
 		BC90FC9525E961990092A52B /* CriarContaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC90FC9425E961990092A52B /* CriarContaVC.swift */; };
 		BC90FC9825E961B60092A52B /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC90FC9725E961B60092A52B /* Alert.swift */; };
@@ -51,7 +52,6 @@
 		65E8D32125E89BEA0078BBE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65E8D32425E89BEA0078BBE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		65E8D32625E89BEA0078BBE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B27DEAF125EBF9E800E501F5 /* PerfilStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PerfilStoryboard.storyboard; sourceTree = "<group>"; };
 		B27DEAF225EBF9E800E501F5 /* PerfilViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
 		B2FD94F025EBFF5F000BDD6F /* DetalheFilme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalheFilme.swift; sourceTree = "<group>"; };
 		B2FD94F125EBFF5F000BDD6F /* DetalheFilme.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DetalheFilme.storyboard; sourceTree = "<group>"; };
@@ -61,6 +61,7 @@
 		B2FD94FB25EBFF90000BDD6F /* Elenco.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Elenco.swift; sourceTree = "<group>"; };
 		B2FD94FC25EBFF90000BDD6F /* ElencoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElencoCollectionViewCell.swift; sourceTree = "<group>"; };
 		B2FD950125EBFFBC000BDD6F /* DetalheFilmeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalheFilmeVC.swift; sourceTree = "<group>"; };
+		B2FD951A25EC0E0B000BDD6F /* Perfil.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Perfil.storyboard; sourceTree = "<group>"; };
 		BC90FC9125E961880092A52B /* CriarConta.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CriarConta.storyboard; sourceTree = "<group>"; };
 		BC90FC9425E961990092A52B /* CriarContaVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CriarContaVC.swift; sourceTree = "<group>"; };
 		BC90FC9725E961B60092A52B /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
@@ -205,7 +206,7 @@
 		B2FD951225EC01E3000BDD6F /* Perfil */ = {
 			isa = PBXGroup;
 			children = (
-				B27DEAF125EBF9E800E501F5 /* PerfilStoryboard.storyboard */,
+				B2FD951A25EC0E0B000BDD6F /* Perfil.storyboard */,
 				B27DEAF225EBF9E800E501F5 /* PerfilViewController.swift */,
 			);
 			path = Perfil;
@@ -289,6 +290,7 @@
 				BCA744B925E947DE00A5B402 /* WatchList.storyboard in Resources */,
 				BC90FC9225E961880092A52B /* CriarConta.storyboard in Resources */,
 				D3694EB325EBFAC800D57CFB /* VerticalTableViewCell.xib in Resources */,
+				B2FD951B25EC0E0B000BDD6F /* Perfil.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
