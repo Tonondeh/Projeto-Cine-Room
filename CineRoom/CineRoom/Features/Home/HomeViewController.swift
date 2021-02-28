@@ -13,8 +13,8 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tabBar: UITabBar!
     
-    var arrayImagemTabBar:[UIImage] = [UIImage(named: "bookmark_v2") ?? UIImage(),
-                                       UIImage(named: "Logo-Cine-Room") ?? UIImage(),
+    var arrayImagemTabBar:[UIImage] = [UIImage(named: "tabBar1") ?? UIImage(),
+                                       UIImage(named: "tabBar2") ?? UIImage(),
                                        UIImage(systemName: "person") ?? UIImage()]
     
     var arrayVFilme:[Catalog] = [Catalog(titleSection: "Tendências", titleMovie: "Wonder Woman", date: "15 Dez 2020", imageMovie:                                      UIImage(named:"filmev12") ?? UIImage()),
@@ -39,12 +39,14 @@ class HomeViewController: UIViewController {
     }
     
     func getImageTabBar() {
+            
         if let count = self.tabBar.items?.count {
             for i in 0...(count-1) {
                 let imageTabBar = arrayImagemTabBar[i]
                 
                 let imageView = UIImageView(image: imageTabBar)
-                imageView.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+                
+//              item.selectedImage = [[UIImage imageNamed:[imageName stringByAppendingString:@"-selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
             }
         }
     }
