@@ -81,6 +81,17 @@ class WatchListVC: UIViewController {
 		self.montaListaFilmes(index: self.listSegmented.selectedSegmentIndex)
 	}
 	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if segue.identifier == "segueDetalheStoryboard" {
+			if let detalheVC = segue.destination as? DetalheFilmeVC {
+				detalheVC.navigationItem.title = "TESTE"
+			}
+		}
+	}
+	
+	
+	
+	// MARK: - Action
 	@IBAction func didTapList(_ sender: UISegmentedControl) {
 		self.atualizaQtdLinhas(index: self.listSegmented.selectedSegmentIndex)
 		self.montaListaFilmes(index: self.listSegmented.selectedSegmentIndex)
@@ -110,6 +121,10 @@ extension WatchListVC: UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		print("UISegmented atual: \(self.listSegmented.selectedSegmentIndex)")
 		print("Selecionado Indice: \(indexPath.row)")
+		
+		
+		self.performSegue(withIdentifier: "segueDetalheStoryboard", sender: self)
+		
 	}
 	
 	

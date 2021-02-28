@@ -2,7 +2,7 @@
 //  ElencoCollectionViewCell.swift
 //  CineRoom
 //
-//  Created by Alexandre Cardoso on 26/02/21.
+//  Created by Alexandre Cardoso on 28/02/21.
 //
 
 import UIKit
@@ -20,12 +20,11 @@ class ElencoCollectionViewCell: UICollectionViewCell {
 	static func nib() -> UINib {
 		return UINib(nibName: self.identifier, bundle: nil)
 	}
-	
-	override func awakeFromNib() {
-		super.awakeFromNib()
-		
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
 		configImageView()
-	}
+    }
 	
 	func configImageView() {
 		self.imageElencoImageView.layer.cornerRadius = self.imageElencoImageView.frame.height / 2
@@ -34,12 +33,10 @@ class ElencoCollectionViewCell: UICollectionViewCell {
 		self.imageElencoImageView.contentMode = .scaleAspectFill
 	}
 	
-	
 	func configCell(elenco: Elenco) {
 		self.imageElencoImageView.image = elenco.imageElenco
 		self.nomeElencoLabel.text = elenco.nome
 		self.nomeArtElencolabel.text = elenco.nomeArt
 	}
-	
-	
+
 }

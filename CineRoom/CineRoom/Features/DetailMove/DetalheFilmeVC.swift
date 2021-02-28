@@ -37,6 +37,7 @@ class DetalheFilmeVC: UIViewController {
 												 DetalheFilme(nomeFilme: "Wonder Woman 1984 main trailer Subtitle")
 	]
 	
+	
 	// MARK: - Enum
 	enum NameImage: String {
 		case bookmark = "bookmark"
