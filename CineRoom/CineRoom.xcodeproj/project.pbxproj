@@ -13,6 +13,7 @@
 		65E8D31B25E89BE50078BBE9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E8D31A25E89BE50078BBE9 /* SceneDelegate.swift */; };
 		65E8D32225E89BEA0078BBE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65E8D32125E89BEA0078BBE9 /* Assets.xcassets */; };
 		65E8D32525E89BEA0078BBE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65E8D32325E89BEA0078BBE9 /* LaunchScreen.storyboard */; };
+		9F78B78825EC1DA40001228D /* EsqueciSenha.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F78B78725EC1DA40001228D /* EsqueciSenha.storyboard */; };
 		B27DEAF425EBF9E800E501F5 /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27DEAF225EBF9E800E501F5 /* PerfilViewController.swift */; };
 		B2FD94F225EBFF5F000BDD6F /* DetalheFilme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FD94F025EBFF5F000BDD6F /* DetalheFilme.swift */; };
 		B2FD94F325EBFF5F000BDD6F /* DetalheFilme.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2FD94F125EBFF5F000BDD6F /* DetalheFilme.storyboard */; };
@@ -52,6 +53,7 @@
 		65E8D32125E89BEA0078BBE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65E8D32425E89BEA0078BBE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		65E8D32625E89BEA0078BBE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F78B78725EC1DA40001228D /* EsqueciSenha.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EsqueciSenha.storyboard; sourceTree = "<group>"; };
 		B27DEAF225EBF9E800E501F5 /* PerfilViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
 		B2FD94F025EBFF5F000BDD6F /* DetalheFilme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalheFilme.swift; sourceTree = "<group>"; };
 		B2FD94F125EBFF5F000BDD6F /* DetalheFilme.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DetalheFilme.storyboard; sourceTree = "<group>"; };
@@ -66,7 +68,6 @@
 		BC90FC9425E961990092A52B /* CriarContaVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CriarContaVC.swift; sourceTree = "<group>"; };
 		BC90FC9725E961B60092A52B /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		BC90FC9B25E9630B0092A52B /* ConfirmarSenhaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmarSenhaViewController.swift; sourceTree = "<group>"; };
-		BC90FC9E25E963150092A52B /* EsqueciSenha.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EsqueciSenha.storyboard; sourceTree = "<group>"; };
 		BC90FCA125E963200092A52B /* EsqueciSenhaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EsqueciSenhaViewController.swift; sourceTree = "<group>"; };
 		BCA744B825E947DE00A5B402 /* WatchList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WatchList.storyboard; sourceTree = "<group>"; };
 		BCA744BB25E9487100A5B402 /* WatchListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListVC.swift; sourceTree = "<group>"; };
@@ -161,7 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				BC90FCA125E963200092A52B /* EsqueciSenhaViewController.swift */,
-				BC90FC9E25E963150092A52B /* EsqueciSenha.storyboard */,
+				9F78B78725EC1DA40001228D /* EsqueciSenha.storyboard */,
 				BC90FC9B25E9630B0092A52B /* ConfirmarSenhaViewController.swift */,
 			);
 			path = ForgetPassword;
@@ -280,6 +281,7 @@
 			files = (
 				65E8D32525E89BEA0078BBE9 /* LaunchScreen.storyboard in Resources */,
 				D3694EB825EBFB2700D57CFB /* HorizontalTableViewCell.xib in Resources */,
+				9F78B78825EC1DA40001228D /* EsqueciSenha.storyboard in Resources */,
 				D3694EC525EBFC3200D57CFB /* Home.storyboard in Resources */,
 				BCA744C125E948E000A5B402 /* WatchListTableViewCell.xib in Resources */,
 				13FFA77925EB2493008053C0 /* Login.storyboard in Resources */,
