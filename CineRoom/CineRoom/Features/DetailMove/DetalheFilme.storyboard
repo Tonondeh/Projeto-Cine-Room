@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Detalhe FilmeVC-->
+        <!--Detalhe-->
         <scene sceneID="YUy-h0-004">
             <objects>
                 <viewController id="0VM-A7-eKD" customClass="DetalheFilmeVC" customModule="CineRoom" customModuleProvider="target" sceneMemberID="viewController">
@@ -193,7 +193,12 @@ formidáveis, Maxwell Lord e a Mulher-Leopardo, enquanto reencontra misteriosame
                             <constraint firstAttribute="bottom" secondItem="klQ-pw-kwt" secondAttribute="bottom" id="lRQ-gF-rj9"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="hq6-LS-QML">
+                    <navigationItem key="navigationItem" title="Detalhe" id="hq6-LS-QML">
+                        <barButtonItem key="leftBarButtonItem" title="Cancelar" id="01Z-i1-g4L">
+                            <connections>
+                                <action selector="didTapCancelar:" destination="0VM-A7-eKD" id="2w7-yk-KCd"/>
+                            </connections>
+                        </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem title="Item" image="bookmark" catalog="system" id="iR9-cE-ulh">
                                 <connections>

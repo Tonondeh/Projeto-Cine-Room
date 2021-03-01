@@ -49,5 +49,5 @@ extension VerticalTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
             cellV?.configVCell(value: self.filmes[indexPath.row])
         return cellV ?? UICollectionViewCell()
     }
-
+	
 }

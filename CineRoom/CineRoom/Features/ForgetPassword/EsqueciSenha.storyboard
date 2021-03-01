@@ -76,7 +76,7 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="tappedContinuarButton:" destination="Mq6-vd-NUQ" eventType="touchUpInside" id="Xlf-w2-qZp"/>
-                                                    <segue destination="3ia-5X-mNo" kind="presentation" modalPresentationStyle="fullScreen" id="qxK-x7-Ibx"/>
+                                                    <segue destination="3ia-5X-mNo" kind="presentation" id="qxK-x7-Ibx"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -117,20 +117,20 @@
             <objects>
                 <viewController id="3ia-5X-mNo" customClass="ConfirmarSenhaViewController" customModule="CineRoom" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FDQ-qP-09K">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.30000001192092896" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="filmev3" translatesAutoresizingMaskIntoConstraints="NO" id="LNv-FQ-3lD">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="2hW-bY-t5T">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TJB-NF-8Gr" userLabel="Top View">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="204"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="201.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoApp-Parceria" translatesAutoresizingMaskIntoConstraints="NO" id="dsk-lq-UbX">
-                                                <rect key="frame" x="20" y="20" width="374" height="164"/>
+                                                <rect key="frame" x="20" y="20" width="374" height="161.5"/>
                                             </imageView>
                                         </subviews>
                                         <constraints>
@@ -141,16 +141,16 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pg2-vj-lZy" userLabel="First View">
-                                        <rect key="frame" x="0.0" y="205" width="414" height="203.5"/>
+                                        <rect key="frame" x="0.0" y="202.5" width="414" height="201"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nova Senha:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6a9-nZ-WiT">
-                                                <rect key="frame" x="20" y="105.5" width="374" height="24"/>
+                                                <rect key="frame" x="20" y="103" width="374" height="24"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="******" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eYh-5A-1BQ">
-                                                <rect key="frame" x="20" y="149.5" width="374" height="34"/>
+                                                <rect key="frame" x="20" y="147" width="374" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -165,16 +165,16 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IlS-Kv-aPT" userLabel="Second View">
-                                        <rect key="frame" x="0.0" y="409.5" width="414" height="204"/>
+                                        <rect key="frame" x="0.0" y="404.5" width="414" height="201.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirmar Nova Senha:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="010-Lh-a3y">
-                                                <rect key="frame" x="20" y="106" width="374" height="24"/>
+                                                <rect key="frame" x="20" y="103.5" width="374" height="24"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="******" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="llz-OZ-qqU">
-                                                <rect key="frame" x="20" y="150" width="374" height="34"/>
+                                                <rect key="frame" x="20" y="147.5" width="374" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -189,20 +189,21 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="382-1C-m3t" userLabel="Bottom View">
-                                        <rect key="frame" x="0.0" y="614.5" width="414" height="203.5"/>
+                                        <rect key="frame" x="0.0" y="607" width="414" height="201"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aTt-UQ-bHU">
-                                                <rect key="frame" x="20" y="76.5" width="374" height="50"/>
+                                                <rect key="frame" x="20" y="75.5" width="374" height="50"/>
                                                 <color key="backgroundColor" name="mainColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="7pp-rF-dTj"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                                <state key="normal" title="Confirmar">
+                                                <state key="normal" title="Salvar">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="confirmarButton:" destination="3ia-5X-mNo" eventType="touchUpInside" id="rDC-Qe-fkY"/>
+                                                    <segue destination="qAh-cd-D2W" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="5kj-ij-nGw"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -237,6 +238,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VUV-Rs-njX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1750.9345794392523" y="114.68682505399569"/>
+        </scene>
+        <!--Login-->
+        <scene sceneID="faw-fV-v6L">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Login" id="qAh-cd-D2W" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OBq-aa-BlZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2393" y="115"/>
         </scene>
     </scenes>
     <resources>
