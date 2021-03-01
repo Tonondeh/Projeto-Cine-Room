@@ -11,11 +11,10 @@ import UIKit
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var tabBar: UITabBar!
     
-    var arrayImagemTabBar:[UIImage] = [UIImage(named: "tabBar1") ?? UIImage(),
-                                       UIImage(named: "tabBar2") ?? UIImage(),
-                                       UIImage(systemName: "person") ?? UIImage()]
+//    var arrayImagemTabBar:[UIImage] = [UIImage(named: "tabBar1") ?? UIImage(),
+//                                       UIImage(named: "tabBar2") ?? UIImage(),
+//                                       UIImage(systemName: "person") ?? UIImage()]
     
     var arrayVFilme:[Catalog] = [Catalog(titleSection: "Tendências", titleMovie: "Wonder Woman", date: "15 Dez 2020", imageMovie:                                      UIImage(named:"filmev12") ?? UIImage()),
                                  Catalog(titleSection: "Tendências", titleMovie: "The Litle Things", date: "27 Jan 2021", imageMovie: UIImage(named:"filmev8") ?? UIImage()),
@@ -35,20 +34,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configTableView()
-        self.getImageTabBar()
-    }
-    
-    func getImageTabBar() {
-            
-        if let count = self.tabBar.items?.count {
-            for i in 0...(count-1) {
-                let imageTabBar = arrayImagemTabBar[i]
-                
-                let imageView = UIImageView(image: imageTabBar)
-                
-//              item.selectedImage = [[UIImage imageNamed:[imageName stringByAppendingString:@"-selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-            }
-        }
+        
     }
     
     func configTableView(){

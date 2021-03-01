@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DHT-LL-Zuq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iNc-ng-vrJ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -9,6 +9,36 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--WatchList-->
+        <scene sceneID="xmI-nb-bbh">
+            <objects>
+                <viewControllerPlaceholder storyboardName="WatchList" id="SL6-oh-vty" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="EmM-rC-7Y5"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HqX-ds-Uzz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-109" y="458"/>
+        </scene>
+        <!--Perfil-->
+        <scene sceneID="aux-jM-S7m">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Perfil" id="GdW-Jf-30K" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="nub-jW-uou"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YHF-0I-Nhr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="264" y="458"/>
+        </scene>
+        <!--DetalheFilme-->
+        <scene sceneID="c8b-EV-U2p">
+            <objects>
+                <viewControllerPlaceholder storyboardName="DetalheFilme" id="Rbv-kH-9JL" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="UTo-nw-Bxo"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HpO-Zo-qu5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="987" y="457"/>
+        </scene>
         <!--Home View Controller-->
         <scene sceneID="v6J-Fj-kkc">
             <objects>
@@ -29,50 +59,52 @@
                                 <color key="textColor" name="mainColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hcU-me-FIA">
-                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="49" id="I65-Bb-xUj"/>
-                                </constraints>
-                                <items>
-                                    <tabBarItem title="" image="tabBar1" id="5nF-NZ-Vpe"/>
-                                    <tabBarItem tag="-3" title="" image="tabBar2" id="nhv-Eu-eaX"/>
-                                    <tabBarItem title="" image="person" catalog="system" id="neM-5O-2FO"/>
-                                </items>
-                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="selectedImageTintColor" name="backgroundColor"/>
-                            </tabBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="q4F-FS-h6a"/>
                         <color key="backgroundColor" name="backgroundColor"/>
                         <constraints>
-                            <constraint firstItem="hcU-me-FIA" firstAttribute="trailing" secondItem="Qld-gm-bFT" secondAttribute="trailing" id="9kS-mN-Wzq"/>
-                            <constraint firstItem="hcU-me-FIA" firstAttribute="top" secondItem="Qld-gm-bFT" secondAttribute="bottom" id="BOs-OK-rkE"/>
                             <constraint firstItem="q4F-FS-h6a" firstAttribute="trailing" secondItem="Qld-gm-bFT" secondAttribute="trailing" id="Ieh-c2-cqb"/>
-                            <constraint firstItem="hcU-me-FIA" firstAttribute="leading" secondItem="Qld-gm-bFT" secondAttribute="leading" id="Oo8-jr-2h5"/>
+                            <constraint firstItem="Qld-gm-bFT" firstAttribute="bottom" secondItem="q4F-FS-h6a" secondAttribute="bottom" id="aKH-Zb-0fD"/>
                             <constraint firstItem="Qld-gm-bFT" firstAttribute="leading" secondItem="q4F-FS-h6a" secondAttribute="leading" id="cjA-jG-KA2"/>
                             <constraint firstItem="acL-dI-Ehc" firstAttribute="leading" secondItem="q4F-FS-h6a" secondAttribute="leading" constant="20" id="duA-jn-gSl"/>
-                            <constraint firstItem="hcU-me-FIA" firstAttribute="bottom" secondItem="q4F-FS-h6a" secondAttribute="bottom" id="hws-cD-Zb8"/>
                             <constraint firstItem="acL-dI-Ehc" firstAttribute="top" secondItem="q4F-FS-h6a" secondAttribute="top" constant="3" id="j3n-uJ-v0g"/>
                             <constraint firstItem="Qld-gm-bFT" firstAttribute="top" secondItem="acL-dI-Ehc" secondAttribute="bottom" constant="5" id="juU-Ko-eEC"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="" image="tabBarHome" id="s0g-ua-VHK"/>
                     <connections>
-                        <outlet property="tabBar" destination="hcU-me-FIA" id="e13-DW-E4g"/>
                         <outlet property="tableView" destination="Qld-gm-bFT" id="PjB-DD-v32"/>
+                        <segue destination="Rbv-kH-9JL" kind="show" identifier="SegueDetalheStoryBoard" id="MCO-OA-gzI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hPN-81-aqO" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="78" y="78"/>
+            <point key="canvasLocation" x="986.95652173913049" y="77.678571428571431"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="uMw-mz-BMJ">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="iNc-ng-vrJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0Yh-YQ-q9O">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" name="mainColor"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="SL6-oh-vty" kind="relationship" relationship="viewControllers" id="ADp-ac-ouF"/>
+                        <segue destination="DHT-LL-Zuq" kind="relationship" relationship="viewControllers" id="9Ki-JF-vdD"/>
+                        <segue destination="GdW-Jf-30K" kind="relationship" relationship="viewControllers" id="dKV-kF-jWB"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nb4-K0-ZP3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="76.811594202898561" y="77.678571428571431"/>
         </scene>
     </scenes>
     <resources>
-        <image name="person" catalog="system" width="128" height="117"/>
-        <image name="tabBar1" width="25" height="25"/>
-        <image name="tabBar2" width="25" height="25"/>
+        <image name="tabBarHome" width="32" height="32"/>
         <namedColor name="backgroundColor">
             <color red="0.0080000003799796104" green="0.15299999713897705" blue="0.3529999852180481" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

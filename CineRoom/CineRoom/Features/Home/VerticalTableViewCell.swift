@@ -48,6 +48,6 @@ extension VerticalTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
         let cellV = collectionView.dequeueReusableCell(withReuseIdentifier: CartazVCollectionViewCell.identifier, for: indexPath) as? CartazVCollectionViewCell
             cellV?.configVCell(value: self.filmes[indexPath.row])
         return cellV ?? UICollectionViewCell()
-        
     }
+
 }

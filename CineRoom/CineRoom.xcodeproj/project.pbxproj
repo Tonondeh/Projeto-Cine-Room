@@ -33,6 +33,7 @@
 		BCA744BC25E9487100A5B402 /* WatchListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA744BB25E9487100A5B402 /* WatchListVC.swift */; };
 		BCA744C025E948E000A5B402 /* WatchListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA744BE25E948E000A5B402 /* WatchListTableViewCell.swift */; };
 		BCA744C125E948E000A5B402 /* WatchListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCA744BF25E948E000A5B402 /* WatchListTableViewCell.xib */; };
+		D33C608425EC6AB000773E6B /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D33C608325EC6AB000773E6B /* Home.storyboard */; };
 		D3694EAE25EBFA7C00D57CFB /* Catalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3694EAD25EBFA7C00D57CFB /* Catalog.swift */; };
 		D3694EB225EBFAC800D57CFB /* VerticalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3694EB025EBFAC800D57CFB /* VerticalTableViewCell.swift */; };
 		D3694EB325EBFAC800D57CFB /* VerticalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3694EB125EBFAC800D57CFB /* VerticalTableViewCell.xib */; };
@@ -42,7 +43,6 @@
 		D3694EBD25EBFB6C00D57CFB /* CartazHCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3694EBB25EBFB6C00D57CFB /* CartazHCollectionViewCell.xib */; };
 		D3694EC125EBFBB100D57CFB /* CartazVCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3694EBF25EBFBB100D57CFB /* CartazVCollectionViewCell.swift */; };
 		D3694EC225EBFBB100D57CFB /* CartazVCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3694EC025EBFBB100D57CFB /* CartazVCollectionViewCell.xib */; };
-		D3694EC525EBFC3200D57CFB /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3694EC425EBFC3200D57CFB /* Home.storyboard */; };
 		D3694EC825EBFCBD00D57CFB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3694EC725EBFCBD00D57CFB /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +75,7 @@
 		BCA744BB25E9487100A5B402 /* WatchListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListVC.swift; sourceTree = "<group>"; };
 		BCA744BE25E948E000A5B402 /* WatchListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListTableViewCell.swift; sourceTree = "<group>"; };
 		BCA744BF25E948E000A5B402 /* WatchListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WatchListTableViewCell.xib; sourceTree = "<group>"; };
+		D33C608325EC6AB000773E6B /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		D3694EAD25EBFA7C00D57CFB /* Catalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Catalog.swift; sourceTree = "<group>"; };
 		D3694EB025EBFAC800D57CFB /* VerticalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalTableViewCell.swift; sourceTree = "<group>"; };
 		D3694EB125EBFAC800D57CFB /* VerticalTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerticalTableViewCell.xib; sourceTree = "<group>"; };
@@ -84,7 +85,6 @@
 		D3694EBB25EBFB6C00D57CFB /* CartazHCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartazHCollectionViewCell.xib; sourceTree = "<group>"; };
 		D3694EBF25EBFBB100D57CFB /* CartazVCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartazVCollectionViewCell.swift; sourceTree = "<group>"; };
 		D3694EC025EBFBB100D57CFB /* CartazVCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartazVCollectionViewCell.xib; sourceTree = "<group>"; };
-		D3694EC425EBFC3200D57CFB /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		D3694EC725EBFCBD00D57CFB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -154,8 +154,8 @@
 				D3694EBB25EBFB6C00D57CFB /* CartazHCollectionViewCell.xib */,
 				D3694EBF25EBFBB100D57CFB /* CartazVCollectionViewCell.swift */,
 				D3694EC025EBFBB100D57CFB /* CartazVCollectionViewCell.xib */,
-				D3694EC425EBFC3200D57CFB /* Home.storyboard */,
 				D3694EC725EBFCBD00D57CFB /* HomeViewController.swift */,
+				D33C608325EC6AB000773E6B /* Home.storyboard */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -284,8 +284,8 @@
 				65E8D32525E89BEA0078BBE9 /* LaunchScreen.storyboard in Resources */,
 				D3694EB825EBFB2700D57CFB /* HorizontalTableViewCell.xib in Resources */,
 				9F78B78825EC1DA40001228D /* EsqueciSenha.storyboard in Resources */,
-				D3694EC525EBFC3200D57CFB /* Home.storyboard in Resources */,
 				BCA744C125E948E000A5B402 /* WatchListTableViewCell.xib in Resources */,
+				D33C608425EC6AB000773E6B /* Home.storyboard in Resources */,
 				13FFA77925EB2493008053C0 /* Login.storyboard in Resources */,
 				B2FD94F325EBFF5F000BDD6F /* DetalheFilme.storyboard in Resources */,
 				D3694EBD25EBFB6C00D57CFB /* CartazHCollectionViewCell.xib in Resources */,

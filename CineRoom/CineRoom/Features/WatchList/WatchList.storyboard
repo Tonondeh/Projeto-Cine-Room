@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -50,12 +51,14 @@
                             <constraint firstItem="hgL-ZL-ygo" firstAttribute="top" secondItem="Ihq-4F-d6B" secondAttribute="bottom" constant="30" id="kZd-tJ-6vi"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Watch List" image="applewatch.watchface" catalog="system" id="zMA-Og-vsK"/>
+                    <tabBarItem key="tabBarItem" title="" id="zMA-Og-vsK">
+                        <imageReference key="image" image="tabBarFavorite" symbolScale="large"/>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" title="Watch List" id="cYq-AE-EZ8"/>
                     <connections>
                         <outlet property="listSegmented" destination="Ihq-4F-d6B" id="Q6q-2E-ewH"/>
                         <outlet property="tableView" destination="hgL-ZL-ygo" id="7rM-s8-61Z"/>
-                        <segue destination="eEg-FA-yU2" kind="presentation" identifier="segueDetalheStoryboard" modalPresentationStyle="fullScreen" id="g1h-rS-Aga"/>
+                        <segue destination="eEg-FA-yU2" kind="show" identifier="segueDetalheStoryboard" id="g1h-rS-Aga"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ab-53-Dlk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -65,14 +68,16 @@
         <!--DetalheFilme-->
         <scene sceneID="Hwu-k2-BTS">
             <objects>
-                <viewControllerPlaceholder storyboardName="DetalheFilme" id="eEg-FA-yU2" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="DetalheFilme" id="eEg-FA-yU2" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Bjm-00-nDv"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fac-nu-B4P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1603" y="848"/>
         </scene>
     </scenes>
     <resources>
-        <image name="applewatch.watchface" catalog="system" width="114" height="128"/>
+        <image name="tabBarFavorite" width="48" height="48"/>
         <namedColor name="backgroundColor">
             <color red="0.0080000003799796104" green="0.15299999713897705" blue="0.3529999852180481" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
