@@ -37,6 +37,7 @@ class DetalheFilmeVC: UIViewController {
 												 DetalheFilme(nomeFilme: "Wonder Woman 1984 main trailer Subtitle")
 	]
 	
+	
 	// MARK: - Enum
 	enum NameImage: String {
 		case bookmark = "bookmark"
@@ -124,6 +125,12 @@ class DetalheFilmeVC: UIViewController {
 		print(#function)
 		print("Ir para Tela Assistir Agora!")
 	}
+	
+	
+	@IBAction func didTapCancelar(_ sender: UIBarButtonItem) {
+		dismiss(animated: true, completion: nil)
+	}
+	
 	
 	
 }

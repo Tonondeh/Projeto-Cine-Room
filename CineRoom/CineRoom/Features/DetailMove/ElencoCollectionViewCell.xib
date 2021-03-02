@@ -11,33 +11,33 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ElencoCollectionViewCell" id="4We-7F-Wna" customClass="ElencoCollectionViewCell" customModule="CineRoom" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ElencoCollectionViewCell" id="iIX-dJ-hGQ" customClass="ElencoCollectionViewCell" customModule="CineRoom" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b01-n4-lsO">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hj8-cq-zon">
                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="w5x-EK-rV1">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VcW-C6-dcB">
                                 <rect key="frame" x="20" y="0.0" width="60" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="d5m-Dd-hF8"/>
-                                    <constraint firstAttribute="width" constant="60" id="nno-9M-E30"/>
+                                    <constraint firstAttribute="width" constant="60" id="ApL-l7-fij"/>
+                                    <constraint firstAttribute="height" constant="60" id="aM3-7L-tkU"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gal Gadot" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="gcH-fF-BQy">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gal Gadot" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="Wf4-7D-8cU">
                                 <rect key="frame" x="0.0" y="65" width="100" height="15"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="15" id="z2P-ML-Msc"/>
+                                    <constraint firstAttribute="height" constant="15" id="AEN-na-rOo"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
                                 <color key="textColor" name="mainColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diana Prince" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="tUw-cC-us3">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diana Prince" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="UYN-8m-Eyb">
                                 <rect key="frame" x="0.0" y="80" width="100" height="11"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -45,32 +45,32 @@
                             </label>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="height" constant="100" id="4e3-RZ-5AX"/>
-                            <constraint firstItem="gcH-fF-BQy" firstAttribute="top" secondItem="w5x-EK-rV1" secondAttribute="bottom" constant="5" id="5AH-js-q62"/>
-                            <constraint firstAttribute="width" constant="100" id="DVq-Ti-yvP"/>
-                            <constraint firstAttribute="trailing" secondItem="gcH-fF-BQy" secondAttribute="trailing" id="GCw-LV-zb3"/>
-                            <constraint firstAttribute="trailing" secondItem="tUw-cC-us3" secondAttribute="trailing" id="PeH-By-3fI"/>
-                            <constraint firstItem="w5x-EK-rV1" firstAttribute="top" secondItem="b01-n4-lsO" secondAttribute="top" id="YKn-OS-Jxa"/>
-                            <constraint firstItem="tUw-cC-us3" firstAttribute="top" secondItem="gcH-fF-BQy" secondAttribute="bottom" id="ZMU-KS-50q"/>
-                            <constraint firstItem="w5x-EK-rV1" firstAttribute="centerX" secondItem="b01-n4-lsO" secondAttribute="centerX" id="iN4-6Z-bLn"/>
-                            <constraint firstItem="tUw-cC-us3" firstAttribute="leading" secondItem="b01-n4-lsO" secondAttribute="leading" id="lgx-ex-900"/>
-                            <constraint firstItem="gcH-fF-BQy" firstAttribute="leading" secondItem="b01-n4-lsO" secondAttribute="leading" id="sba-8o-Yky"/>
+                            <constraint firstAttribute="width" constant="100" id="1nJ-Vc-DaU"/>
+                            <constraint firstItem="VcW-C6-dcB" firstAttribute="centerX" secondItem="Hj8-cq-zon" secondAttribute="centerX" id="5Ft-71-56m"/>
+                            <constraint firstItem="UYN-8m-Eyb" firstAttribute="leading" secondItem="Hj8-cq-zon" secondAttribute="leading" id="5bt-RM-I5i"/>
+                            <constraint firstAttribute="trailing" secondItem="UYN-8m-Eyb" secondAttribute="trailing" id="60n-Zu-AZS"/>
+                            <constraint firstItem="VcW-C6-dcB" firstAttribute="top" secondItem="Hj8-cq-zon" secondAttribute="top" id="8W6-84-Whh"/>
+                            <constraint firstItem="Wf4-7D-8cU" firstAttribute="top" secondItem="VcW-C6-dcB" secondAttribute="bottom" constant="5" id="9bp-14-HTi"/>
+                            <constraint firstItem="UYN-8m-Eyb" firstAttribute="top" secondItem="Wf4-7D-8cU" secondAttribute="bottom" id="G13-8o-I68"/>
+                            <constraint firstAttribute="height" constant="100" id="XO5-fy-Cj0"/>
+                            <constraint firstItem="Wf4-7D-8cU" firstAttribute="leading" secondItem="Hj8-cq-zon" secondAttribute="leading" id="gCR-Qf-7et"/>
+                            <constraint firstAttribute="trailing" secondItem="Wf4-7D-8cU" secondAttribute="trailing" id="tLO-PN-v6o"/>
                         </constraints>
                     </view>
                 </subviews>
             </view>
-            <viewLayoutGuide key="safeArea" id="igQ-c9-rVk"/>
+            <viewLayoutGuide key="safeArea" id="QdC-Cp-Hdc"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="b01-n4-lsO" secondAttribute="bottom" id="0QV-yS-Nu8"/>
-                <constraint firstItem="b01-n4-lsO" firstAttribute="leading" secondItem="4We-7F-Wna" secondAttribute="leading" id="3nx-cT-6zt"/>
-                <constraint firstItem="b01-n4-lsO" firstAttribute="top" secondItem="4We-7F-Wna" secondAttribute="top" id="PUa-8a-6sj"/>
-                <constraint firstAttribute="trailing" secondItem="b01-n4-lsO" secondAttribute="trailing" id="aMh-zw-pch"/>
+                <constraint firstAttribute="trailing" secondItem="Hj8-cq-zon" secondAttribute="trailing" id="3UR-YZ-qc1"/>
+                <constraint firstItem="Hj8-cq-zon" firstAttribute="top" secondItem="iIX-dJ-hGQ" secondAttribute="top" id="KZK-zo-3aB"/>
+                <constraint firstItem="Hj8-cq-zon" firstAttribute="leading" secondItem="iIX-dJ-hGQ" secondAttribute="leading" id="RdT-ZY-wK4"/>
+                <constraint firstAttribute="bottom" secondItem="Hj8-cq-zon" secondAttribute="bottom" id="ow9-WR-r28"/>
             </constraints>
             <size key="customSize" width="100" height="100"/>
             <connections>
-                <outlet property="imageElencoImageView" destination="w5x-EK-rV1" id="RwM-6N-teP"/>
-                <outlet property="nomeArtElencolabel" destination="tUw-cC-us3" id="enu-w2-FzV"/>
-                <outlet property="nomeElencoLabel" destination="gcH-fF-BQy" id="PgG-YR-KJo"/>
+                <outlet property="imageElencoImageView" destination="VcW-C6-dcB" id="vem-Tl-Jgc"/>
+                <outlet property="nomeArtElencolabel" destination="UYN-8m-Eyb" id="m76-91-GMS"/>
+                <outlet property="nomeElencoLabel" destination="Wf4-7D-8cU" id="Dtw-sU-Yx2"/>
             </connections>
             <point key="canvasLocation" x="-453.62318840579712" y="-64.285714285714278"/>
         </collectionViewCell>

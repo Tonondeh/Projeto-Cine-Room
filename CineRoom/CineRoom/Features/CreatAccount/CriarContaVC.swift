@@ -248,6 +248,7 @@ class CriarContaVC: UIViewController {
 		
 		if validarDadosEntrada() {
 			print("Conectar")
+			self.performSegue(withIdentifier: "segueHomeStoryboard", sender: self)
 		} else {
 			Alert.showIncompleteFormAlert(on: self)
 		}

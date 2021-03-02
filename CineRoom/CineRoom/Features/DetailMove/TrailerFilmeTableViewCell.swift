@@ -2,15 +2,16 @@
 //  TrailerFilmeTableViewCell.swift
 //  CineRoom
 //
-//  Created by Alexandre Cardoso on 26/02/21.
+//  Created by Alexandre Cardoso on 28/02/21.
 //
 
 import UIKit
 
 class TrailerFilmeTableViewCell: UITableViewCell {
-
+	
 	static let identifier: String = "TrailerFilmeTableViewCell"
 	
+	// MARK: - IBOutlet
 	@IBOutlet weak var nomeTrailerLabel: UILabel!
 	@IBOutlet weak var iconImageView: UIImageView!
 	
@@ -21,7 +22,6 @@ class TrailerFilmeTableViewCell: UITableViewCell {
 	
 	override func awakeFromNib() {
 		super.awakeFromNib()
-		
 		configImageView()
 	}
 	
@@ -33,5 +33,5 @@ class TrailerFilmeTableViewCell: UITableViewCell {
 	func configCell(detalhe: DetalheFilme) {
 		self.nomeTrailerLabel.text = detalhe.nomeFilme
 	}
-
+	
 }
