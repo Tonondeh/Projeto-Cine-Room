@@ -229,6 +229,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Ugn-gF-xA9"/>
                     <connections>
+                        <outlet property="confirmarButton" destination="yXn-Mg-21h" id="cL2-r5-OBP"/>
                         <outlet property="confirmarNovaSenha" destination="nE1-lb-peO" id="syK-48-Fsf"/>
                         <outlet property="novaSenhaTextField" destination="4jn-pj-ad2" id="tSD-u3-jcQ"/>
                     </connections>

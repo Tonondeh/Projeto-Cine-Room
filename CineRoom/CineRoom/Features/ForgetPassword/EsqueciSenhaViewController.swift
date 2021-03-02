@@ -20,7 +20,8 @@ class EsqueciSenhaViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configTextField()
-//        self.continuarButton.isEnabled = false
+        self.habilitarBotaoContinuar()
+        //        self.continuarButton.isEnabled = false
     }
     
     func configTextField(){
