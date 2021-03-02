@@ -8,17 +8,19 @@
 import UIKit
 
 class ConfirmarSenhaViewController: UIViewController {
-
+    
     
     
     @IBOutlet weak var novaSenhaTextField: UITextField!
     
     @IBOutlet weak var confirmarNovaSenha: UITextField!
     
+    @IBOutlet var confirmarButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configTextField()
-        
+        self.habilitarBotaoConfirmar()
     }
     
     func configTextField(){
@@ -35,7 +37,35 @@ class ConfirmarSenhaViewController: UIViewController {
     }
     
     @IBAction func confirmarButton(_ sender: UIButton) {
-        print("Confirmar")
+        if self.novaSenhaTextField.text == self.confirmarNovaSenha.text {
+            print("Confirmar")
+            self.performSegue(withIdentifier:"SegueLoginStoryboard" , sender: self)
+            
+        }
+    }
+    
+    func habilitarBotaoConfirmar(){
+        if self.confirmarNovaSenha.text != "" {
+            self.confirmarButton.isEnabled = true
+        }else{
+            self.confirmarButton.isEnabled = false
+        }
+    }
+    
+    func validarNovaSenha() {
+        if self.novaSenhaTextField.text == ""{
+        
+            self.novaSenhaTextField.layer.borderColor = UIColor.red.cgColor
+        }
+    }
+    
+    func validarConfirmarNovaSenha() -> Bool{
+        if self.confirmarNovaSenha.text != ""{
+            return true
+        }else{
+            self.confirmarNovaSenha.layer.borderColor = UIColor.red.cgColor
+            return false
+        }
     }
     
 }
@@ -43,12 +73,16 @@ class ConfirmarSenhaViewController: UIViewController {
 extension ConfirmarSenhaViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        textField.layer.borderColor = UIColor.blue.cgColor
+        novaSenhaTextField.layer.borderColor = UIColor.blue.cgColor
+        confirmarNovaSenha.layer.borderColor = UIColor.blue.cgColor
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        validarNovaSenha()
+        habilitarBotaoConfirmar()
         
-        
+        return validarConfirmarNovaSenha()
     }
 }
+
