@@ -52,12 +52,10 @@ class ConfirmarSenhaViewController: UIViewController {
         }
     }
     
-    func validarNovaSenha() -> Bool{
-        if self.novaSenhaTextField.text != ""{
-            return true
-        }else{
+    func validarNovaSenha() {
+        if self.novaSenhaTextField.text == ""{
+        
             self.novaSenhaTextField.layer.borderColor = UIColor.red.cgColor
-            return false
         }
     }
     
@@ -80,9 +78,8 @@ extension ConfirmarSenhaViewController: UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        novaSenhaTextField.resignFirstResponder()
+        textField.resignFirstResponder()
         validarNovaSenha()
-        confirmarNovaSenha.resignFirstResponder()
         habilitarBotaoConfirmar()
         
         return validarConfirmarNovaSenha()
