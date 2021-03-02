@@ -44,6 +44,7 @@
 		D3694EC125EBFBB100D57CFB /* CartazVCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3694EBF25EBFBB100D57CFB /* CartazVCollectionViewCell.swift */; };
 		D3694EC225EBFBB100D57CFB /* CartazVCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3694EC025EBFBB100D57CFB /* CartazVCollectionViewCell.xib */; };
 		D3694EC825EBFCBD00D57CFB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3694EC725EBFCBD00D57CFB /* HomeViewController.swift */; };
+		D3FC81DC25EEFF59001A2FD0 /* CellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FC81DB25EEFF59001A2FD0 /* CellDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +87,7 @@
 		D3694EBF25EBFBB100D57CFB /* CartazVCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartazVCollectionViewCell.swift; sourceTree = "<group>"; };
 		D3694EC025EBFBB100D57CFB /* CartazVCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartazVCollectionViewCell.xib; sourceTree = "<group>"; };
 		D3694EC725EBFCBD00D57CFB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		D3FC81DB25EEFF59001A2FD0 /* CellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 				D3694EC025EBFBB100D57CFB /* CartazVCollectionViewCell.xib */,
 				D3694EC725EBFCBD00D57CFB /* HomeViewController.swift */,
 				D33C608325EC6AB000773E6B /* Home.storyboard */,
+				D3FC81DB25EEFF59001A2FD0 /* CellDelegate.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				D3694EB725EBFB2700D57CFB /* HorizontalTableViewCell.swift in Sources */,
 				BC8F423825EC59BB0040776A /* TrailerFilmeTableViewCell.swift in Sources */,
 				D3694EC125EBFBB100D57CFB /* CartazVCollectionViewCell.swift in Sources */,
+				D3FC81DC25EEFF59001A2FD0 /* CellDelegate.swift in Sources */,
 				D3694EBC25EBFB6C00D57CFB /* CartazHCollectionViewCell.swift in Sources */,
 				D3694EB225EBFAC800D57CFB /* VerticalTableViewCell.swift in Sources */,
 				D3694EAE25EBFA7C00D57CFB /* Catalog.swift in Sources */,

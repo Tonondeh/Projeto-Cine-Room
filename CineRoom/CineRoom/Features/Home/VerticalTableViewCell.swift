@@ -19,6 +19,8 @@ class VerticalTableViewCell: UITableViewCell {
     
     private var filmes:[Catalog] = []
     
+    var delegate:CellDelegate?
+    
     func getFilmes(value:[Catalog]){
         self.filmes = value
         self.collectionView.reloadData()
@@ -50,4 +52,8 @@ extension VerticalTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
         return cellV ?? UICollectionViewCell()
     }
 
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.delegate?.selectedCell()
+    }
+    
 }

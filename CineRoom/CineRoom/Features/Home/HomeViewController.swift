@@ -12,10 +12,6 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-//    var arrayImagemTabBar:[UIImage] = [UIImage(named: "tabBar1") ?? UIImage(),
-//                                       UIImage(named: "tabBar2") ?? UIImage(),
-//                                       UIImage(systemName: "person") ?? UIImage()]
-    
     var arrayVFilme:[Catalog] = [Catalog(titleSection: "Tendências", titleMovie: "Wonder Woman", date: "15 Dez 2020", imageMovie:                                      UIImage(named:"filmev12") ?? UIImage()),
                                  Catalog(titleSection: "Tendências", titleMovie: "The Litle Things", date: "27 Jan 2021", imageMovie: UIImage(named:"filmev8") ?? UIImage()),
                                  Catalog(titleSection: "Tendências", titleMovie: "Palmer", date: "29 Jan 2021", imageMovie: UIImage(named:"filmev4") ?? UIImage()),
@@ -31,9 +27,12 @@ class HomeViewController: UIViewController {
                                  Catalog(titleSection: "Tendências", titleMovie: "The Dig", date: "14 Jan 2021", imageMovie: UIImage(named:"filmeh5") ?? UIImage()),
                                  Catalog(titleSection: "Tendências", titleMovie: "The Soul", date: "25 Dez 2020", imageMovie: UIImage(named:"filmeh6") ?? UIImage())]
     
+    var verticalTableView: VerticalTableViewCell?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configTableView()
+        self.verticalTableView?.delegate = self
         
     }
     
@@ -82,5 +81,12 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             return cellV ?? UITableViewCell()
         }
     }
+}
+
+extension HomeViewController: CellDelegate {
+    func selectedCell() {
+        performSegue(withIdentifier: "SegueDetalheStoryBoard", sender: self)
+    }
+    
     
 }

@@ -70,7 +70,7 @@
                 <outlet property="collectionView" destination="YEf-u9-YeR" id="l7k-iA-HKK"/>
                 <outlet property="titleLabel" destination="Mr0-b4-Kgo" id="7ge-BT-D3g"/>
             </connections>
-            <point key="canvasLocation" x="-189" y="88"/>
+            <point key="canvasLocation" x="-404" y="84"/>
         </tableViewCell>
     </objects>
     <resources>
