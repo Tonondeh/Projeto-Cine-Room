@@ -30,6 +30,8 @@ class EsqueciSenhaViewController: UIViewController {
 		
 		if validarEmail(){
 			print("Segue Proxima Tela")
+            self.performSegue(withIdentifier: "SegueContinuar", sender: self)
+            
 		}
 		
 	}

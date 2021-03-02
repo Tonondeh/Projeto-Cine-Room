@@ -76,7 +76,6 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="tappedContinuarButton:" destination="Mq6-vd-NUQ" eventType="touchUpInside" id="Xlf-w2-qZp"/>
-                                                    <segue destination="3ia-5X-mNo" kind="presentation" id="qxK-x7-Ibx"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -106,6 +105,7 @@
                     <connections>
                         <outlet property="continuarButton" destination="wvb-5u-f8D" id="QVy-gY-LQc"/>
                         <outlet property="emailTextField" destination="gUx-34-AHj" id="1E6-Ha-Pqv"/>
+                        <segue destination="3ia-5X-mNo" kind="show" identifier="SegueContinuar" id="DDV-1g-63G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oMC-Yn-8YI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -198,12 +198,11 @@
                                                     <constraint firstAttribute="height" constant="50" id="7pp-rF-dTj"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                                <state key="normal" title="Salvar">
+                                                <state key="normal" title="Confirmar">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="confirmarButton:" destination="3ia-5X-mNo" eventType="touchUpInside" id="rDC-Qe-fkY"/>
-                                                    <segue destination="qAh-cd-D2W" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="5kj-ij-nGw"/>
+                                                    <action selector="confirmarButton:" destination="3ia-5X-mNo" eventType="touchUpInside" id="P1U-RH-lcd"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -231,8 +230,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="I2r-on-mIt"/>
                     <connections>
+                        <outlet property="confirmarButton" destination="aTt-UQ-bHU" id="xuE-KP-fib"/>
                         <outlet property="confirmarNovaSenha" destination="llz-OZ-qqU" id="Nuk-Mc-P88"/>
                         <outlet property="novaSenhaTextField" destination="eYh-5A-1BQ" id="D1q-iu-cS7"/>
+                        <segue destination="qAh-cd-D2W" kind="presentation" identifier="SegueLoginStoryboard" modalPresentationStyle="fullScreen" id="2jB-GS-O2V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VUV-Rs-njX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

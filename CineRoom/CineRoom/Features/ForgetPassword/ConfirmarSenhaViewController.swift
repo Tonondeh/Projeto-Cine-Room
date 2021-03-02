@@ -8,7 +8,7 @@
 import UIKit
 
 class ConfirmarSenhaViewController: UIViewController {
-
+    
     
     
     @IBOutlet weak var novaSenhaTextField: UITextField!
@@ -38,10 +38,12 @@ class ConfirmarSenhaViewController: UIViewController {
     
     @IBAction func confirmarButton(_ sender: UIButton) {
         if self.novaSenhaTextField.text == self.confirmarNovaSenha.text {
-          print("Confirmar")
+            print("Confirmar")
+            self.performSegue(withIdentifier:"SegueLoginStoryboard" , sender: self)
+            
         }
-        }
-   
+    }
+    
     func habilitarBotaoConfirmar(){
         if self.confirmarNovaSenha.text != "" {
             self.confirmarButton.isEnabled = true
@@ -49,7 +51,7 @@ class ConfirmarSenhaViewController: UIViewController {
             self.confirmarButton.isEnabled = false
         }
     }
-   
+    
     func validarNovaSenha() -> Bool{
         if self.novaSenhaTextField.text != ""{
             return true
