@@ -19,6 +19,8 @@ class HorizontalTableViewCell: UITableViewCell {
     
     private var filmes:[Catalog] = []
     
+    var delegate:CellDelegate?
+    
     func getFilmes(value:[Catalog]) {
         self.filmes = value
         self.collectionView.reloadData()
@@ -52,5 +54,10 @@ extension HorizontalTableViewCell: UICollectionViewDelegate, UICollectionViewDat
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
             return CGSize(width: 240, height: 155)
         }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.delegate?.selectedCell(index: indexPath.row)
+        print("banana1")
+    }
     
 }

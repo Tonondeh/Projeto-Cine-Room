@@ -9,7 +9,7 @@ import Foundation
 
 protocol CellDelegate {
     
-    func selectedCell()
+    func selectedCell(index:Int)
     
     
 }

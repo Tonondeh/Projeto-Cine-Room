@@ -27,12 +27,12 @@ class HomeViewController: UIViewController {
                                  Catalog(titleSection: "Tendências", titleMovie: "The Dig", date: "14 Jan 2021", imageMovie: UIImage(named:"filmeh5") ?? UIImage()),
                                  Catalog(titleSection: "Tendências", titleMovie: "The Soul", date: "25 Dez 2020", imageMovie: UIImage(named:"filmeh6") ?? UIImage())]
     
-    var verticalTableView: VerticalTableViewCell?
+//    var verticalTableView: VerticalTableViewCell?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configTableView()
-        self.verticalTableView?.delegate = self
+//        self.verticalTableView?.delegate = self
         
     }
     
@@ -74,19 +74,21 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row == 1 {
             cellH = tableView.dequeueReusableCell(withIdentifier: HorizontalTableViewCell.identifier, for: indexPath) as? HorizontalTableViewCell
             cellH?.getFilmes(value: filmes)
+            cellH?.delegate = self
             return cellH ?? UITableViewCell()
         } else {
             cellV = tableView.dequeueReusableCell(withIdentifier: VerticalTableViewCell.identifier, for: indexPath) as? VerticalTableViewCell
             cellV?.getFilmes(value: filmes)
+            cellV?.delegate = self
             return cellV ?? UITableViewCell()
         }
     }
 }
 
 extension HomeViewController: CellDelegate {
-    func selectedCell() {
+    func selectedCell(index: Int) {
         performSegue(withIdentifier: "SegueDetalheStoryBoard", sender: self)
+        print("\(index) tal.")
     }
-    
-    
+
 }

@@ -53,7 +53,8 @@ extension VerticalTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.delegate?.selectedCell()
+        self.delegate?.selectedCell(index: indexPath.row)
+        print("banana1")
     }
     
 }
