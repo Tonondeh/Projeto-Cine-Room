@@ -8,7 +8,7 @@
 import UIKit
 
 class CriarContaVC: UIViewController {
-
+	
 	// MARK: - IBOutlet
 	@IBOutlet weak var scrollView: UIScrollView!
 	@IBOutlet weak var filmeBackgroundImageView: UIImageView!
@@ -43,7 +43,7 @@ class CriarContaVC: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-
+		
 		configScrollView()
 		configView()
 		configImageView()
@@ -148,69 +148,13 @@ class CriarContaVC: UIViewController {
 	}
 	
 	func validarDadosEntrada() -> Bool {
-		var dadosOK: Bool = true
-		let nome = nomeTextField.text ?? ""
-		let email = emailTextField.text ?? ""
-		let senha = senhaTextField.text ?? ""
-		let confirmaSenha = confirmaSenhaTextField.text ?? ""
 		
-		// Valida Nome
-		if nome == "" {
-			dadosOK = false
-			self.nomeTextField.layer.borderWidth = 1.0
-			self.nomeTextField.layer.borderColor = UIColor.red.cgColor
-		}
-		
-		// Valida Nome
-		if email == "" {
-			dadosOK = false
-			self.emailTextField.layer.borderWidth = 1.0
-			self.emailTextField.layer.borderColor = UIColor.red.cgColor
+		if nomeTextField.validateName() && emailTextField.validateEmail() && senhaTextField.validatePassword() && confirmaSenhaTextField.validatePassword() && senhaTextField.text == confirmaSenhaTextField.text {
+			return true
 		} else {
-			
-			let valoresEmail = email.components(separatedBy: "@")
-			
-			if valoresEmail.count != 2 {
-				dadosOK = false
-				self.emailTextField.layer.borderWidth = 1.0
-				self.emailTextField.layer.borderColor = UIColor.red.cgColor
-			} else {
-				for valor in valoresEmail {
-					if valor == "" {
-						dadosOK = false
-						self.emailTextField.layer.borderWidth = 1.0
-						self.emailTextField.layer.borderColor = UIColor.red.cgColor
-						break
-					}
-				}
-			}
-			
+			return false
 		}
 		
-		// Valida Senha
-		if senha == "" || senha.count <= 4   {
-			dadosOK = false
-			self.senhaTextField.layer.borderWidth = 1.0
-			self.senhaTextField.layer.borderColor = UIColor.red.cgColor
-		}
-		
-		// Valida Confirmar Senha
-		if confirmaSenha == "" {
-			dadosOK = false
-			self.confirmaSenhaTextField.layer.borderWidth = 1.0
-			self.confirmaSenhaTextField.layer.borderColor = UIColor.red.cgColor
-		}
-		
-		// Valida Igualdade de senha
-		if senha != confirmaSenha {
-			dadosOK = false
-			self.senhaTextField.layer.borderWidth = 1.0
-			self.senhaTextField.layer.borderColor = UIColor.red.cgColor
-			self.confirmaSenhaTextField.layer.borderWidth = 1.0
-			self.confirmaSenhaTextField.layer.borderColor = UIColor.red.cgColor
-		}
-		
-		return dadosOK
 	}
 	
 	

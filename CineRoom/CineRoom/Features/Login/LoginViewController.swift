@@ -7,10 +7,9 @@
 
 import UIKit
 
-
 class LoginViewController: UIViewController {
-    
-    
+	
+	// MARK: - IBOutlet
     @IBOutlet weak var loginImageView: UIImageView!
     @IBOutlet weak var emailtextField: UITextField!
     @IBOutlet weak var senhaTextField: UITextField!
@@ -19,10 +18,9 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configTextField()
-        
     }
     
-    func configTextField(){
+    func configTextField() {
         self.emailtextField.delegate = self
         self.senhaTextField.delegate = self
     }

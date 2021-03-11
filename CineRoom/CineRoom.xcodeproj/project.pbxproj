@@ -21,6 +21,7 @@
 		B2FD950225EBFFBC000BDD6F /* DetalheFilmeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FD950125EBFFBC000BDD6F /* DetalheFilmeVC.swift */; };
 		B2FD950D25EC0192000BDD6F /* ConfirmarSenhaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC90FC9B25E9630B0092A52B /* ConfirmarSenhaViewController.swift */; };
 		B2FD951B25EC0E0B000BDD6F /* Perfil.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2FD951A25EC0E0B000BDD6F /* Perfil.storyboard */; };
+		BC0387A125FAD71F00EB56DE /* Extension+TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0387A025FAD71F00EB56DE /* Extension+TextField.swift */; };
 		BC8F423825EC59BB0040776A /* TrailerFilmeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8F423625EC59BB0040776A /* TrailerFilmeTableViewCell.swift */; };
 		BC8F423925EC59BB0040776A /* TrailerFilmeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC8F423725EC59BB0040776A /* TrailerFilmeTableViewCell.xib */; };
 		BC8F423E25EC5AF90040776A /* ElencoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8F423C25EC5AF90040776A /* ElencoCollectionViewCell.swift */; };
@@ -63,6 +64,7 @@
 		B2FD94FB25EBFF90000BDD6F /* Elenco.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Elenco.swift; sourceTree = "<group>"; };
 		B2FD950125EBFFBC000BDD6F /* DetalheFilmeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalheFilmeVC.swift; sourceTree = "<group>"; };
 		B2FD951A25EC0E0B000BDD6F /* Perfil.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Perfil.storyboard; sourceTree = "<group>"; };
+		BC0387A025FAD71F00EB56DE /* Extension+TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+TextField.swift"; sourceTree = "<group>"; };
 		BC8F423625EC59BB0040776A /* TrailerFilmeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailerFilmeTableViewCell.swift; sourceTree = "<group>"; };
 		BC8F423725EC59BB0040776A /* TrailerFilmeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrailerFilmeTableViewCell.xib; sourceTree = "<group>"; };
 		BC8F423C25EC5AF90040776A /* ElencoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElencoCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 		B2FD950925EC013A000BDD6F /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				BC03879F25FAD6FD00EB56DE /* Base */,
 				B2FD951325EC01F3000BDD6F /* Login */,
 				B2FD951225EC01E3000BDD6F /* Perfil */,
 				B2FD951125EC01CF000BDD6F /* DetailMove */,
@@ -227,6 +230,14 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		BC03879F25FAD6FD00EB56DE /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				BC0387A025FAD71F00EB56DE /* Extension+TextField.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -313,6 +324,7 @@
 				BCA744BC25E9487100A5B402 /* WatchListVC.swift in Sources */,
 				B2FD94FE25EBFF90000BDD6F /* Elenco.swift in Sources */,
 				BCA744C025E948E000A5B402 /* WatchListTableViewCell.swift in Sources */,
+				BC0387A125FAD71F00EB56DE /* Extension+TextField.swift in Sources */,
 				BC90FCA225E963200092A52B /* EsqueciSenhaViewController.swift in Sources */,
 				B2FD950D25EC0192000BDD6F /* ConfirmarSenhaViewController.swift in Sources */,
 				BC90FC9525E961990092A52B /* CriarContaVC.swift in Sources */,
