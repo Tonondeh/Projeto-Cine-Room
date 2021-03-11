@@ -61,7 +61,7 @@
                                 <rect key="frame" x="30" y="462" width="315" height="34"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FcG-dQ-r0L">
                                 <rect key="frame" x="176" y="501" width="169" height="34"/>
@@ -70,7 +70,6 @@
                                     <color key="titleColor" red="0.48669354390000003" green="1" blue="0.8995752602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="tappedEsqueceuSenha:" destination="pPB-dU-d6J" eventType="touchUpInside" id="ijl-na-gHA"/>
                                     <segue destination="yYk-2L-Z8e" kind="presentation" id="TYq-Hb-X9B"/>
                                 </connections>
                             </button>
@@ -86,7 +85,6 @@
                                     <color key="titleColor" name="backgroundColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="tappedCriarConta:" destination="pPB-dU-d6J" eventType="touchUpInside" id="FxX-an-j9T"/>
                                     <segue destination="SdV-mP-oXy" kind="presentation" id="hl5-c0-e1e"/>
                                 </connections>
                             </button>
@@ -103,7 +101,6 @@
                                 </state>
                                 <connections>
                                     <action selector="tappedConectar:" destination="pPB-dU-d6J" eventType="touchUpInside" id="Ag9-lb-GnE"/>
-                                    <segue destination="5jC-eN-Yuj" kind="presentation" modalPresentationStyle="fullScreen" id="BCq-HJ-YHX"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -142,6 +139,7 @@
                         <outlet property="emailtextField" destination="OJo-sz-Jih" id="tcp-eb-wUX"/>
                         <outlet property="loginImageView" destination="15F-Jt-nG0" id="xRP-na-Fmy"/>
                         <outlet property="senhaTextField" destination="3cL-R3-Gsw" id="05q-UC-bjB"/>
+                        <segue destination="5jC-eN-Yuj" kind="presentation" identifier="segueHome" modalPresentationStyle="fullScreen" id="aAm-ao-NSW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BZW-e0-hTw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -162,7 +160,7 @@
                 <viewControllerPlaceholder storyboardName="Home" id="5jC-eN-Yuj" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k6T-vy-8l1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-421" y="423"/>
+            <point key="canvasLocation" x="-824" y="426"/>
         </scene>
         <!--CriarConta-->
         <scene sceneID="6ro-4S-8jr">
@@ -170,7 +168,7 @@
                 <viewControllerPlaceholder storyboardName="CriarConta" id="SdV-mP-oXy" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="szb-6s-j1L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-891" y="423"/>
+            <point key="canvasLocation" x="-485" y="426"/>
         </scene>
     </scenes>
     <resources>
