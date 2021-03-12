@@ -121,6 +121,28 @@ class CriarContaVC: UIViewController {
 		// Atribuição Botão
 		configTexFieldButton(icon: .eyeSlash, tag: 1, textField: self.senhaTextField)
 		configTexFieldButton(icon: .eyeSlash, tag: 2, textField: self.confirmaSenhaTextField)
+		
+		let toolbar = UIToolbar()
+				toolbar.barStyle = .default
+				toolbar.isTranslucent = true
+				toolbar.tintColor = .blue
+				toolbar.backgroundColor = .white
+				toolbar.sizeToFit()
+		
+		let buttonOK = UIBarButtonItem(title: "OK", style: .plain, target: self, action: #selector(finish))
+		let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+		
+		toolbar.setItems([spaceButton, buttonOK], animated: true)
+		toolbar.isUserInteractionEnabled = true
+		
+		senhaTextField.inputAccessoryView = toolbar
+		confirmaSenhaTextField.inputAccessoryView = toolbar
+	}
+	
+	@objc
+	func finish() {
+		self.senhaTextField.resignFirstResponder()
+		self.confirmaSenhaTextField.resignFirstResponder()
 	}
 	
 	func configTextFieldImage(icon: String, frame: CGRect, textField: UITextField) {
