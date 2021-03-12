@@ -170,8 +170,8 @@
 			isa = PBXGroup;
 			children = (
 				BC90FCA125E963200092A52B /* EsqueciSenhaViewController.swift */,
-				9F78B78725EC1DA40001228D /* EsqueciSenha.storyboard */,
 				BC90FC9B25E9630B0092A52B /* ConfirmarSenhaViewController.swift */,
+				9F78B78725EC1DA40001228D /* EsqueciSenha.storyboard */,
 			);
 			path = ForgetPassword;
 			sourceTree = "<group>";

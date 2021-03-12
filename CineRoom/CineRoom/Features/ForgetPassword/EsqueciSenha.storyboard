@@ -49,7 +49,7 @@
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="cineroom@cineroom" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gUx-34-AHj">
                                                 <rect key="frame" x="20" y="188" width="374" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                             </textField>
                                         </subviews>
                                         <constraints>
@@ -152,7 +152,7 @@
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="******" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eYh-5A-1BQ">
                                                 <rect key="frame" x="20" y="147" width="374" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                             </textField>
                                         </subviews>
                                         <constraints>
@@ -176,7 +176,7 @@
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="******" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="llz-OZ-qqU">
                                                 <rect key="frame" x="20" y="147.5" width="374" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                             </textField>
                                         </subviews>
                                         <constraints>
@@ -233,12 +233,12 @@
                         <outlet property="confirmarButton" destination="aTt-UQ-bHU" id="xuE-KP-fib"/>
                         <outlet property="confirmarNovaSenha" destination="llz-OZ-qqU" id="Nuk-Mc-P88"/>
                         <outlet property="novaSenhaTextField" destination="eYh-5A-1BQ" id="D1q-iu-cS7"/>
-                        <segue destination="qAh-cd-D2W" kind="presentation" identifier="SegueLoginStoryboard" modalPresentationStyle="fullScreen" id="2jB-GS-O2V"/>
+                        <segue destination="qAh-cd-D2W" kind="presentation" identifier="segueLogin" modalPresentationStyle="fullScreen" id="2jB-GS-O2V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VUV-Rs-njX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1750.9345794392523" y="114.68682505399569"/>
+            <point key="canvasLocation" x="1865" y="115"/>
         </scene>
         <!--Login-->
         <scene sceneID="faw-fV-v6L">
