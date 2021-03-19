@@ -69,5 +69,11 @@ extension UITextField {
 		}
 		
 	}
+    
+    func validateCPF() -> Bool {
+        return false
+    }
 	
 }
+
+// pintar em vermelho, ou colocar no label o que falta.

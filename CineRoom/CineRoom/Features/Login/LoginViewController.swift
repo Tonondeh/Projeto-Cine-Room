@@ -47,7 +47,7 @@ class LoginViewController: UIViewController {
 	}
 	
 	func validarEntrada() -> Bool{
-		
+		//validacao na Base.
 		if emailtextField.validateEmail() && senhaTextField.validatePassword() {
 			return true
 		} else {
