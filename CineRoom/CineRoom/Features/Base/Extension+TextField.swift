@@ -70,6 +70,10 @@ extension UITextField {
 		}
 		
 	}
+    
+    func validateCPF() -> Bool {
+        return false
+    }
 	
     func inputToBar()-> UIToolbar {
         
@@ -96,3 +100,5 @@ extension UITextField {
         self.resignFirstResponder()
     }
 }
+
+// pintar em vermelho, ou colocar no label o que falta.

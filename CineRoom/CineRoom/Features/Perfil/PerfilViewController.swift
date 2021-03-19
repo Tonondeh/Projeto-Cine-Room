@@ -10,7 +10,7 @@ import Foundation
 
 class PerfilViewController: UIViewController {
     
-
+    
     @IBOutlet weak var perfilImageView: UIImageView!
     @IBOutlet weak var nomeUsuarioLabel: UILabel!
     @IBOutlet weak var nomeCompletoLabel: UILabel!
@@ -27,7 +27,7 @@ class PerfilViewController: UIViewController {
     @IBOutlet weak var salvarButton: UIButton!
     
     var imagePicker:UIImagePickerController = UIImagePickerController()
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,10 +44,10 @@ class PerfilViewController: UIViewController {
         self.emailTextField.isEnabled = false
         self.cpfTextField.isEnabled = false
         self.nascimentoDataPicker.isEnabled = false
-        
-        
-        
 
+        
+        
+        
     }
     
     func configImagePicker(){
@@ -59,15 +59,16 @@ class PerfilViewController: UIViewController {
         self.nomeTextField.delegate = self
         self.nomeCompletoTextField.delegate = self
         self.cpfTextField.delegate = self
-        
+        self.cpfTextField.keyboardType = .decimalPad
         
     }
     
     
-
+    
     @IBAction func editPerfilTappedButton(_ sender: UIBarButtonItem) {
         self.mudarFotoButton.isHidden = false
         self.salvarButton.isHidden = false
+        
         
         self.nomeTextField.isEnabled = true
         self.nomeCompletoTextField.isEnabled = true
@@ -75,17 +76,23 @@ class PerfilViewController: UIViewController {
         self.nascimentoDataPicker.isEnabled = true
         
         
+        
+        
     }
     
     @IBAction func salvarTappedButton(_ sender: UIButton) {
         self.mudarFotoButton.isHidden = true
         self.salvarButton.isHidden = true
-        
         self.nomeTextField.isEnabled = false
         self.nomeCompletoTextField.isEnabled = false
         self.cpfTextField.isEnabled = false
         self.nascimentoDataPicker.isEnabled = false
-        }
+        
+        
+        
+        
+        
+    }
     
     @IBAction func editPhotoTappedButton(_ sender: UIButton) {
         self.imagePicker.sourceType = .photoLibrary
@@ -102,6 +109,7 @@ extension PerfilViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.layer.borderColor = UIColor.blue.cgColor
+        
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -112,7 +120,43 @@ extension PerfilViewController: UITextFieldDelegate {
         
     }
     
+
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        var appendString = ""
+        
+        
+        if textField == cpfTextField {
+            
+            print("range.length:\(range.length)")
+            print("range.location:\(range.location)")
+        
+            if range.length == 0 {
+                switch range.location {
+                case 3:
+                    appendString = "."
+                case 7:
+                    appendString = "."
+                case 11:
+                    appendString = "-"
+                default:
+                    break
+                }
+            }
+            
+            textField.text?.append(appendString)
+            
+            if (textField.text?.count ?? 0) > 13 && range.length == 0 {
+                return false
+            }
+        }
+    return true
+    }
+        
+    
 }
+
 
 extension PerfilViewController: UINavigationControllerDelegate,UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -123,5 +167,15 @@ extension PerfilViewController: UINavigationControllerDelegate,UIImagePickerCont
         picker.dismiss(animated: true, completion: nil)
     }
 }
+
+// pintar borda. O escreve e o app vai validando. Label. 1234
+
+//
+
+
+
+
+
+
 
 
