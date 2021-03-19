@@ -153,8 +153,6 @@
 				B2FD951225EC01E3000BDD6F /* Perfil */,
 				B2FD951125EC01CF000BDD6F /* DetailMove */,
 				B2FD951025EC01B4000BDD6F /* WatchList */,
-				B2FD950F25EC019C000BDD6F /* CreatAccount */,
-				B2FD950C25EC016C000BDD6F /* ForgetPassword */,
 				B2FD950A25EC0145000BDD6F /* Home */,
 			);
 			path = Features;
@@ -238,6 +236,8 @@
 			children = (
 				13FFA77525EB246B008053C0 /* LoginViewController.swift */,
 				13FFA77825EB2493008053C0 /* Login.storyboard */,
+				B2FD950C25EC016C000BDD6F /* ForgetPassword */,
+				B2FD950F25EC019C000BDD6F /* CreatAccount */,
 			);
 			path = Login;
 			sourceTree = "<group>";
