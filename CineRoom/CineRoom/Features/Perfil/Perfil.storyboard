@@ -72,7 +72,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="111.111.111-11" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AJI-EH-xEs">
                                 <rect key="frame" x="30" y="578" width="354" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <textInputTraits key="textInputTraits"/>
                             </textField>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gjT-5g-rqm">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -173,6 +173,7 @@
                         <outlet property="emailTextField" destination="jHj-z2-mFC" id="sgO-i0-PYT"/>
                         <outlet property="mudarFotoButton" destination="OnY-8Z-uHV" id="PSb-rf-5OQ"/>
                         <outlet property="nascimentoDataPicker" destination="kYv-Tf-7IZ" id="Xl8-M8-nk2"/>
+                        <outlet property="navegationBar" destination="gjT-5g-rqm" id="bdu-hG-Des"/>
                         <outlet property="nomeCompletoLabel" destination="ffs-y6-tDt" id="WyY-MT-yF8"/>
                         <outlet property="nomeCompletoTextField" destination="xhK-oj-mrq" id="4Tq-Ky-3n2"/>
                         <outlet property="nomeTextField" destination="ZUX-tX-ofo" id="Qfx-VV-o9r"/>

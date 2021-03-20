@@ -26,6 +26,8 @@ class PerfilViewController: UIViewController {
     @IBOutlet weak var mudarFotoButton: UIButton!
     @IBOutlet weak var salvarButton: UIButton!
     
+    @IBOutlet weak var navegationBar: UINavigationBar!
+    
     var imagePicker:UIImagePickerController = UIImagePickerController()
     
     
@@ -35,16 +37,48 @@ class PerfilViewController: UIViewController {
         self.salvarButton.isHidden = true
         self.configTextField()
         self.configImagePicker()
-        
         self.salvarButton.layer.cornerRadius = 5
-        
-        
         self.nomeTextField.isEnabled = false
         self.nomeCompletoTextField.isEnabled = false
         self.emailTextField.isEnabled = false
         self.cpfTextField.isEnabled = false
         self.nascimentoDataPicker.isEnabled = false
-
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+    }
+    
+    
+    
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                
+                //let campoTextField = cpfTextField.hasText
+                
+                if self.cpfTextField.isEditing {
+                    self.view.frame.origin.y -= keyboardSize.height
+                } else if self.nomeCompletoTextField.isEditing{
+                    self.view.frame.origin.y -= 200
+                } else if self.nomeTextField.isEditing{
+                    self.view.frame.origin.y -= 100
+                } else {
+                    self.view.frame.origin.y -= 300
+                }
+                
+                
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+            //self.navegationBar.frame.origin.y =
+            
+        }
         
         
         
@@ -59,7 +93,7 @@ class PerfilViewController: UIViewController {
         self.nomeTextField.delegate = self
         self.nomeCompletoTextField.delegate = self
         self.cpfTextField.delegate = self
-        self.cpfTextField.keyboardType = .decimalPad
+        //self.cpfTextField.keyboardType = .decimalPad
         
     }
     
@@ -120,7 +154,7 @@ extension PerfilViewController: UITextFieldDelegate {
         
     }
     
-
+    
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
@@ -129,9 +163,6 @@ extension PerfilViewController: UITextFieldDelegate {
         
         if textField == cpfTextField {
             
-            print("range.length:\(range.length)")
-            print("range.location:\(range.location)")
-        
             if range.length == 0 {
                 switch range.location {
                 case 3:
@@ -148,12 +179,15 @@ extension PerfilViewController: UITextFieldDelegate {
             textField.text?.append(appendString)
             
             if (textField.text?.count ?? 0) > 13 && range.length == 0 {
+                
                 return false
+                
+                
             }
         }
-    return true
+        return true
     }
-        
+    
     
 }
 
