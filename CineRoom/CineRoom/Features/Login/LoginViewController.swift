@@ -23,27 +23,7 @@ class LoginViewController: UIViewController {
 	func configTextField() {
 		self.emailtextField.delegate = self
 		self.senhaTextField.delegate = self
-		
-		let toolbar = UIToolbar()
-		toolbar.barStyle = .default
-		toolbar.isTranslucent = true
-		toolbar.tintColor = .blue
-		toolbar.backgroundColor = .white
-		toolbar.sizeToFit()
-		
-		let buttonOK = UIBarButtonItem(title: "OK", style: .plain, target: self, action: #selector(finish))
-		let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-		
-		toolbar.setItems([spaceButton, buttonOK], animated: true)
-		toolbar.isUserInteractionEnabled = true
-		
-		senhaTextField.inputAccessoryView = toolbar
-		
-	}
-	
-	@objc
-	func finish() {
-		senhaTextField.resignFirstResponder()
+        senhaTextField.inputAccessoryView = self.senhaTextField.inputToBar()
 	}
 	
 	func validarEntrada() -> Bool{
