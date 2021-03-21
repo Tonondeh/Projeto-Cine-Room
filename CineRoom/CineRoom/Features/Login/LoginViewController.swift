@@ -13,34 +13,39 @@ class LoginViewController: UIViewController {
 	@IBOutlet weak var loginImageView: UIImageView!
 	@IBOutlet weak var emailtextField: UITextField!
 	@IBOutlet weak var senhaTextField: UITextField!
+	@IBOutlet weak var createAccountButton: UIButton!
+	@IBOutlet weak var connectButton: UIButton!
+	
+	// MARK: - Variable
+	var controller: LoginController = LoginController()
 	
 	
+	// MARK: - Lifecycle
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		configTextField()
+		configButton()
 	}
 	
-	func configTextField() {
+	
+	// MARK: - Function
+	private func configTextField() {
 		self.emailtextField.delegate = self
 		self.senhaTextField.delegate = self
-        senhaTextField.inputAccessoryView = self.senhaTextField.inputToBar()
+		self.senhaTextField.inputAccessoryView = self.senhaTextField.inputToBar()
 	}
 	
-	func validarEntrada() -> Bool{
-		//validacao na Base.
-		if emailtextField.validateEmail() && senhaTextField.validatePassword() {
-			return true
-		} else {
-			return false
-		}
+	private func configButton() {
+		self.createAccountButton.layer.cornerRadius	= 5
+		self.connectButton.layer.cornerRadius 		 	= 5
+	}
 		
-	}
-	
 	
 	// MARK: - IBAction
 	@IBAction func tappedConectar(_ sender: UIButton) {
-		// Chamada de Func validar entrada
-		if validarEntrada(){
+		
+		if self.controller.validateLogin(emailTextField: emailtextField,
+													passwordTextField: senhaTextField) {
 			print("chamar tela conectar")
 			performSegue(withIdentifier: "segueHome", sender: self)
 		} else {
@@ -57,10 +62,6 @@ extension LoginViewController: UITextFieldDelegate {
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 		textField.resignFirstResponder()
 		return true
-	}
-	
-	func textFieldDidBeginEditing(_ textField: UITextField) {
-		textField.layer.borderColor = nil
 	}
 	
 }

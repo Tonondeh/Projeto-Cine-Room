@@ -136,6 +136,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="connectButton" destination="IZ2-pg-qHe" id="Jv1-QH-f3h"/>
+                        <outlet property="createAccountButton" destination="2vC-6d-fP9" id="v7b-k3-pSX"/>
                         <outlet property="emailtextField" destination="OJo-sz-Jih" id="tcp-eb-wUX"/>
                         <outlet property="loginImageView" destination="15F-Jt-nG0" id="xRP-na-Fmy"/>
                         <outlet property="senhaTextField" destination="3cL-R3-Gsw" id="05q-UC-bjB"/>

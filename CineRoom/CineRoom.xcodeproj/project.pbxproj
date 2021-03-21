@@ -38,6 +38,7 @@
 		BCA744BC25E9487100A5B402 /* WatchListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA744BB25E9487100A5B402 /* WatchListVC.swift */; };
 		BCA744C025E948E000A5B402 /* WatchListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA744BE25E948E000A5B402 /* WatchListTableViewCell.swift */; };
 		BCA744C125E948E000A5B402 /* WatchListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCA744BF25E948E000A5B402 /* WatchListTableViewCell.xib */; };
+		BCBDA20D2607C8A400A86423 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBDA20C2607C8A400A86423 /* LoginController.swift */; };
 		BCE4A2C225FBD78C00CF398C /* MovieDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE4A2C125FBD78C00CF398C /* MovieDetail.swift */; };
 		BCE4A2C525FBD8E000CF398C /* MovieCredits.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE4A2C425FBD8E000CF398C /* MovieCredits.swift */; };
 		BCE4A2C825FBD97600CF398C /* MovieVideos.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE4A2C725FBD97600CF398C /* MovieVideos.swift */; };
@@ -89,6 +90,7 @@
 		BCA744BB25E9487100A5B402 /* WatchListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListVC.swift; sourceTree = "<group>"; };
 		BCA744BE25E948E000A5B402 /* WatchListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListTableViewCell.swift; sourceTree = "<group>"; };
 		BCA744BF25E948E000A5B402 /* WatchListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WatchListTableViewCell.xib; sourceTree = "<group>"; };
+		BCBDA20C2607C8A400A86423 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		BCE4A2C125FBD78C00CF398C /* MovieDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetail.swift; sourceTree = "<group>"; };
 		BCE4A2C425FBD8E000CF398C /* MovieCredits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCredits.swift; sourceTree = "<group>"; };
 		BCE4A2C725FBD97600CF398C /* MovieVideos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieVideos.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 		B2FD951325EC01F3000BDD6F /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				BCBDA20B2607C88D00A86423 /* Controller */,
 				13FFA77525EB246B008053C0 /* LoginViewController.swift */,
 				13FFA77825EB2493008053C0 /* Login.storyboard */,
 				B2FD950C25EC016C000BDD6F /* ForgetPassword */,
@@ -273,6 +276,14 @@
 				BCA744BF25E948E000A5B402 /* WatchListTableViewCell.xib */,
 			);
 			path = CustomTableViewCell;
+			sourceTree = "<group>";
+		};
+		BCBDA20B2607C88D00A86423 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BCBDA20C2607C8A400A86423 /* LoginController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,6 +369,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCBDA20D2607C8A400A86423 /* LoginController.swift in Sources */,
 				BCA744BC25E9487100A5B402 /* WatchListVC.swift in Sources */,
 				B2FD94FE25EBFF90000BDD6F /* Elenco.swift in Sources */,
 				BCA744C025E948E000A5B402 /* WatchListTableViewCell.swift in Sources */,
