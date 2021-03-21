@@ -8,5 +8,6 @@ target 'CineRoom' do
   # Pods for CineRoom
 	pod 'Firebase/Analytics'
 	pod 'Firebase/Auth'
+	pod 'GoogleSignIn'
 
 end
