@@ -32,7 +32,7 @@ class LoginViewController: UIViewController {
 	private func configTextField() {
 		self.emailtextField.delegate = self
 		self.senhaTextField.delegate = self
-		self.senhaTextField.inputAccessoryView = self.senhaTextField.inputToBar()
+		self.senhaTextField.inputAccessoryView = self.senhaTextField.inputToolbar()
 	}
 	
 	private func configButton() {

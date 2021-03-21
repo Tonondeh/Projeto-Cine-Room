@@ -32,8 +32,8 @@ class ConfirmarSenhaViewController: UIViewController {
 		self.confirmarNovaSenha.delegate = self
 		self.novaSenhaTextField.isSecureTextEntry = true
 		self.confirmarNovaSenha.isSecureTextEntry = true
-		self.novaSenhaTextField.inputAccessoryView = novaSenhaTextField.inputToBar()
-		self.confirmarNovaSenha.inputAccessoryView = confirmarNovaSenha.inputToBar()
+		self.novaSenhaTextField.inputAccessoryView = novaSenhaTextField.inputToolbar()
+		self.confirmarNovaSenha.inputAccessoryView = confirmarNovaSenha.inputToolbar()
 	}
 	
 	private func configButton() {

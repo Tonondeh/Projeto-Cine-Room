@@ -75,8 +75,7 @@ extension UITextField {
         return false
     }
 	
-    func inputToBar()-> UIToolbar {
-        
+    func inputToolbar()-> UIToolbar {
         let toolbar = UIToolbar()
         toolbar.barStyle = .default
         toolbar.isTranslucent = true
@@ -85,20 +84,19 @@ extension UITextField {
         toolbar.sizeToFit()
         
         let buttonOK = UIBarButtonItem(title: "OK", style: .plain, target: self, action: #selector(finish))
-        
         let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         
         toolbar.setItems([spaceButton, buttonOK], animated: true)
         toolbar.isUserInteractionEnabled = true
         
         return toolbar
-        
     }
     
     @objc
     func finish() {
         self.resignFirstResponder()
     }
+		
 }
 
 // pintar em vermelho, ou colocar no label o que falta.

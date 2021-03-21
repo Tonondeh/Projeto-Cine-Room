@@ -40,6 +40,7 @@
 		BCA744C125E948E000A5B402 /* WatchListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCA744BF25E948E000A5B402 /* WatchListTableViewCell.xib */; };
 		BCBDA20D2607C8A400A86423 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBDA20C2607C8A400A86423 /* LoginController.swift */; };
 		BCBDA2112607CED200A86423 /* ForgetPassController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBDA2102607CED200A86423 /* ForgetPassController.swift */; };
+		BCBDA2152607D62300A86423 /* CriarContaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBDA2142607D62300A86423 /* CriarContaController.swift */; };
 		BCE4A2C225FBD78C00CF398C /* MovieDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE4A2C125FBD78C00CF398C /* MovieDetail.swift */; };
 		BCE4A2C525FBD8E000CF398C /* MovieCredits.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE4A2C425FBD8E000CF398C /* MovieCredits.swift */; };
 		BCE4A2C825FBD97600CF398C /* MovieVideos.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE4A2C725FBD97600CF398C /* MovieVideos.swift */; };
@@ -93,6 +94,7 @@
 		BCA744BF25E948E000A5B402 /* WatchListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WatchListTableViewCell.xib; sourceTree = "<group>"; };
 		BCBDA20C2607C8A400A86423 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		BCBDA2102607CED200A86423 /* ForgetPassController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPassController.swift; sourceTree = "<group>"; };
+		BCBDA2142607D62300A86423 /* CriarContaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriarContaController.swift; sourceTree = "<group>"; };
 		BCE4A2C125FBD78C00CF398C /* MovieDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetail.swift; sourceTree = "<group>"; };
 		BCE4A2C425FBD8E000CF398C /* MovieCredits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCredits.swift; sourceTree = "<group>"; };
 		BCE4A2C725FBD97600CF398C /* MovieVideos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieVideos.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 		B2FD950F25EC019C000BDD6F /* CreatAccount */ = {
 			isa = PBXGroup;
 			children = (
+				BCBDA2132607D60500A86423 /* Controller */,
 				BC90FC9725E961B60092A52B /* Alert.swift */,
 				BC90FC9425E961990092A52B /* CriarContaVC.swift */,
 				BC90FC9125E961880092A52B /* CriarConta.storyboard */,
@@ -297,6 +300,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		BCBDA2132607D60500A86423 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BCBDA2142607D62300A86423 /* CriarContaController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -381,6 +392,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCBDA20D2607C8A400A86423 /* LoginController.swift in Sources */,
+				BCBDA2152607D62300A86423 /* CriarContaController.swift in Sources */,
 				BCA744BC25E9487100A5B402 /* WatchListVC.swift in Sources */,
 				B2FD94FE25EBFF90000BDD6F /* Elenco.swift in Sources */,
 				BCA744C025E948E000A5B402 /* WatchListTableViewCell.swift in Sources */,

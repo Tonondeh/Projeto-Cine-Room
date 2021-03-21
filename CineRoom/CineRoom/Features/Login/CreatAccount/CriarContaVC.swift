@@ -27,6 +27,7 @@ class CriarContaVC: UIViewController {
 	
 	// MARK: - Variavel
 	var imagePicker: UIImagePickerController = UIImagePickerController()
+	let controller: CriarContaController = CriarContaController()
 	
 	// MARK: - Enum Name Image
 	enum NameImage: String {
@@ -41,6 +42,7 @@ class CriarContaVC: UIViewController {
 	}
 	
 	
+	// MARK: - Lifecycle
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
@@ -54,17 +56,17 @@ class CriarContaVC: UIViewController {
 	
 	
 	// MARK: - Function
-	func configScrollView() {
+	private func configScrollView() {
 		self.scrollView.delaysContentTouches = false
 	}
 	
-	func configView() {
+	private func configView() {
 		self.avatarUserView.layer.cornerRadius = self.avatarUserView.frame.height / 2
 		self.cameraView.layer.cornerRadius = self.cameraView.frame.height / 2
 		self.cameraView.backgroundColor = UIColor(named: "secondColor")
 	}
 	
-	func configImageView() {
+	private func configImageView() {
 		// UIImageView - Avatar
 		self.avatarUserImageView.backgroundColor = .lightGray
 		self.avatarUserImageView.tintColor = .darkGray
@@ -81,11 +83,11 @@ class CriarContaVC: UIViewController {
 		self.cameraImageView.addGestureRecognizer(tap)
 	}
 	
-	func configImagePicker() {
+	private func configImagePicker() {
 		self.imagePicker.delegate = self
 	}
 	
-	func configButton() {
+	private func configButton() {
 		self.googleButton.setImage(UIImage(named: NameImage.google.rawValue), for: .normal)
 		self.googleButton.translatesAutoresizingMaskIntoConstraints = false
 		self.googleButton.imageEdgeInsets = UIEdgeInsets(top: 8, left: 45, bottom: 8, right: 45)
@@ -102,7 +104,7 @@ class CriarContaVC: UIViewController {
 		self.conectarButton.layer.cornerRadius = 10
 	}
 	
-	func configTextField() {
+	private func configTextField() {
 		// Atribuição Delegate
 		self.nomeTextField.delegate = self
 		self.emailTextField.delegate = self
@@ -122,30 +124,11 @@ class CriarContaVC: UIViewController {
 		configTexFieldButton(icon: .eyeSlash, tag: 1, textField: self.senhaTextField)
 		configTexFieldButton(icon: .eyeSlash, tag: 2, textField: self.confirmaSenhaTextField)
 		
-		let toolbar = UIToolbar()
-				toolbar.barStyle = .default
-				toolbar.isTranslucent = true
-				toolbar.tintColor = .blue
-				toolbar.backgroundColor = .white
-				toolbar.sizeToFit()
-		
-		let buttonOK = UIBarButtonItem(title: "OK", style: .plain, target: self, action: #selector(finish))
-		let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-		
-		toolbar.setItems([spaceButton, buttonOK], animated: true)
-		toolbar.isUserInteractionEnabled = true
-		
-		senhaTextField.inputAccessoryView = toolbar
-		confirmaSenhaTextField.inputAccessoryView = toolbar
+		self.senhaTextField.inputAccessoryView = self.senhaTextField.inputToolbar()
+		self.confirmaSenhaTextField.inputAccessoryView = self.confirmaSenhaTextField.inputToolbar()
 	}
 	
-	@objc
-	func finish() {
-		self.senhaTextField.resignFirstResponder()
-		self.confirmaSenhaTextField.resignFirstResponder()
-	}
-	
-	func configTextFieldImage(icon: String, frame: CGRect, textField: UITextField) {
+	private func configTextFieldImage(icon: String, frame: CGRect, textField: UITextField) {
 		let rightImage = UIImageView(frame: frame)
 		rightImage.tintColor = .darkGray
 		rightImage.image = UIImage(systemName: icon)
@@ -157,7 +140,7 @@ class CriarContaVC: UIViewController {
 		textField.rightView = rightView
 	}
 	
-	func configTexFieldButton(icon: NameImage, tag: Int, textField: UITextField) {
+	private func configTexFieldButton(icon: NameImage, tag: Int, textField: UITextField) {
 		let button = UIButton(type: .custom)
 		button.setImage(UIImage(systemName: icon.rawValue), for: .normal)
 		button.imageEdgeInsets = UIEdgeInsets(top: 0, left: -16, bottom: 0, right: 0)
@@ -168,17 +151,6 @@ class CriarContaVC: UIViewController {
 		textField.rightViewMode = .always
 		textField.rightView = button
 	}
-	
-	func validarDadosEntrada() -> Bool {
-		
-		if nomeTextField.validateName() && emailTextField.validateEmail() && senhaTextField.validatePassword() && confirmaSenhaTextField.validatePassword() && senhaTextField.text == confirmaSenhaTextField.text {
-			return true
-		} else {
-			return false
-		}
-		
-	}
-	
 	
 	// MARK: - Function - Objc
 	@objc func trocarAvatar(_ sender: UITapGestureRecognizer) {
@@ -212,7 +184,10 @@ class CriarContaVC: UIViewController {
 	// MARK: - Action
 	@IBAction func didTapConectar(_ sender: UIButton) {
 		
-		if validarDadosEntrada() {
+		if self.controller.validarCriarConta(nome: nomeTextField,
+														 email: emailTextField,
+														 senha: senhaTextField,
+														 confSenha: confirmaSenhaTextField) {
 			print("Conectar")
 			self.performSegue(withIdentifier: "segueHomeStoryboard", sender: self)
 		} else {
@@ -240,7 +215,6 @@ class CriarContaVC: UIViewController {
 }
 
 
-
 // MARK: - Extension ImagePicker
 extension CriarContaVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 	
@@ -253,14 +227,8 @@ extension CriarContaVC: UIImagePickerControllerDelegate, UINavigationControllerD
 }
 
 
-
 // MARK: - Extension TextField
 extension CriarContaVC: UITextFieldDelegate {
-	
-	func textFieldDidBeginEditing(_ textField: UITextField) {
-		textField.layer.borderWidth = 0
-		textField.layer.borderColor = nil
-	}
 	
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 		let nextTag = textField.tag + 1
