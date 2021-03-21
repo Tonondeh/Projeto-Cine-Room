@@ -188,8 +188,19 @@ class CriarContaVC: UIViewController {
 														 email: emailTextField,
 														 senha: senhaTextField,
 														 confSenha: confirmaSenhaTextField) {
-			print("Conectar")
-			self.performSegue(withIdentifier: "segueHomeStoryboard", sender: self)
+			
+			print("++++ Dados de entrada OK  ++++")
+			
+			self.controller.createUserFirebase(email: emailTextField.text, password: senhaTextField.text) { (success) in
+				if success {
+					print("=== SUCESSO AO CRIAR CONTA NO FIREBASE ===")
+					self.performSegue(withIdentifier: "segueHomeStoryboard", sender: self)
+				} else {
+					print("=== ERRO AO CRIAR CONTA NO FIREBASE ===")
+				}
+			}
+		
+			
 		} else {
 			Alert.showIncompleteFormAlert(on: self)
 		}

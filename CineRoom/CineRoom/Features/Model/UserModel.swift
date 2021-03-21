@@ -8,12 +8,12 @@
 import Foundation
 
 class UserModel: Codable {
-    
-    let name:String
-    let fullname:String
-    let email:String
-    let cpf:Double
-    let birthAge:String
+
+    let name: String
+    let fullname: String
+    let email: String
+    let cpf: Int
+    let birthAge: String
     
 }
 

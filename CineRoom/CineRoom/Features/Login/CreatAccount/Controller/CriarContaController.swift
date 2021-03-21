@@ -18,4 +18,10 @@ class CriarContaController {
 		}
 	}
 	
+	func createUserFirebase(email: String?, password: String?, completion: @escaping(_ success: Bool) -> Void) {
+		LoginWorker().createUserFirebase(email: email, password: password) { (success) in
+			completion(success)
+		}
+	}
+	
 }
