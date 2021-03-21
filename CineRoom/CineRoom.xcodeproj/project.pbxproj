@@ -41,6 +41,7 @@
 		BCBDA20D2607C8A400A86423 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBDA20C2607C8A400A86423 /* LoginController.swift */; };
 		BCBDA2112607CED200A86423 /* ForgetPassController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBDA2102607CED200A86423 /* ForgetPassController.swift */; };
 		BCBDA2152607D62300A86423 /* CriarContaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBDA2142607D62300A86423 /* CriarContaController.swift */; };
+		BCBDA21A2607D91C00A86423 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BCBDA2192607D91C00A86423 /* GoogleService-Info.plist */; };
 		BCE4A2C225FBD78C00CF398C /* MovieDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE4A2C125FBD78C00CF398C /* MovieDetail.swift */; };
 		BCE4A2C525FBD8E000CF398C /* MovieCredits.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE4A2C425FBD8E000CF398C /* MovieCredits.swift */; };
 		BCE4A2C825FBD97600CF398C /* MovieVideos.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE4A2C725FBD97600CF398C /* MovieVideos.swift */; };
@@ -95,6 +96,7 @@
 		BCBDA20C2607C8A400A86423 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		BCBDA2102607CED200A86423 /* ForgetPassController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPassController.swift; sourceTree = "<group>"; };
 		BCBDA2142607D62300A86423 /* CriarContaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriarContaController.swift; sourceTree = "<group>"; };
+		BCBDA2192607D91C00A86423 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BCE4A2C125FBD78C00CF398C /* MovieDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetail.swift; sourceTree = "<group>"; };
 		BCE4A2C425FBD8E000CF398C /* MovieCredits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCredits.swift; sourceTree = "<group>"; };
 		BCE4A2C725FBD97600CF398C /* MovieVideos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieVideos.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				65E8D32125E89BEA0078BBE9 /* Assets.xcassets */,
 				65E8D32325E89BEA0078BBE9 /* LaunchScreen.storyboard */,
 				65E8D32625E89BEA0078BBE9 /* Info.plist */,
+				BCBDA2192607D91C00A86423 /* GoogleService-Info.plist */,
 			);
 			path = CineRoom;
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 				D3694EC225EBFBB100D57CFB /* CartazVCollectionViewCell.xib in Resources */,
 				BC8F423F25EC5AF90040776A /* ElencoCollectionViewCell.xib in Resources */,
 				BCA744B925E947DE00A5B402 /* WatchList.storyboard in Resources */,
+				BCBDA21A2607D91C00A86423 /* GoogleService-Info.plist in Resources */,
 				BC90FC9225E961880092A52B /* CriarConta.storyboard in Resources */,
 				BC8F423925EC59BB0040776A /* TrailerFilmeTableViewCell.xib in Resources */,
 				D3694EB325EBFAC800D57CFB /* VerticalTableViewCell.xib in Resources */,
