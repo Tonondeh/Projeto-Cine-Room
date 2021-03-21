@@ -244,7 +244,7 @@
 		B2FD951325EC01F3000BDD6F /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				BCBDA20B2607C88D00A86423 /* Controller */,
+				BCBDA20C2607C8A400A86423 /* LoginController.swift */,
 				13FFA77525EB246B008053C0 /* LoginViewController.swift */,
 				13FFA77825EB2493008053C0 /* Login.storyboard */,
 				B2FD950C25EC016C000BDD6F /* ForgetPassword */,
@@ -282,14 +282,6 @@
 				BCA744BF25E948E000A5B402 /* WatchListTableViewCell.xib */,
 			);
 			path = CustomTableViewCell;
-			sourceTree = "<group>";
-		};
-		BCBDA20B2607C88D00A86423 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				BCBDA20C2607C8A400A86423 /* LoginController.swift */,
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		BCBDA20F2607CEB900A86423 /* Controller */ = {

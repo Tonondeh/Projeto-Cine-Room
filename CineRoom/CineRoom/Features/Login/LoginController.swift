@@ -10,7 +10,6 @@ import UIKit
 
 class LoginController {
 	
-	
 	func validateLogin(emailTextField: UITextField, passwordTextField: UITextField) -> Bool {
 		if emailTextField.validateEmail() && passwordTextField.validatePassword() {
 			return true
