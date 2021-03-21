@@ -21,9 +21,9 @@ class LoginController {
 	func addStateDidChangeListener(completion: @escaping(_ success: Bool) -> Void) {
 		LoginWorker().addStateDidChangeListener { (success) in
 			if success != nil {
+				print("== User logado: \(String(describing: success)) ==")
 				completion(true)
 			} else {
-				print("== User logado: \(String(describing: success)) ==")
 				completion(false)
 			}
 			
@@ -32,6 +32,12 @@ class LoginController {
 	
 	func removeStateDidChangeListener() {
 		LoginWorker().removeStateDidChangeListener()
+	}
+	
+	func signIn(email: String?, password: String?, completion: @escaping(_ success: Bool) -> Void) {
+		LoginWorker().signIn(email: email, password: password) { (success) in
+			completion(success)
+		}
 	}
 	
 }

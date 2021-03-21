@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import FirebaseAuth
 
 class CriarContaController {
 	
@@ -20,6 +21,12 @@ class CriarContaController {
 	
 	func createUserFirebase(email: String?, password: String?, completion: @escaping(_ success: Bool) -> Void) {
 		LoginWorker().createUserFirebase(email: email, password: password) { (success) in
+			completion(success)
+		}
+	}
+	
+	func signInCredential(credential: AuthCredential, completion: @escaping(_ success: Bool) -> Void) {
+		LoginWorker().signInCredential(credential: credential) { (success) in
 			completion(success)
 		}
 	}

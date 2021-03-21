@@ -64,8 +64,20 @@ class LoginViewController: UIViewController {
 		
 		if self.controller.validateLogin(emailTextField: emailtextField,
 													passwordTextField: senhaTextField) {
-			print("chamar tela conectar")
-			performSegue(withIdentifier: "segueHome", sender: nil)
+			
+			print("Dados de entrada OK !!")
+			
+			self.controller.signIn(email: emailtextField.text, password: senhaTextField.text) { (success) in
+				if success {
+					print("=== LOGIN FIREBASE")
+					self.performSegue(withIdentifier: "segueHome", sender: nil)
+				} else {
+					print("=== erro LOGIN FIREBASE")
+				}
+			}
+			
+			
+			
 		} else {
 			print("Entrada errada")
 		}
@@ -83,4 +95,3 @@ extension LoginViewController: UITextFieldDelegate {
 	}
 	
 }
-

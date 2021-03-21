@@ -350,6 +350,7 @@
 				65E8D31225E89BE50078BBE9 /* Frameworks */,
 				65E8D31325E89BE50078BBE9 /* Resources */,
 				986753E9C55A39A1D93FA324 /* [CP] Embed Pods Frameworks */,
+				3DB9C25CAA24AA64B613D22B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -420,6 +421,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3DB9C25CAA24AA64B613D22B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CineRoom/Pods-CineRoom-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CineRoom/Pods-CineRoom-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CineRoom/Pods-CineRoom-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		5BD5F5DD18CBE3FC3556C8C0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

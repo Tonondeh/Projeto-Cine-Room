@@ -38,6 +38,49 @@ class LoginWorker {
 		
 	}
 	
+	func signInCredential(credential: AuthCredential, completion: @escaping(_ success: Bool) -> Void) {
+		
+		handle.signIn(with: credential) { (authResult, error) in
+			if error != nil {
+				completion(false)
+			} else {
+				
+				if authResult == nil {
+					completion(false)
+				} else {
+					completion(true)
+				}
+				
+			}
+		}
+		
+	}
+	
+	func signIn(email: String?, password: String?, completion: @escaping(_ success: Bool) -> Void) {
+		
+		// Verificar o que retornar para Controller
+		// Dados do User.
+		
+		guard let _email = email, let _password = password else {
+			return completion(false)
+		}
+		
+		handle.signIn(withEmail: _email, password: _password) { (authResult, error) in
+			if error != nil {
+				completion(false)
+			} else {
+				
+				if authResult == nil {
+					completion(false)
+				} else {
+					completion(true)
+				}
+				
+			}
+		}
+		
+	}
+	
 	func addStateDidChangeListener(completion: @escaping(_ success: String?) -> Void) {
 		
 		// Verificar o que retornar para Controller
