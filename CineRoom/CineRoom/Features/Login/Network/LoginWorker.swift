@@ -10,6 +10,8 @@ import FirebaseAuth
 
 class LoginWorker {
 	
+	private let handle = Auth.auth()
+	
 	
 	func createUserFirebase(email: String?, password: String?, completion: @escaping(_ success: Bool) -> Void) {
 		
@@ -20,7 +22,7 @@ class LoginWorker {
 			return completion(false)
 		}
 		
-		Auth.auth().createUser(withEmail: _email, password: _password) { (authResult, error) in
+		handle.createUser(withEmail: _email, password: _password) { (authResult, error) in
 			
 			if error != nil {
 				completion(false)
@@ -34,6 +36,24 @@ class LoginWorker {
 			
 		}
 		
+	}
+	
+	func addStateDidChangeListener(completion: @escaping(_ success: String?) -> Void) {
+		
+		// Verificar o que retornar para Controller
+		// Dados do User.
+		
+		handle.addStateDidChangeListener { (auth, user) in
+			if user == nil {
+				completion(nil)
+			} else {
+				completion(user?.email)
+			}
+		}
+	}
+	
+	func removeStateDidChangeListener() {
+		Auth.auth().removeStateDidChangeListener(handle)
 	}
 	
 }

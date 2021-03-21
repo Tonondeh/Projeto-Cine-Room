@@ -18,4 +18,20 @@ class LoginController {
 		}
 	}
 	
+	func addStateDidChangeListener(completion: @escaping(_ success: Bool) -> Void) {
+		LoginWorker().addStateDidChangeListener { (success) in
+			if success != nil {
+				completion(true)
+			} else {
+				print("== User logado: \(String(describing: success)) ==")
+				completion(false)
+			}
+			
+		}
+	}
+	
+	func removeStateDidChangeListener() {
+		LoginWorker().removeStateDidChangeListener()
+	}
+	
 }

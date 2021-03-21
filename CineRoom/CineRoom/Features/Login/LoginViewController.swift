@@ -23,12 +23,30 @@ class LoginViewController: UIViewController {
 	// MARK: - Lifecycle
 	override func viewDidLoad() {
 		super.viewDidLoad()
+	
 		configTextField()
 		configButton()
 	}
 	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		
+		// TODO: Colocar um Loading....
+		
+		self.controller.addStateDidChangeListener { (success) in
+			if success {
+				self.performSegue(withIdentifier: "segueHome", sender: nil)
+			}
+		}
+	}
 	
-	// MARK: - Function
+	override func viewWillDisappear(_ animated: Bool) {
+		super.viewWillDisappear(animated)
+		self.controller.removeStateDidChangeListener()
+	}
+	
+	
+	// MARK: - Function	
 	private func configTextField() {
 		self.emailtextField.delegate = self
 		self.senhaTextField.delegate = self
@@ -39,7 +57,7 @@ class LoginViewController: UIViewController {
 		self.createAccountButton.layer.cornerRadius	= 5
 		self.connectButton.layer.cornerRadius 		 	= 5
 	}
-		
+	
 	
 	// MARK: - IBAction
 	@IBAction func tappedConectar(_ sender: UIButton) {
