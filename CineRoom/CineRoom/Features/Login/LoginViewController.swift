@@ -17,7 +17,7 @@ class LoginViewController: UIViewController {
 	@IBOutlet weak var connectButton: UIButton!
 	
 	// MARK: - Variable
-	var controller: LoginController = LoginController()
+	let controller: LoginController = LoginController()
 	
 	
 	// MARK: - Lifecycle
@@ -47,7 +47,7 @@ class LoginViewController: UIViewController {
 		if self.controller.validateLogin(emailTextField: emailtextField,
 													passwordTextField: senhaTextField) {
 			print("chamar tela conectar")
-			performSegue(withIdentifier: "segueHome", sender: self)
+			performSegue(withIdentifier: "segueHome", sender: nil)
 		} else {
 			print("Entrada errada")
 		}

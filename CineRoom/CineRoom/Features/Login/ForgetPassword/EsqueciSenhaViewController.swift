@@ -9,45 +9,35 @@ import UIKit
 
 class EsqueciSenhaViewController: UIViewController {
 	
+	// MARK: - IBOutlet
 	@IBOutlet weak var emailTextField: UITextField!
 	@IBOutlet weak var continuarButton: UIButton!
 	
 	
+	// MARK: - Lifecycle
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		self.configTextField()
+		self.configButton()
 	}
 	
-	func configTextField(){
+	
+	// MARK: - Function
+	private func configTextField() {
 		self.emailTextField.delegate = self
-		self.emailTextField.layer.borderWidth = 2.0
-		self.emailTextField.backgroundColor = .white
-		self.emailTextField.layer.borderColor = UIColor.lightGray.cgColor
 	}
 	
-	func habilitarBotaoContinuar(){
-		if self.emailTextField.text != "" {
-			self.continuarButton.isEnabled = true
-		}else{
-			self.continuarButton.isEnabled = false
-		}
-	}
-	
-	func validarEmail() -> Bool{
-		if emailTextField.validateEmail() {
-			return true
-		} else {
-			return false
-		}
+	private func configButton() {
+		self.continuarButton.layer.cornerRadius = 5
 	}
 	
 	
 	// MARK: - IBAction
 	@IBAction func tappedContinuarButton(_ sender: UIButton) {
 		
-		if validarEmail() {
+		if emailTextField.validateEmail() {
 			print("Segue Proxima Tela")
-			self.performSegue(withIdentifier: "SegueContinuar", sender: self)
+			self.performSegue(withIdentifier: "SegueContinuar", sender: nil)
 		} else {
 			print("Erro na validação")
 		}
@@ -56,16 +46,13 @@ class EsqueciSenhaViewController: UIViewController {
 	
 }
 
+
+// MARK: - Extension TextField
 extension EsqueciSenhaViewController: UITextFieldDelegate {
-	
-	func textFieldDidBeginEditing(_ textField: UITextField) {
-		textField.layer.borderColor = UIColor.blue.cgColor
-	}
 	
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 		textField.resignFirstResponder()
-		habilitarBotaoContinuar()
-		return validarEmail()
+		return true
 	}
 	
 }

@@ -12,61 +12,40 @@ class ConfirmarSenhaViewController: UIViewController {
 	// MARK: - IBOutlet
 	@IBOutlet weak var novaSenhaTextField: UITextField!
 	@IBOutlet weak var confirmarNovaSenha: UITextField!
-	@IBOutlet var confirmarButton: UIButton!
+	@IBOutlet weak var confirmarButton: UIButton!
 	
+	// MARK: - Variable
+	let controller: ForgetPassController = ForgetPassController()
+	
+	
+	// MARK: - Lifecycle
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		self.configTextField()
+		self.configButton()
 	}
 	
-	func configTextField() {
+	
+	// MARK: - Function
+	private func configTextField() {
 		self.novaSenhaTextField.delegate = self
-		self.novaSenhaTextField.layer.borderWidth = 2.0
-		self.novaSenhaTextField.backgroundColor = .white
-		self.novaSenhaTextField.layer.borderColor = UIColor.lightGray.cgColor
-		
 		self.confirmarNovaSenha.delegate = self
-		self.confirmarNovaSenha.layer.borderWidth = 2.0
-		self.confirmarNovaSenha.backgroundColor = .white
-		self.confirmarNovaSenha.layer.borderColor = UIColor.lightGray.cgColor
-		
-		let toolbar = UIToolbar()
-		toolbar.barStyle = .default
-		toolbar.isTranslucent = true
-		toolbar.tintColor = .blue
-		toolbar.backgroundColor = .white
-		toolbar.sizeToFit()
-		
-		let buttonOK = UIBarButtonItem(title: "OK", style: .plain, target: self, action: #selector(finish))
-		let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-		
-		toolbar.setItems([spaceButton, buttonOK], animated: true)
-		toolbar.isUserInteractionEnabled = true
-		
-		novaSenhaTextField.inputAccessoryView = toolbar
-		confirmarNovaSenha.inputAccessoryView = toolbar
+		self.novaSenhaTextField.isSecureTextEntry = true
+		self.confirmarNovaSenha.isSecureTextEntry = true
+		self.novaSenhaTextField.inputAccessoryView = novaSenhaTextField.inputToBar()
+		self.confirmarNovaSenha.inputAccessoryView = confirmarNovaSenha.inputToBar()
 	}
 	
-	@objc
-	func finish() {
-		self.novaSenhaTextField.resignFirstResponder()
-		self.confirmarNovaSenha.resignFirstResponder()
-	}
-	
-	func validarDados() -> Bool {
-		if novaSenhaTextField.validatePassword() && confirmarNovaSenha.validatePassword() && novaSenhaTextField.text == confirmarNovaSenha.text {
-			return true
-		} else {
-			return false
-		}
+	private func configButton() {
+		self.confirmarButton.layer.cornerRadius = 5
 	}
 	
 	
 	// MARK: - IBAction
 	@IBAction func confirmarButton(_ sender: UIButton) {
-		if self.validarDados() {
+		if self.controller.validateForgetPassword(newPass: novaSenhaTextField, confNewPass: confirmarNovaSenha) {
 			print("Confirmar")
-			self.performSegue(withIdentifier:"segueLogin" , sender: self)
+			self.performSegue(withIdentifier: "segueLogin" , sender: nil)
 		} else {
 			print("Erro dados")
 		}
@@ -75,12 +54,8 @@ class ConfirmarSenhaViewController: UIViewController {
 }
 
 
+// MARK: - Extension TextField
 extension ConfirmarSenhaViewController: UITextFieldDelegate {
-	
-	func textFieldDidBeginEditing(_ textField: UITextField) {
-		novaSenhaTextField.layer.borderColor = UIColor.blue.cgColor
-		confirmarNovaSenha.layer.borderColor = UIColor.blue.cgColor
-	}
 	
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 		textField.resignFirstResponder()
