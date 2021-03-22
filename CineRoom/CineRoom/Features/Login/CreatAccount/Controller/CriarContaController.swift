@@ -26,9 +26,47 @@ class CriarContaController {
 	}
 	
 	func signInCredential(credential: AuthCredential, completion: @escaping(_ success: Bool) -> Void) {
+		print(#function)
 		LoginWorker().signInCredential(credential: credential) { (success) in
 			completion(success)
 		}
 	}
+	
+	func signInGoogle(completion: @escaping(_ success: Bool) -> Void) {
+		print(#function)
+		let loginWorker = LoginWorker()
+		loginWorker.delegate = self
+		loginWorker.signInGoogle { (success) in
+			completion(success)
+		}
+	
+	}
+	
+	func signInFacebook(viewController: UIViewController, completion: @escaping(_ success: Bool) -> Void) {
+		print(#function)
+		
+		LoginWorker().signInFacebook(viewController: viewController) { (credential) in
+			
+			if let _credential = credential {
+				self.signInCredential(credential: _credential) { (success) in
+					completion(success)
+				}
+			} else {
+				completion(false)
+			}
+		}
+	}
+	
+}
+
+
+// MARK: - Extension
+extension CriarContaController: LoginWorkerProtocol {
+	
+	func credentialGoogle(credential: AuthCredential) {
+		print(#function)
+		self.credentialGoogle(credential: credential)
+	}
+	
 	
 }
