@@ -48,9 +48,7 @@ class CriarContaVC: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		GIDSignIn.sharedInstance()?.delegate = self
 		GIDSignIn.sharedInstance()?.presentingViewController = self
-		
 		configScrollView()
 		configView()
 		configImageView()
@@ -194,7 +192,7 @@ class CriarContaVC: UIViewController {
 														 senha: senhaTextField,
 														 confSenha: confirmaSenhaTextField) {
 			
-			print("++++ Dados de entrada OK  ++++")
+			self.showSpinner()
 			
 			self.controller.createUserFirebase(email: emailTextField.text, password: senhaTextField.text) { (success) in
 				if success {
@@ -203,6 +201,7 @@ class CriarContaVC: UIViewController {
 				} else {
 					print("=== ERRO AO CRIAR CONTA NO FIREBASE ===")
 				}
+				self.removeSpinner()
 			}
 			
 		} else {
@@ -218,13 +217,24 @@ class CriarContaVC: UIViewController {
 	
 	
 	@IBAction func didTapGoogle(_ sender: UIButton) {
-		print("Chamar Tela Login Google")
-		GIDSignIn.sharedInstance()?.signIn()
+		self.showSpinner()
+		self.controller.signInGoogle(delegate: self)
 	}
 	
 	
 	@IBAction func didTapFacebook(_ sender: UIButton) {
-		print("Chamar Tela Login Facebook")
+		self.showSpinner()
+		
+		self.controller.signInFacebook(viewController: self) { (success) in
+			
+			if success {
+				print("=== SUCESSO AO CRIAR CONTA FACEBOOK NO FIREBASE ===")
+				self.performSegue(withIdentifier: "segueHomeStoryboard", sender: nil)
+			} else {
+				print("=== ERRO AO CRIAR CONTA FACEBOOK NO FIREBASE ===")
+			}
+			self.removeSpinner()
+		}
 	}
 	
 	
@@ -261,49 +271,18 @@ extension CriarContaVC: UITextFieldDelegate {
 }
 
 
-// MARK: - Extension Google SignInt
-extension CriarContaVC: GIDSignInDelegate {
-	
-	func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-		print("didSignInFor")
-
-		if error != nil {
-			print("Erro no SingIn-Google")
-			print(error.localizedDescription)
+// MARK: - Extension Prototol CriarConta
+extension CriarContaVC: CriarContaProtocol {
+		
+	func loginGoogleFinish(_ success: Bool) {
+		
+		if success {
+			print("=== SUCESSO AO CRIAR CONTA GOOGLE NO FIREBASE ===")
+			self.performSegue(withIdentifier: "segueHomeStoryboard", sender: nil)
+		} else {
+			print("=== ERRO AO CRIAR CONTA GOOGLE NO FIREBASE ===")
 		}
-
-		if user != nil {
-
-			print("==== USUARIO LOGADO!!!")
-			print("Nome: \(String(describing: user.profile.name))")
-			print("Email: \(String(describing: user.profile.email))")
-
-			// Obter a Imagem do Profile Google
-			//			let data = try? Data(contentsOf: _imagem)
-			//			if let imageData = data {
-			//				self.profileImageView.image = UIImage(data: imageData)
-			//			}
-
-			// Autenticacao com o Firebase
-			guard let authentication = user.authentication else { return }
-			print("authentication: \(authentication)")
-			
-			let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
-																		  accessToken: authentication.accessToken)
-			
-			// SignIn no Firebse
-			self.controller.signInCredential(credential: credential) { (success) in
-				if success {
-					print("=== SUCESSO AO CRIAR CONTA GOOGLE NO FIREBASE ===")
-					self.performSegue(withIdentifier: "segueHomeStoryboard", sender: nil)
-				} else {
-					print("=== ERRO AO CRIAR CONTA GOOGLE NO FIREBASE ===")
-				}
-			}
-
-		}
-
-
+		self.removeSpinner()
 	}
 	
 }

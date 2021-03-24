@@ -7,8 +7,11 @@
 
 import Foundation
 import FirebaseAuth
+import FBSDKLoginKit
+import GoogleSignIn
 
-class LoginWorker {
+
+class LoginWorker: NSObject {
 	
 	private let handle = Auth.auth()
 	
@@ -41,11 +44,15 @@ class LoginWorker {
 	func signInCredential(credential: AuthCredential, completion: @escaping(_ success: Bool) -> Void) {
 		
 		handle.signIn(with: credential) { (authResult, error) in
+			//		Auth.auth().signIn(with: credential) { (authResult, error) in
+			
 			if error != nil {
+				print("Error> \(String(describing: error?.localizedDescription))")
 				completion(false)
 			} else {
 				
 				if authResult == nil {
+					print("Error> \(String(describing: error?.localizedDescription))")
 					completion(false)
 				} else {
 					completion(true)
@@ -97,6 +104,30 @@ class LoginWorker {
 	
 	func removeStateDidChangeListener() {
 		Auth.auth().removeStateDidChangeListener(handle)
+	}
+	
+	func signInFacebook(viewController: UIViewController, completion: @escaping(_ success: AuthCredential?) -> Void) {
+		let loginManager = LoginManager()
+		
+		loginManager.logIn(permissions: ["public_profile", "email"], from: viewController) { (loginResult, error) in
+			
+			if let _error = error {
+				print("Erro no LogIn Facebook")
+				print(_error.localizedDescription)
+				completion(nil)
+				return
+			}
+			
+			if let _token = loginResult?.token {
+				let credential = FacebookAuthProvider.credential(withAccessToken: _token.tokenString)
+				completion(credential)
+			} else {
+				completion(nil)
+			}
+						
+		}
+		
+		
 	}
 	
 }

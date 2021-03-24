@@ -26,6 +26,34 @@
 				<string>com.googleusercontent.apps.831488875194-8v63e6r4t3pvuaobi4gm0ju37hes1chf</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb252783136504123</string>
+			</array>
+		</dict>
+	</array>
+	<key>FacebookAppID</key>
+	<string>252783136504123</string>
+	<key>FacebookDisplayName</key>
+	<string>CineRoom</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbapi</string>
+		<string>fbapi20130214</string>
+		<string>fbapi20130410</string>
+		<string>fbapi20130702</string>
+		<string>fbapi20131010</string>
+		<string>fbapi20131219</string>
+		<string>fbapi20140410</string>
+		<string>fbapi20140116</string>
+		<string>fbapi20150313</string>
+		<string>fbapi20150629</string>
+		<string>fbapi20160328</string>
+		<string>fbauth</string>
+		<string>fb-messenger-share-api</string>
+		<string>fbauth2</string>
+		<string>fbshareextension</string>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
@@ -73,5 +101,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	
+	
+	
+	
+	
+	
 </dict>
 </plist>
