@@ -28,17 +28,19 @@ class LoginViewController: UIViewController {
 		configButton()
 	}
 	
-//	override func viewWillAppear(_ animated: Bool) {
-//		super.viewWillAppear(animated)
-//		
-//		// TODO: Colocar um Loading....
-//		
-//		self.controller.addStateDidChangeListener { (success) in
-//			if success {
-//				self.performSegue(withIdentifier: "segueHome", sender: nil)
-//			}
-//		}
-//	}
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		
+		// TODO: Colocar um Loading....
+		self.showSpinner()
+		
+		self.controller.addStateDidChangeListener { (success) in
+			if success {
+				self.performSegue(withIdentifier: "segueHome", sender: nil)
+			}
+			self.removeSpinner()
+		}
+	}
 	
 	override func viewWillDisappear(_ animated: Bool) {
 		super.viewWillDisappear(animated)
@@ -65,7 +67,7 @@ class LoginViewController: UIViewController {
 		if self.controller.validateLogin(emailTextField: emailtextField,
 													passwordTextField: senhaTextField) {
 			
-			print("Dados de entrada OK !!")
+			self.showSpinner()
 			
 			self.controller.signIn(email: emailtextField.text, password: senhaTextField.text) { (success) in
 				if success {
@@ -74,9 +76,8 @@ class LoginViewController: UIViewController {
 				} else {
 					print("=== erro LOGIN FIREBASE")
 				}
+				self.removeSpinner()
 			}
-			
-			
 			
 		} else {
 			print("Entrada errada")
