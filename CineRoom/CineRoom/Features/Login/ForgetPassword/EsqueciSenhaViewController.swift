@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class EsqueciSenhaViewController: UIViewController {
 	
@@ -31,13 +32,32 @@ class EsqueciSenhaViewController: UIViewController {
 		self.continuarButton.layer.cornerRadius = 5
 	}
 	
+    func sendPasswordReset(withEmail email: String, _ callback: ((Error?) -> ())? = nil){
+        Auth.auth().sendPasswordReset(withEmail: email) { error in
+            callback?(error)
+        }
+    }
+    
+    
 	
 	// MARK: - IBAction
 	@IBAction func tappedContinuarButton(_ sender: UIButton) {
 		
 		if emailTextField.validateEmail() {
 			print("Segue Proxima Tela")
-			self.performSegue(withIdentifier: "SegueContinuar", sender: nil)
+			
+            self.sendPasswordReset(withEmail: emailTextField.text ?? "") { (error) in
+                if error == nil {
+                    print("Tela Login")
+                }else{
+                    let _error = error as NSError?
+                    if _error?.code == 17011 {
+                        print("Email invalido")
+                        Alert.showInvalidEmailAlert(on: self)
+                    }
+                }
+            }
+
 		} else {
 			print("Erro na validação")
 		}

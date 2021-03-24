@@ -22,7 +22,7 @@ struct Alert {
 	}
 	
 	static func showInvalidEmailAlert(on vc: UIViewController) {
-		showBasicAlert(on: vc, with: "Invalid Email", message: "Please use a correct email")
+		showBasicAlert(on: vc, with: "Email Inválido", message: "Por favor, utilizar um email válido !!!")
 	}
 	
 }

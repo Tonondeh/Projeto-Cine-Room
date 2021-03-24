@@ -28,17 +28,17 @@ class LoginViewController: UIViewController {
 		configButton()
 	}
 	
-	override func viewWillAppear(_ animated: Bool) {
-		super.viewWillAppear(animated)
-		
-		// TODO: Colocar um Loading....
-		
-		self.controller.addStateDidChangeListener { (success) in
-			if success {
-				self.performSegue(withIdentifier: "segueHome", sender: nil)
-			}
-		}
-	}
+//	override func viewWillAppear(_ animated: Bool) {
+//		super.viewWillAppear(animated)
+//		
+//		// TODO: Colocar um Loading....
+//		
+//		self.controller.addStateDidChangeListener { (success) in
+//			if success {
+//				self.performSegue(withIdentifier: "segueHome", sender: nil)
+//			}
+//		}
+//	}
 	
 	override func viewWillDisappear(_ animated: Bool) {
 		super.viewWillDisappear(animated)
