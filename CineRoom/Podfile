@@ -10,5 +10,6 @@ target 'CineRoom' do
 	pod 'Firebase/Auth'
 	pod 'GoogleSignIn'
 	pod 'FBSDKLoginKit'
+	pod 'Alamofire', '~> 5.4'
 
 end

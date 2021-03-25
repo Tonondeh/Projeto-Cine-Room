@@ -54,7 +54,7 @@
                                 <color key="sectionIndexBackgroundColor" name="backgroundColor"/>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oi Lilly" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acL-dI-Ehc">
-                                <rect key="frame" x="20" y="47" width="69" height="29"/>
+                                <rect key="frame" x="20" y="47" width="374" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" name="mainColor"/>
                                 <nil key="highlightedColor"/>
@@ -64,6 +64,7 @@
                         <color key="backgroundColor" name="backgroundColor"/>
                         <constraints>
                             <constraint firstItem="q4F-FS-h6a" firstAttribute="trailing" secondItem="Qld-gm-bFT" secondAttribute="trailing" id="Ieh-c2-cqb"/>
+                            <constraint firstItem="q4F-FS-h6a" firstAttribute="trailing" secondItem="acL-dI-Ehc" secondAttribute="trailing" constant="20" id="NDV-e9-FLF"/>
                             <constraint firstItem="Qld-gm-bFT" firstAttribute="bottom" secondItem="q4F-FS-h6a" secondAttribute="bottom" id="aKH-Zb-0fD"/>
                             <constraint firstItem="Qld-gm-bFT" firstAttribute="leading" secondItem="q4F-FS-h6a" secondAttribute="leading" id="cjA-jG-KA2"/>
                             <constraint firstItem="acL-dI-Ehc" firstAttribute="leading" secondItem="q4F-FS-h6a" secondAttribute="leading" constant="20" id="duA-jn-gSl"/>
@@ -73,6 +74,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="tabBarHome" id="s0g-ua-VHK"/>
                     <connections>
+                        <outlet property="nameUserLabel" destination="acL-dI-Ehc" id="GPq-zg-5ru"/>
                         <outlet property="tableView" destination="Qld-gm-bFT" id="PjB-DD-v32"/>
                         <segue destination="Rbv-kH-9JL" kind="show" identifier="SegueDetalheStoryBoard" id="MCO-OA-gzI"/>
                     </connections>

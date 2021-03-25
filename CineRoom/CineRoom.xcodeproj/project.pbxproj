@@ -26,6 +26,8 @@
 		BC0387A625FAF21300EB56DE /* MovieNowPlaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0387A525FAF21300EB56DE /* MovieNowPlaying.swift */; };
 		BC0387A925FAF28F00EB56DE /* MoviePopular.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0387A825FAF28F00EB56DE /* MoviePopular.swift */; };
 		BC0387AC25FAF2F500EB56DE /* MovieTrending.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0387AB25FAF2F500EB56DE /* MovieTrending.swift */; };
+		BC20916E260D362B003CDD95 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC20916D260D362B003CDD95 /* HomeController.swift */; };
+		BC209172260D38EC003CDD95 /* HomeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC209171260D38EC003CDD95 /* HomeWorker.swift */; };
 		BC8F423825EC59BB0040776A /* TrailerFilmeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8F423625EC59BB0040776A /* TrailerFilmeTableViewCell.swift */; };
 		BC8F423925EC59BB0040776A /* TrailerFilmeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC8F423725EC59BB0040776A /* TrailerFilmeTableViewCell.xib */; };
 		BC8F423E25EC5AF90040776A /* ElencoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8F423C25EC5AF90040776A /* ElencoCollectionViewCell.swift */; };
@@ -85,6 +87,8 @@
 		BC0387A525FAF21300EB56DE /* MovieNowPlaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieNowPlaying.swift; sourceTree = "<group>"; };
 		BC0387A825FAF28F00EB56DE /* MoviePopular.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePopular.swift; sourceTree = "<group>"; };
 		BC0387AB25FAF2F500EB56DE /* MovieTrending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTrending.swift; sourceTree = "<group>"; };
+		BC20916D260D362B003CDD95 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		BC209171260D38EC003CDD95 /* HomeWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorker.swift; sourceTree = "<group>"; };
 		BC8F423625EC59BB0040776A /* TrailerFilmeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailerFilmeTableViewCell.swift; sourceTree = "<group>"; };
 		BC8F423725EC59BB0040776A /* TrailerFilmeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrailerFilmeTableViewCell.xib; sourceTree = "<group>"; };
 		BC8F423C25EC5AF90040776A /* ElencoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElencoCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -192,6 +196,8 @@
 		B2FD950A25EC0145000BDD6F /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				BC209170260D38BE003CDD95 /* Network */,
+				BC20916C260D3619003CDD95 /* Controller */,
 				D3694EAD25EBFA7C00D57CFB /* Catalog.swift */,
 				D3694EB025EBFAC800D57CFB /* VerticalTableViewCell.swift */,
 				D3694EB125EBFAC800D57CFB /* VerticalTableViewCell.xib */,
@@ -307,6 +313,22 @@
 				BCA744BF25E948E000A5B402 /* WatchListTableViewCell.xib */,
 			);
 			path = CustomTableViewCell;
+			sourceTree = "<group>";
+		};
+		BC20916C260D3619003CDD95 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BC20916D260D362B003CDD95 /* HomeController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BC209170260D38BE003CDD95 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				BC209171260D38EC003CDD95 /* HomeWorker.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		BCBDA20F2607CEB900A86423 /* Controller */ = {
@@ -496,6 +518,7 @@
 				BCE4A2C525FBD8E000CF398C /* MovieCredits.swift in Sources */,
 				BCEF40E3260AAC830037443C /* Extension+ViewController.swift in Sources */,
 				BCE4A2C225FBD78C00CF398C /* MovieDetail.swift in Sources */,
+				BC209172260D38EC003CDD95 /* HomeWorker.swift in Sources */,
 				BC0387A125FAD71F00EB56DE /* Extension+TextField.swift in Sources */,
 				BC90FCA225E963200092A52B /* EsqueciSenhaViewController.swift in Sources */,
 				B2FD950D25EC0192000BDD6F /* ConfirmarSenhaViewController.swift in Sources */,
@@ -519,6 +542,7 @@
 				B2FD94F225EBFF5F000BDD6F /* DetalheFilme.swift in Sources */,
 				13FFA77625EB246B008053C0 /* LoginViewController.swift in Sources */,
 				BC90FC9825E961B60092A52B /* Alert.swift in Sources */,
+				BC20916E260D362B003CDD95 /* HomeController.swift in Sources */,
 				BC8F423E25EC5AF90040776A /* ElencoCollectionViewCell.swift in Sources */,
 				9FF0FB852604181700B58839 /* UserModel.swift in Sources */,
 				BC0387AC25FAF2F500EB56DE /* MovieTrending.swift in Sources */,
