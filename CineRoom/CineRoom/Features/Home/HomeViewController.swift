@@ -31,7 +31,8 @@ class HomeViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		self.nameUserLabel.text = self.nameUser
+//		self.nameUserLabel.text = self.nameUser
+		self.nameUserLabel.text = "Oi 😍"
 		self.configTableView()
 	}
 	

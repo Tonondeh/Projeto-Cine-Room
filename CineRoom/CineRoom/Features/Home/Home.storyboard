@@ -37,7 +37,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HpO-Zo-qu5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="987" y="457"/>
+            <point key="canvasLocation" x="932" y="495"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="v6J-Fj-kkc">
@@ -48,14 +48,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qld-gm-bFT">
-                                <rect key="frame" x="0.0" y="81" width="414" height="732"/>
+                                <rect key="frame" x="0.0" y="89" width="414" height="724"/>
                                 <color key="backgroundColor" name="backgroundColor"/>
                                 <color key="separatorColor" name="backgroundColor"/>
                                 <color key="sectionIndexBackgroundColor" name="backgroundColor"/>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oi Lilly" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acL-dI-Ehc">
-                                <rect key="frame" x="20" y="47" width="374" height="29"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VOI-ny-BVK">
+                                <rect key="frame" x="20" y="44" width="374" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="JVa-7b-9tH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <color key="textColor" name="mainColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -64,24 +67,24 @@
                         <color key="backgroundColor" name="backgroundColor"/>
                         <constraints>
                             <constraint firstItem="q4F-FS-h6a" firstAttribute="trailing" secondItem="Qld-gm-bFT" secondAttribute="trailing" id="Ieh-c2-cqb"/>
-                            <constraint firstItem="q4F-FS-h6a" firstAttribute="trailing" secondItem="acL-dI-Ehc" secondAttribute="trailing" constant="20" id="NDV-e9-FLF"/>
+                            <constraint firstItem="VOI-ny-BVK" firstAttribute="top" secondItem="q4F-FS-h6a" secondAttribute="top" id="LMl-0r-kah"/>
+                            <constraint firstItem="VOI-ny-BVK" firstAttribute="leading" secondItem="q4F-FS-h6a" secondAttribute="leading" constant="20" id="RLt-pf-0Ey"/>
                             <constraint firstItem="Qld-gm-bFT" firstAttribute="bottom" secondItem="q4F-FS-h6a" secondAttribute="bottom" id="aKH-Zb-0fD"/>
                             <constraint firstItem="Qld-gm-bFT" firstAttribute="leading" secondItem="q4F-FS-h6a" secondAttribute="leading" id="cjA-jG-KA2"/>
-                            <constraint firstItem="acL-dI-Ehc" firstAttribute="leading" secondItem="q4F-FS-h6a" secondAttribute="leading" constant="20" id="duA-jn-gSl"/>
-                            <constraint firstItem="acL-dI-Ehc" firstAttribute="top" secondItem="q4F-FS-h6a" secondAttribute="top" constant="3" id="j3n-uJ-v0g"/>
-                            <constraint firstItem="Qld-gm-bFT" firstAttribute="top" secondItem="acL-dI-Ehc" secondAttribute="bottom" constant="5" id="juU-Ko-eEC"/>
+                            <constraint firstItem="Qld-gm-bFT" firstAttribute="top" secondItem="VOI-ny-BVK" secondAttribute="bottom" constant="5" id="fNj-RG-MEa"/>
+                            <constraint firstItem="q4F-FS-h6a" firstAttribute="trailing" secondItem="VOI-ny-BVK" secondAttribute="trailing" constant="20" id="xR0-UY-jQ8"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="tabBarHome" id="s0g-ua-VHK"/>
                     <connections>
-                        <outlet property="nameUserLabel" destination="acL-dI-Ehc" id="GPq-zg-5ru"/>
+                        <outlet property="nameUserLabel" destination="VOI-ny-BVK" id="1GW-wT-zNs"/>
                         <outlet property="tableView" destination="Qld-gm-bFT" id="PjB-DD-v32"/>
                         <segue destination="Rbv-kH-9JL" kind="show" identifier="SegueDetalheStoryBoard" id="MCO-OA-gzI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hPN-81-aqO" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="986.95652173913049" y="77.678571428571431"/>
+            <point key="canvasLocation" x="932" y="78"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="uMw-mz-BMJ">
