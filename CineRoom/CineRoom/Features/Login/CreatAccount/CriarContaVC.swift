@@ -8,6 +8,8 @@
 import UIKit
 import FirebaseAuth
 import GoogleSignIn
+import AuthenticationServices
+import CryptoKit
 
 class CriarContaVC: UIViewController {
 	
@@ -210,23 +212,257 @@ class CriarContaVC: UIViewController {
 		
 	}
 	
-	
+//    lazy var buttonAppleSignIn: ASAuthorizationAppleIDButton = {
+//      let button = ASAuthorizationAppleIDButton()
+//      button.addTarget(self, action: #selector(didTapApple(_:)), for: .touchUpInside)
+//      return button
+//    }()
+//
+//    weak var manager: SignInWithAppleManager?
+//
+//    @objc func actionButtonSignIn() {
+//      manager?.signIn()
+//    }
+//
+//    // MARK: - Protocol
+//    protocol SignInWithAppleManagerDelegate {
+//        func signIn(succeded: Bool)
+//    }
+//
+//    // MARK: - SignInWithAppleManager
+//    class SignInWithAppleManager: NSObject, ASAuthorizationControllerDelegate {
+//
+//        // MARK: - Delegate
+//
+//        var delegate: SignInWithAppleManagerDelegate?
+//
+//        // MARK: - Life Cycle
+//
+//        init(delegate: SignInWithAppleManagerDelegate?) {
+//            self.delegate = delegate
+//        }
+//
+//        deinit {
+//            Logger.log()
+//        }
+//
+//        // MARK: - Methods
+//
+//        func signIn() {
+//            let auth = ASAuthorizationAppleIDProvider()
+//            let request = auth.createRequest()
+//            request.requestedScopes = [.fullName, .email]
+//
+//            let authController = ASAuthorizationController(authorizationRequests: [request])
+//            authController.delegate = self
+//            authController.performRequests()
+//        }
+//
+//        func signInWithExistingAccountFlows() {
+//            // Prepare requests for both Apple ID and password providers.
+//            let requests = [ASAuthorizationAppleIDProvider().createRequest(),
+//                            ASAuthorizationPasswordProvider().createRequest()]
+//
+//            // Create an authorization controller with the given requests.
+//            let authorizationController = ASAuthorizationController(authorizationRequests: requests)
+//            authorizationController.delegate = self
+//            authorizationController.performRequests()
+//        }
+//    }
+//
+//    // MARK: - SignInWithAppleManager - Delegate
+//    extension  CriarContaVC: SignInWithAppleManager {
+//
+//        func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+//            switch authorization.credential {
+//            case let credential as ASAuthorizationAppleIDCredential:
+//                // Verify if it's the first authentication (credential has full name and email ONLY on the first authentication)
+//                if let _ = credential.email, let _ = credential.fullName {
+//                    signInRegisterNewAccount(credential: credential)
+//                } else {
+//                    signInExistingAccount(credential: credential)
+//                }
+//                Logger.log()
+//            case let passwordCredential as ASPasswordCredential:
+//                // Usuario com uma senha salva no iCloud Keychain Password
+//                let username = passwordCredential.user
+//                let password = passwordCredential.password
+//                // Autentica usuário com a senha atual presente na credential
+//                break
+//            default:
+//                break
+//            }
+//
+//        }
+//
+//        func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+//            // Lida com erros
+//        }
+//
+//        // MARK: - Hadlers
+//
+//        private func signInRegisterNewAccount(credential: ASAuthorizationAppleIDCredential) {
+//            // Credential Data
+//            let userIdentifier = credential.user // Match in all devices of the user, in all Apps associated with your TeamID
+//            guard let userEmail = credential.email else { return }
+//            guard let userName = credential.fullName else { return }
+//
+//            // Credential Data - Extra
+//            let identityToken = credential.identityToken
+//            let authorizationCode = credential.authorizationCode
+//            let realUserStatus = credential.realUserStatus
+//            // Cria conta no seu sistema (envia as informações da credential para seu back-end)
+//            // Salva userIdentifier no keychain
+//
+//            // Chama a classe que referencia esse Manager representando o sucesso
+//            delegate?.signIn(succeded: true)
+//        }
+//
+//        private func signInExistingAccount(credential: ASAuthorizationAppleIDCredential) {
+//            // Realiza sign in no seu back-end utilizando credential.user, credential.identityToken, credential.authorizationCode
+//            delegate?.signIn(succeded: true)
+//        }
+//
+//    }
+//
+//    func verifySignIn(userIdentifier: String, handler: @escaping ((Bool)->Void)) {
+//            let appleIDProvider = ASAuthorizationAppleIDProvider()
+//            appleIDProvider.getCredentialState(forUserID: userIdentifier) { (credentialState, error) in
+//                switch credentialState {
+//                case .authorized:
+//                    // The Apple ID credential is valid.
+//                    handler(true)
+//                case .revoked:
+//                    // The Apple ID credential is either revoked or was not found, so show the sign-in UI.
+//                    // Call your existing sign out logic. Fall through to displaying sign in.
+//                    handler(false)
+//                case .notFound:
+//                    // Credential not found, show login UI
+//                    handler(false)
+//                default:
+//                    handler(false)
+//                }
+//            }
+//        }
+//
+//    func setupSignInObserver() {
+//            // Register for revocation notification
+//            let center = NotificationCenter.default
+//            let name = ASAuthorizationAppleIDProvider.credentialRevokedNotification
+//            center.addObserver(forName: name, object: nil, queue: nil) { (notification) in
+//                // Sign the user out, optionally guide them to sign in again
+//            }
+//        }
+//
+    
+    //MARK:- Separação de Modo Botão Apple - Apple documentation
+    
+    
+//
+//    func setupProviderLoginView() {
+//        let authorizationButton = ASAuthorizationAppleIDButton()
+//        authorizationButton.addTarget(self, action: #selector(didTapApple(_:)), for: .touchUpInside)
+//        self.appleButton.addSubview(authorizationButton)
+//    }
+//
+//    @objc
+//    func handleAuthorizationAppleIDButtonPress() {
+//        let appleIDProvider = ASAuthorizationAppleIDProvider()
+//        let request = appleIDProvider.createRequest()
+//        request.requestedScopes = [.fullName, .email]
+//
+//        let authorizationController = ASAuthorizationController(authorizationRequests: [request])
+//        authorizationController.delegate = self
+//        authorizationController.presentationContextProvider = self
+//        authorizationController.performRequests()
+//    }
+//
+//    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+//        return self.view.window!
+//    }
+//
+//    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+//        switch authorization.credential {
+//        case let appleIDCredential as ASAuthorizationAppleIDCredential:
+//
+//            // Create an account in your system.
+//            let userIdentifier = appleIDCredential.user
+//            let fullName = appleIDCredential.fullName
+//            let email = appleIDCredential.email
+//
+//            // For the purpose of this demo app, store the `userIdentifier` in the keychain.
+//            self.saveUserInKeychain(userIdentifier)
+//
+//            // For the purpose of this demo app, show the Apple ID credential information in the `ResultViewController`.
+//            self.showResultViewController(userIdentifier: userIdentifier, fullName: fullName, email: email)
+//
+//        case let passwordCredential as ASPasswordCredential:
+//
+//            // Sign in using an existing iCloud Keychain credential.
+//            let username = passwordCredential.user
+//            let password = passwordCredential.password
+//
+//            // For the purpose of this demo app, show the password credential as an alert.
+//            DispatchQueue.main.async {
+//                self.showPasswordCredentialAlert(username: username, password: password)
+//            }
+//
+//        default:
+//            break
+//        }
+//    }
+//
+//    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+//        // Handle error.
+//    }
+//
+//    func performExistingAccountSetupFlows() {
+//        // Prepare requests for both Apple ID and password providers.
+//        let requests = [ASAuthorizationAppleIDProvider().createRequest(),
+//                        ASAuthorizationPasswordProvider().createRequest()]
+//
+//        // Create an authorization controller with the given requests.
+//        let authorizationController = ASAuthorizationController(authorizationRequests: requests)
+//        authorizationController.delegate = self
+//        authorizationController.presentationContextProvider = self
+//        authorizationController.performRequests()
+//    }
+//
+//    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+//        let appleIDProvider = ASAuthorizationAppleIDProvider()
+//        appleIDProvider.getCredentialState(forUserID: KeychainItem.currentUserIdentifier) { (credentialState, error) in
+//            switch credentialState {
+//            case .authorized:
+//                break // The Apple ID credential is valid.
+//            case .revoked, .notFound:
+//                // The Apple ID credential is either revoked or was not found, so show the sign-in UI.
+//                DispatchQueue.main.async {
+//                    self.window?.rootViewController?.showLoginViewController()
+//                }
+//            default:
+//                break
+//            }
+//        }
+//        return true
+//    }
+//
 	@IBAction func didTapApple(_ sender: UIButton) {
-		print("Chamar Tela Login Apple")
+        print("Chamar Tela Login Apple")
+        startSignInWithAppleFlow()
 	}
-	
-	
+
+
 	@IBAction func didTapGoogle(_ sender: UIButton) {
 		self.showSpinner()
 		self.controller.signInGoogle(delegate: self)
 	}
-	
-	
+
+
 	@IBAction func didTapFacebook(_ sender: UIButton) {
 		self.showSpinner()
-		
+
 		self.controller.signInFacebook(viewController: self) { (success) in
-			
+
 			if success {
 				print("=== SUCESSO AO CRIAR CONTA FACEBOOK NO FIREBASE ===")
 				self.performSegue(withIdentifier: "segueHomeStoryboard", sender: nil)
@@ -236,8 +472,76 @@ class CriarContaVC: UIViewController {
 			self.removeSpinner()
 		}
 	}
-	
-	
+
+    
+    
+    // Adapted from https://auth0.com/docs/api-auth/tutorials/nonce#generate-a-cryptographically-random-nonce
+    private func randomNonceString(length: Int = 32) -> String {
+      precondition(length > 0)
+      let charset: Array<Character> =
+          Array("0123456789ABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvwxyz-._")
+      var result = ""
+      var remainingLength = length
+
+      while remainingLength > 0 {
+        let randoms: [UInt8] = (0 ..< 16).map { _ in
+          var random: UInt8 = 0
+          let errorCode = SecRandomCopyBytes(kSecRandomDefault, 1, &random)
+          if errorCode != errSecSuccess {
+            fatalError("Unable to generate nonce. SecRandomCopyBytes failed with OSStatus \(errorCode)")
+          }
+          return random
+        }
+
+        randoms.forEach { random in
+          if remainingLength == 0 {
+            return
+          }
+
+          if random < charset.count {
+            result.append(charset[Int(random)])
+            remainingLength -= 1
+          }
+        }
+      }
+
+      return result
+    }
+    
+    
+
+    // Unhashed nonce.
+    fileprivate var currentNonce: String?
+
+//    @available(iOS 13, *)
+    func startSignInWithAppleFlow() {
+      let nonce = randomNonceString()
+      currentNonce = nonce
+      let appleIDProvider = ASAuthorizationAppleIDProvider()
+      let request = appleIDProvider.createRequest()
+      request.requestedScopes = [.fullName, .email]
+      request.nonce = sha256(nonce)
+
+      let authorizationController = ASAuthorizationController(authorizationRequests: [request])
+      authorizationController.delegate = self
+//      authorizationController.presentationContextProvider = self
+      authorizationController.performRequests()
+    }
+
+//    @available(iOS 13, *)
+    private func sha256(_ input: String) -> String {
+      let inputData = Data(input.utf8)
+      let hashedData = SHA256.hash(data: inputData)
+      let hashString = hashedData.compactMap {
+        return String(format: "%02x", $0)
+      }.joined()
+
+      return hashString
+    }
+    
+    
+    
+
 }
 
 
@@ -286,3 +590,50 @@ extension CriarContaVC: CriarContaProtocol {
 	}
 	
 }
+
+
+extension CriarContaVC: ASAuthorizationControllerDelegate {
+    
+//    @available(iOS 13.0, *)
+//    extension MainViewController: ASAuthorizationControllerDelegate {
+
+      func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
+          guard let nonce = currentNonce else {
+            fatalError("Invalid state: A login callback was received, but no login request was sent.")
+          }
+          guard let appleIDToken = appleIDCredential.identityToken else {
+            print("Unable to fetch identity token")
+            return
+          }
+          guard let idTokenString = String(data: appleIDToken, encoding: .utf8) else {
+            print("Unable to serialize token string from data: \(appleIDToken.debugDescription)")
+            return
+          }
+          // Initialize a Firebase credential.
+//          let credential = OAuthProvider.credential(withProviderID: "apple.com",
+//                                                    IDToken: idTokenString,
+//                                                    rawNonce: nonce)
+          // Sign in with Firebase.
+//          Auth.auth().signIn(with: credential) { (authResult, error) in
+//            if error {
+//              // Error. If error.code == .MissingOrInvalidNonce, make sure
+//              // you're sending the SHA256-hashed nonce as a hex string with
+//              // your request to Apple.
+//              print(error.localizedDescription)
+//              return
+//            }
+//            // User is signed in to Firebase with Apple.
+//            // ...
+//          }
+        }
+      }
+
+      func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        // Handle error.
+        print("==================Sign in with Apple errored: \(error.localizedDescription)")
+      }
+
+    }
+    
+//}

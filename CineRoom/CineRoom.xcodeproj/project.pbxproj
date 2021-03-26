@@ -66,6 +66,7 @@
 		13FFA77525EB246B008053C0 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		13FFA77825EB2493008053C0 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		29BA664536B670495986EBF3 /* Pods-CineRoom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CineRoom.release.xcconfig"; path = "Target Support Files/Pods-CineRoom/Pods-CineRoom.release.xcconfig"; sourceTree = "<group>"; };
+		6565AC55260ADBF600CD3583 /* CineRoom.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CineRoom.entitlements; sourceTree = "<group>"; };
 		65E8D31525E89BE50078BBE9 /* CineRoom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CineRoom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65E8D31825E89BE50078BBE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65E8D31A25E89BE50078BBE9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -155,6 +156,7 @@
 		65E8D31725E89BE50078BBE9 /* CineRoom */ = {
 			isa = PBXGroup;
 			children = (
+				6565AC55260ADBF600CD3583 /* CineRoom.entitlements */,
 				B2FD950925EC013A000BDD6F /* Features */,
 				65E8D31825E89BE50078BBE9 /* AppDelegate.swift */,
 				65E8D31A25E89BE50078BBE9 /* SceneDelegate.swift */,
@@ -661,6 +663,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CineRoom/CineRoom.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CineRoom/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -681,7 +684,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CineRoom/CineRoom.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CineRoom/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
