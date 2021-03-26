@@ -22,17 +22,21 @@ class PerfilViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var cpfTextField: UITextField!
     @IBOutlet weak var nascimentoDataPicker: UIDatePicker!
-    @IBOutlet weak var editarButton: UIBarButtonItem!
+   
+    @IBOutlet weak var editarButton: UIButton!
+    
     @IBOutlet weak var mudarFotoButton: UIButton!
     @IBOutlet weak var salvarButton: UIButton!
     
-    @IBOutlet weak var navegationBar: UINavigationBar!
+    
     
     var imagePicker:UIImagePickerController = UIImagePickerController()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+      
+        
         self.mudarFotoButton.isHidden = true
         self.salvarButton.isHidden = true
         self.configTextField()
@@ -59,13 +63,16 @@ class PerfilViewController: UIViewController {
                 //let campoTextField = cpfTextField.hasText
                 
                 if self.cpfTextField.isEditing {
-                    self.view.frame.origin.y -= keyboardSize.height
+                    self.view.frame.origin.y -= 200
+                    print("Entrou em CPF")
                 } else if self.nomeCompletoTextField.isEditing{
                     self.view.frame.origin.y -= 200
+                    print("Entrou em nome completo")
                 } else if self.nomeTextField.isEditing{
                     self.view.frame.origin.y -= 100
+                    print("Entrou em nome")
                 } else {
-                    self.view.frame.origin.y -= 300
+                    self.view.frame.origin.y -= keyboardSize.height
                 }
                 
                 
@@ -76,7 +83,7 @@ class PerfilViewController: UIViewController {
     @objc func keyboardWillHide(notification: NSNotification) {
         if self.view.frame.origin.y != 0 {
             self.view.frame.origin.y = 0
-            //self.navegationBar.frame.origin.y =
+            
             
         }
         
@@ -93,13 +100,14 @@ class PerfilViewController: UIViewController {
         self.nomeTextField.delegate = self
         self.nomeCompletoTextField.delegate = self
         self.cpfTextField.delegate = self
-        //self.cpfTextField.keyboardType = .decimalPad
+        self.cpfTextField.keyboardType = .decimalPad
+        self.cpfTextField.inputAccessoryView = self.cpfTextField.inputToolbar()
         
     }
     
     
     
-    @IBAction func editPerfilTappedButton(_ sender: UIBarButtonItem) {
+    @IBAction func editPerfilTappedButton(_ sender: UIButton) {
         self.mudarFotoButton.isHidden = false
         self.salvarButton.isHidden = false
         
@@ -147,8 +155,20 @@ extension PerfilViewController: UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-    }
+        //textField.resignFirstResponder()
+        
+        let nextTag = textField.tag + 1
+       
+               if let nextResponder = textField.superview?.viewWithTag(nextTag) {
+                   nextResponder.becomeFirstResponder()
+               } else {
+                   textField.resignFirstResponder()
+               }
+       
+               return false
+           }
+        
+
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         
@@ -188,7 +208,6 @@ extension PerfilViewController: UITextFieldDelegate {
         return true
     }
     
-    
 }
 
 
@@ -204,7 +223,14 @@ extension PerfilViewController: UINavigationControllerDelegate,UIImagePickerCont
 
 // pintar borda. O escreve e o app vai validando. Label. 1234
 
-//
+
+
+    
+    
+
+
+
+
 
 
 
