@@ -7,9 +7,6 @@
 
 import Foundation
 
-protocol CellDelegate {
-    
-    func selectedCell(index:Int)
-    
-    
+protocol CellDelegate: class {
+	func selectedCell(indexPath: IndexPath)
 }
