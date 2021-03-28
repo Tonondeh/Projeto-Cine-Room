@@ -30,7 +30,6 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        
         self.configTableView()
     }
     
@@ -39,6 +38,7 @@ class HomeViewController: UIViewController {
         self.configNameUser()
     }
     
+	
     // MARK: - Function
     private func configTableView() {
         self.tableView.delegate = self
@@ -47,23 +47,19 @@ class HomeViewController: UIViewController {
         self.tableView.register(VerticalTableViewCell.nib(), forCellReuseIdentifier: VerticalTableViewCell.identifier)
         self.tableView.register(HorizontalTableViewCell.nib(), forCellReuseIdentifier: HorizontalTableViewCell.identifier)
     }
-    private func configNameUser(){
-        if let email = Utils.getUserDefaults(key: "email") as? String{
-            self.controller.loadUserData(email: email) { (success) in
-                if success != nil{
-                    self.nameUserLabel.text = success
-                    
-                }else{
-                    self.nameUserLabel.text = "Oi 😍"
-                    
-                }
-                
-            }
-            
-        }else{
-            self.nameUserLabel.text = "Oi 😍"
-        }
-        
+	
+    private func configNameUser() {
+		guard let email = Utils.getUserDefaults(key: "email") as? String
+		else {return self.nameUserLabel.text = "Olá 😍" }
+		
+		self.controller.loadUserData(email: email) { (success) in
+			if let email = success {
+				self.nameUserLabel.text = "Olá, \(email) !"
+			} else {
+				self.nameUserLabel.text = "Olá 😍"
+			}
+		}
+		        
     }
     
 }

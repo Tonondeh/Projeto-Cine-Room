@@ -72,6 +72,7 @@ class LoginViewController: UIViewController {
 			self.controller.signIn(email: emailtextField.text, password: senhaTextField.text) { (success) in
 				if success {
 					print("=== LOGIN FIREBASE")
+					Utils.saveUserDefaults(value: self.emailtextField.text, key: "email")
 					self.performSegue(withIdentifier: "segueHome", sender: nil)
 				} else {
 					print("=== erro LOGIN FIREBASE")

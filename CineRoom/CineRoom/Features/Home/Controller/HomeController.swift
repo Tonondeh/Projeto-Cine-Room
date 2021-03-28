@@ -82,7 +82,7 @@ class HomeController {
 		return self.movieNowPlaying?.results[indexPath.row] ?? nil
 	}
     
-    func loadUserData(email: String,completion: @escaping(_ success:String?) ->Void){
+    func loadUserData(email: String, completion: @escaping(_ success: String?) ->Void){
         DataManager().loadUserData(email: email) { (success) in
             completion(success)
         }
