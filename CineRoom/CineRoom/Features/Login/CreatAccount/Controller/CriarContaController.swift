@@ -59,6 +59,7 @@ class CriarContaController: NSObject {
 	
 	func createUser(nameDisplay: String?, nameFull: String?, email: String?, cpf: Int64, dateBrith: Date?) {
 		DataManager().createUser(nameDisplay: nameDisplay, nameFull: nameFull, email: email, cpf: cpf, dateBrith: dateBrith)
+        Utils.saveUserDefaults(value: email, key: "email")
 	}
 	
 }

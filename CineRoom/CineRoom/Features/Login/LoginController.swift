@@ -22,7 +22,8 @@ class LoginController {
 		LoginWorker().addStateDidChangeListener { (success) in
 			if success != nil {
 				print("== User logado: \(String(describing: success)) ==")
-				completion(true)
+                Utils.saveUserDefaults(value: success?.email, key: "email")
+                completion(true)
 			} else {
 				completion(false)
 			}
@@ -40,4 +41,6 @@ class LoginController {
 		}
 	}
 	
+   
+    
 }

@@ -30,10 +30,10 @@ class LoginViewController: UIViewController {
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-		
+
 		// TODO: Colocar um Loading....
 		self.showSpinner()
-		
+
 		self.controller.addStateDidChangeListener { (success) in
 			if success {
 				self.performSegue(withIdentifier: "segueHome", sender: nil)
