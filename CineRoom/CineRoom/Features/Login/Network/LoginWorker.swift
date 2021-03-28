@@ -88,7 +88,7 @@ class LoginWorker: NSObject {
 		
 	}
 	
-	func addStateDidChangeListener(completion: @escaping(_ success: String?) -> Void) {
+	func addStateDidChangeListener(completion: @escaping(_ success: User?) -> Void) {
 		
 		// Verificar o que retornar para Controller
 		// Dados do User.
@@ -97,7 +97,8 @@ class LoginWorker: NSObject {
 			if user == nil {
 				completion(nil)
 			} else {
-				completion(user?.email)
+				
+				completion(user)
 			}
 		}
 	}

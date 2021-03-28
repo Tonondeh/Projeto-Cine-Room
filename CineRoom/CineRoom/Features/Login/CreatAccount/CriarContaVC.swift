@@ -197,6 +197,13 @@ class CriarContaVC: UIViewController {
 			self.controller.createUserFirebase(email: emailTextField.text, password: senhaTextField.text) { (success) in
 				if success {
 					print("=== SUCESSO AO CRIAR CONTA NO FIREBASE ===")
+					
+					self.controller.createUser(nameDisplay: self.nomeTextField.text,
+														nameFull: self.nomeTextField.text,
+														email: self.emailTextField.text,
+														cpf: 0,
+														dateBrith: Date())
+					
 					self.performSegue(withIdentifier: "segueHomeStoryboard", sender: nil)
 				} else {
 					print("=== ERRO AO CRIAR CONTA NO FIREBASE ===")

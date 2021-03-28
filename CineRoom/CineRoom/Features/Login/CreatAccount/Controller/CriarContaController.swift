@@ -57,6 +57,10 @@ class CriarContaController: NSObject {
 		GIDSignIn.sharedInstance()?.signIn()
 	}
 	
+	func createUser(nameDisplay: String?, nameFull: String?, email: String?, cpf: Int64, dateBrith: Date?) {
+		DataManager().createUser(nameDisplay: nameDisplay, nameFull: nameFull, email: email, cpf: cpf, dateBrith: dateBrith)
+	}
+	
 }
 
 

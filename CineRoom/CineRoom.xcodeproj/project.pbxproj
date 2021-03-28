@@ -26,6 +26,8 @@
 		BC0387A625FAF21300EB56DE /* MovieNowPlaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0387A525FAF21300EB56DE /* MovieNowPlaying.swift */; };
 		BC0387A925FAF28F00EB56DE /* MoviePopular.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0387A825FAF28F00EB56DE /* MoviePopular.swift */; };
 		BC0387AC25FAF2F500EB56DE /* MovieTrending.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0387AB25FAF2F500EB56DE /* MovieTrending.swift */; };
+		BC1FE87E2611182F009AD5F2 /* CineRoom.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BC1FE87C2611182F009AD5F2 /* CineRoom.xcdatamodeld */; };
+		BC1FE88126111B1C009AD5F2 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1FE88026111B1C009AD5F2 /* DataManager.swift */; };
 		BC20916E260D362B003CDD95 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC20916D260D362B003CDD95 /* HomeController.swift */; };
 		BC209172260D38EC003CDD95 /* HomeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC209171260D38EC003CDD95 /* HomeWorker.swift */; };
 		BC8F423825EC59BB0040776A /* TrailerFilmeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8F423625EC59BB0040776A /* TrailerFilmeTableViewCell.swift */; };
@@ -86,6 +88,8 @@
 		BC0387A525FAF21300EB56DE /* MovieNowPlaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieNowPlaying.swift; sourceTree = "<group>"; };
 		BC0387A825FAF28F00EB56DE /* MoviePopular.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePopular.swift; sourceTree = "<group>"; };
 		BC0387AB25FAF2F500EB56DE /* MovieTrending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTrending.swift; sourceTree = "<group>"; };
+		BC1FE87D2611182F009AD5F2 /* CineRoom.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CineRoom.xcdatamodel; sourceTree = "<group>"; };
+		BC1FE88026111B1C009AD5F2 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		BC20916D260D362B003CDD95 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		BC209171260D38EC003CDD95 /* HomeWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorker.swift; sourceTree = "<group>"; };
 		BC8F423625EC59BB0040776A /* TrailerFilmeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailerFilmeTableViewCell.swift; sourceTree = "<group>"; };
@@ -164,6 +168,7 @@
 				65E8D32325E89BEA0078BBE9 /* LaunchScreen.storyboard */,
 				65E8D32625E89BEA0078BBE9 /* Info.plist */,
 				BCBDA2192607D91C00A86423 /* GoogleService-Info.plist */,
+				BC1FE87C2611182F009AD5F2 /* CineRoom.xcdatamodeld */,
 			);
 			path = CineRoom;
 			sourceTree = "<group>";
@@ -364,6 +369,7 @@
 			isa = PBXGroup;
 			children = (
 				BCCCC6C52607DD7D001C0CD4 /* LoginWorker.swift */,
+				BC1FE88026111B1C009AD5F2 /* DataManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -548,12 +554,14 @@
 				D3694EB225EBFAC800D57CFB /* VerticalTableViewCell.swift in Sources */,
 				65E8D31925E89BE50078BBE9 /* AppDelegate.swift in Sources */,
 				B27DEAF425EBF9E800E501F5 /* PerfilViewController.swift in Sources */,
+				BC1FE87E2611182F009AD5F2 /* CineRoom.xcdatamodeld in Sources */,
 				BCBDA2112607CED200A86423 /* ForgetPassController.swift in Sources */,
 				65E8D31B25E89BE50078BBE9 /* SceneDelegate.swift in Sources */,
 				B2FD950225EBFFBC000BDD6F /* DetalheFilmeVC.swift in Sources */,
 				B2FD94F225EBFF5F000BDD6F /* DetalheFilme.swift in Sources */,
 				13FFA77625EB246B008053C0 /* LoginViewController.swift in Sources */,
 				BC90FC9825E961B60092A52B /* Alert.swift in Sources */,
+				BC1FE88126111B1C009AD5F2 /* DataManager.swift in Sources */,
 				BC20916E260D362B003CDD95 /* HomeController.swift in Sources */,
 				BC8F423E25EC5AF90040776A /* ElencoCollectionViewCell.swift in Sources */,
 				9FF0FB852604181700B58839 /* UserModel.swift in Sources */,
@@ -753,6 +761,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BC1FE87C2611182F009AD5F2 /* CineRoom.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BC1FE87D2611182F009AD5F2 /* CineRoom.xcdatamodel */,
+			);
+			currentVersion = BC1FE87D2611182F009AD5F2 /* CineRoom.xcdatamodel */;
+			path = CineRoom.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 65E8D30D25E89BE50078BBE9 /* Project object */;
 }
