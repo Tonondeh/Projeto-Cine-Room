@@ -71,7 +71,9 @@ extension HorizontalTableViewCell: UICollectionViewDelegate, UICollectionViewDat
 	
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 		print("Clicado em Celula Horizontal: \(indexPath.row)")
-		self.delegate?.selectedCell(indexPath: indexPath)
+		let movieID = self.controller.getMoviePopular(indexPath: indexPath)
+		
+		self.delegate?.selectedCell(indexPath: indexPath, id: movieID?.id)
 	}
 	
 }

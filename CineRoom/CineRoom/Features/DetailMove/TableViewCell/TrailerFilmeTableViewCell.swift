@@ -9,20 +9,25 @@ import UIKit
 
 class TrailerFilmeTableViewCell: UITableViewCell {
 	
-	static let identifier: String = "TrailerFilmeTableViewCell"
-	
 	// MARK: - IBOutlet
 	@IBOutlet weak var nomeTrailerLabel: UILabel!
 	@IBOutlet weak var iconImageView: UIImageView!
 	
 	
-	static func nib() -> UINib {
-		return UINib(nibName: self.identifier, bundle: nil)
-	}
+	// MARK: - Variable
+	static let identifier: String = "TrailerFilmeTableViewCell"
 	
+	
+	// MARK: - Lifecycle
 	override func awakeFromNib() {
 		super.awakeFromNib()
 		configImageView()
+	}
+	
+	
+	// MARK: - Function
+	static func nib() -> UINib {
+		return UINib(nibName: self.identifier, bundle: nil)
 	}
 	
 	func configImageView() {
@@ -30,8 +35,9 @@ class TrailerFilmeTableViewCell: UITableViewCell {
 		self.iconImageView.tintColor = UIColor(named: "secondColor")
 	}
 	
-	func configCell(detalhe: DetalheFilme) {
-		self.nomeTrailerLabel.text = detalhe.nomeFilme
+	func configCell(video: ResultVideos?) {
+		guard let _video = video else { return }
+		self.nomeTrailerLabel.text = _video.name
 	}
 	
 }

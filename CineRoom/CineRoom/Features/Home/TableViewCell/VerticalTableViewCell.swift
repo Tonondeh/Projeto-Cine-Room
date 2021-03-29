@@ -98,8 +98,20 @@ extension VerticalTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		var movieID: Int?
 		print("Clicado em Celula Vertical: \(indexPath.row)")
-		self.delegate?.selectedCell(indexPath: indexPath)
+		
+		switch self.category {
+			case .Trending:
+				let movie = self.controller.getMovieTrending(indexPath: indexPath)
+				movieID = movie?.id
+			case .NowPlaying:
+				let movie = self.controller.getMovieNowPlaying(indexPath: indexPath)
+				movieID = movie?.id
+			default:
+				break
+		}
+		self.delegate?.selectedCell(indexPath: indexPath, id: movieID)
 	}
 	
 }

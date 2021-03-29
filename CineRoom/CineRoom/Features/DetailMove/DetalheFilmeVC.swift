@@ -24,18 +24,8 @@ class DetalheFilmeVC: UIViewController {
 	
 	
 	// MARK: - Variable
-	var atores: [Elenco] = [ Elenco(nome: "Gal Gadot", nomeArt: "Diana Prince", imageElenco: #imageLiteral(resourceName: "ator4")),
-									 Elenco(nome: "Ator 1", nomeArt: "Ator Art 1", imageElenco: UIImage(named: "ator1") ?? UIImage()),
-									 Elenco(nome: "Ator 2", nomeArt: "Ator Art 2", imageElenco: UIImage(named: "ator2") ?? UIImage()),
-									 Elenco(nome: "Ator 3", nomeArt: "Ator Art 3", imageElenco: UIImage(named: "ator3") ?? UIImage()),
-									 Elenco(nome: "Ator 4", nomeArt: "Ator Art 4", imageElenco: UIImage(named: "ator4") ?? UIImage())
-	]
-	
-	var traileres: [DetalheFilme] = [ DetalheFilme(nomeFilme: "Oficial trailler"),
-												 DetalheFilme(nomeFilme: "Trailer Youtube"),
-												 DetalheFilme(nomeFilme: "Mulher Maravilha 1984"),
-												 DetalheFilme(nomeFilme: "Wonder Woman 1984 main trailer Subtitle")
-	]
+	var movieID: Int?
+	let controller: DetalheController = DetalheController()
 	
 	
 	// MARK: - Enum
@@ -54,35 +44,36 @@ class DetalheFilmeVC: UIViewController {
 		configBarButtonItem()
 		configCollectionView()
 		configTableView()
+		loadMovieDetails()
 	}
 	
 	
 	
 	// MARK: - Function
-	func configScrollView() {
+	private func configScrollView() {
 		self.scrollView.delaysContentTouches = true
 	}
 	
-	func configBarButtonItem() {
+	private func configBarButtonItem() {
 		self.bookmarkBarButtonItem.tintColor = .black
 		self.heartBarButtonItem.tintColor = .black
 	}
 	
-	func configCollectionView() {
+	private func configCollectionView() {
 		self.collectionView.backgroundColor = UIColor(named: "backgroundColor")
 		self.collectionView.dataSource = self
 		self.collectionView.delegate = self
 		self.collectionView.register(ElencoCollectionViewCell.nib(), forCellWithReuseIdentifier: ElencoCollectionViewCell.identifier)
 	}
 	
-	func configTableView() {
+	private func configTableView() {
 		self.tableView.backgroundColor = UIColor(named: "backgroundColor")
 		self.tableView.delegate = self
 		self.tableView.dataSource = self
 		self.tableView.register(TrailerFilmeTableViewCell.nib(), forCellReuseIdentifier: TrailerFilmeTableViewCell.identifier)
 	}
 	
-	func changeBookmarkBarButtonItem(_ button: UIBarButtonItem) {
+	private func changeBookmarkBarButtonItem(_ button: UIBarButtonItem) {
 		let imageBookmark = UIImage(systemName: NameImage.bookmark.rawValue)
 		let imageBookmarkFill = UIImage(systemName: NameImage.bookmarkFill.rawValue)
 		
@@ -95,7 +86,7 @@ class DetalheFilmeVC: UIViewController {
 		}
 	}
 	
-	func changeHeartBarButtonItem(_ button: UIBarButtonItem) {
+	private func changeHeartBarButtonItem(_ button: UIBarButtonItem) {
 		let imageHeart = UIImage(systemName: NameImage.heart.rawValue)
 		let imageHeartFill = UIImage(systemName: NameImage.heartFill.rawValue)
 		
@@ -109,6 +100,51 @@ class DetalheFilmeVC: UIViewController {
 		
 	}
 	
+	private func loadMovieDetails() {
+		
+		if let id = self.movieID {
+			
+			self.controller.loadMovieDetail(movieId: id) { (success, error) in
+				if success {
+					if let detail = self.controller.getMovieDetail() {
+						self.nomeFilmeLabel.text = detail.title
+						self.generoFilmeLabel.text = self.controller.getGenres()
+						self.ratingFilmeLabel.text = "\(detail.voteAverage)"
+						self.overviewFilmeLabel.text = detail.overview
+						self.duracaoFilmeLabel.text = self.controller.convertMinHour(value: detail.runtime)
+						
+						if detail.homepage == "" {
+							self.assistirFilmeButton.isEnabled = false
+						}
+					}
+					
+				} else {
+					print("Erro ao chamar o detalhe")
+					self.dismiss(animated: true, completion: nil)
+				}
+			}
+			
+			self.controller.loadMovieCredit(movieId: id) { (success, error) in
+				if success {
+					print("Encontrou Credits")
+					self.collectionView.reloadData()
+				} else {
+					print("Não encontrou Credits")
+				}
+			}
+			
+			self.controller.loadMovieVideo(movieId: id) { (success, error) in
+				if success {
+					print("Encontrou Videos")
+					self.tableView.reloadData()
+				} else {
+					print("Não encontrou Videos")
+				}
+			}
+			
+		}
+		
+	}
 	
 	
 	// MARK: - Action
@@ -131,28 +167,23 @@ class DetalheFilmeVC: UIViewController {
 		dismiss(animated: true, completion: nil)
 	}
 	
-	
-	
 }
-
 
 
 // MARK: - Extension -> CollectionView
 extension DetalheFilmeVC: UICollectionViewDelegate, UICollectionViewDataSource {
 	
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return atores.count
+		return self.controller.resultsMovieCredits
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		let ator = atores[indexPath.row]
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ElencoCollectionViewCell.identifier, for: indexPath) as? ElencoCollectionViewCell
 		
-		cell?.configCell(elenco: ator)
+		cell?.configCell(cast: self.controller.getMovieCredits(indexPath: indexPath))
 		
 		return cell ?? UICollectionViewCell()
 	}
-	
 	
 }
 
@@ -162,14 +193,13 @@ extension DetalheFilmeVC: UICollectionViewDelegate, UICollectionViewDataSource {
 extension DetalheFilmeVC: UITableViewDelegate, UITableViewDataSource {
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return traileres.count
+		return self.controller.resultsMovieVideos
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let trailer = traileres[indexPath.row]
 		let cell = tableView.dequeueReusableCell(withIdentifier: TrailerFilmeTableViewCell.identifier, for: indexPath) as? TrailerFilmeTableViewCell
 		
-		cell?.configCell(detalhe: trailer)
+		cell?.configCell(video: self.controller.getMovieVideos(indexPath: indexPath))
 		
 		return cell ?? UITableViewCell()
 	}
@@ -177,6 +207,5 @@ extension DetalheFilmeVC: UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		print("Celula selecionada - \(indexPath.row)")
 	}
-	
-	
+
 }
