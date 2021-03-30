@@ -40,8 +40,10 @@ class HomeWorker {
 				print("==> Sucesso na busca de Movie Trending")
 				completion(movie, nil)
 				
-			} catch {
+			} catch let error as NSError {
 				print("==>> Erro na Request Movie Trending")
+				print(error.localizedDescription)
+				print(error.debugDescription)
 				completion(nil, NSError())
 			}
 			
@@ -72,11 +74,13 @@ class HomeWorker {
 			
 			do {
 				let movie: MoviePopular = try MoviePopular(data: data)
-				print("==> Sucesso na busca de Movie Trending")
+				print("==> Sucesso na busca de Movie Popular")
 				completion(movie, nil)
 				
-			} catch {
-				print("==>> Erro na Request Movie Trending")
+			} catch let error as NSError {
+				print("==>> Erro na Request Movie Popular")
+				print(error.localizedDescription)
+				print(error.debugDescription)
 				completion(nil, NSError())
 			}
 			
@@ -107,11 +111,13 @@ class HomeWorker {
 			
 			do {
 				let movie: MovieNowPlaying = try MovieNowPlaying(data: data)
-				print("==> Sucesso na busca de Movie Trending")
+				print("==> Sucesso na busca de Movie Now Playing")
 				completion(movie, nil)
 				
-			} catch {
-				print("==>> Erro na Request Movie Trending")
+			} catch let error as NSError {
+				print("==>> Erro na Request Movie Now Playing")
+				print(error.localizedDescription)
+				print(error.debugDescription)
 				completion(nil, NSError())
 			}
 			

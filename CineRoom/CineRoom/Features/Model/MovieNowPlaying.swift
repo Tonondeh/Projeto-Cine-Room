@@ -125,7 +125,7 @@ extension Dates {
 // MARK: - Result
 class ResultNowPlaying: Codable {
 	 let adult: Bool
-	 let backdropPath: String
+	 let backdropPath: String?
 	 let genreIDS: [Int]
 	 let id: Int
 	 let originalLanguage, originalTitle, overview: String
@@ -150,7 +150,7 @@ class ResultNowPlaying: Codable {
 		  case voteCount = "vote_count"
 	 }
 
-	 init(adult: Bool, backdropPath: String, genreIDS: [Int], id: Int, originalLanguage: String, originalTitle: String, overview: String, popularity: Double, posterPath: String, releaseDate: String, title: String, video: Bool, voteAverage: Double, voteCount: Int) {
+	 init(adult: Bool, backdropPath: String?, genreIDS: [Int], id: Int, originalLanguage: String, originalTitle: String, overview: String, popularity: Double, posterPath: String, releaseDate: String, title: String, video: Bool, voteAverage: Double, voteCount: Int) {
 		  self.adult = adult
 		  self.backdropPath = backdropPath
 		  self.genreIDS = genreIDS

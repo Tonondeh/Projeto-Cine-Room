@@ -8,6 +8,7 @@ target 'CineRoom' do
   # Pods for CineRoom
 	pod 'Firebase/Analytics'
 	pod 'Firebase/Auth'
+	pod 'Firebase/Database'
 	pod 'GoogleSignIn'
 	pod 'FBSDKLoginKit'
 	pod 'Alamofire', '~> 5.4'

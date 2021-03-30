@@ -117,6 +117,12 @@ class DetalheController {
 	}
 	
 	
+	// Método para gravar Watch List
+	func setWatchList(movieID: Int?, name: String?, genre: String?, rating: String?, foto: String?, favorite: String?, watch: String?) {
+		
+	}
+	
+	
 
 	
 	

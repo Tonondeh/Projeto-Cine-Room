@@ -76,8 +76,8 @@ class DetalheFilmeVC: UIViewController {
 	}
 	
 	private func configBarButtonItem() {
-		self.changeBookmarkBarButtonItem(self.bookmarkBarButtonItem)
-		self.changeHeartBarButtonItem(self.heartBarButtonItem)
+		self.bookmarkBarButtonItem.tintColor = .black
+		self.heartBarButtonItem.tintColor    = .black
 	}
 	
 	private func configCollectionView() {
@@ -98,6 +98,7 @@ class DetalheFilmeVC: UIViewController {
 		print(#function)
 		let imageBookmark = UIImage(systemName: NameImage.bookmark.rawValue)
 		let imageBookmarkFill = UIImage(systemName: NameImage.bookmarkFill.rawValue)
+		isQueroAssistir = !isQueroAssistir
 		
 		if isQueroAssistir {
 			button.image = imageBookmarkFill
@@ -113,7 +114,8 @@ class DetalheFilmeVC: UIViewController {
 		print(#function)
 		let imageHeart = UIImage(systemName: NameImage.heart.rawValue)
 		let imageHeartFill = UIImage(systemName: NameImage.heartFill.rawValue)
-		
+		isFavorito = !isFavorito
+				
 		if isFavorito {
 			button.image = imageHeartFill
 			button.tintColor = .red

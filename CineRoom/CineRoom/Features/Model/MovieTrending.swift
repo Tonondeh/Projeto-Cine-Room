@@ -73,7 +73,7 @@ extension MovieTrending {
 // MARK: - ResultTrending
 class ResultTrending: Codable {
 	 let adult: Bool
-	 let backdropPath: String
+	 let backdropPath: String?
 	 let genreIDS: [Int]
 	 let id: Int
 	 let originalLanguage, originalTitle, overview, posterPath: String
@@ -101,7 +101,7 @@ class ResultTrending: Codable {
 		  case mediaType = "media_type"
 	 }
 
-	 init(adult: Bool, backdropPath: String, genreIDS: [Int], id: Int, originalLanguage: String, originalTitle: String, overview: String, posterPath: String, releaseDate: String, title: String, video: Bool, voteAverage: Double, voteCount: Int, popularity: Double, mediaType: String) {
+	 init(adult: Bool, backdropPath: String?, genreIDS: [Int], id: Int, originalLanguage: String, originalTitle: String, overview: String, posterPath: String, releaseDate: String, title: String, video: Bool, voteAverage: Double, voteCount: Int, popularity: Double, mediaType: String) {
 		  self.adult = adult
 		  self.backdropPath = backdropPath
 		  self.genreIDS = genreIDS

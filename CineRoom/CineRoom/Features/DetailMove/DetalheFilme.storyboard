@@ -194,7 +194,7 @@ formidáveis, Maxwell Lord e a Mulher-Leopardo, enquanto reencontra misteriosame
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Detalhe" id="hq6-LS-QML">
-                        <barButtonItem key="leftBarButtonItem" title="Cancelar" id="01Z-i1-g4L">
+                        <barButtonItem key="leftBarButtonItem" title="Voltar" id="01Z-i1-g4L">
                             <connections>
                                 <action selector="didTapCancelar:" destination="0VM-A7-eKD" id="2w7-yk-KCd"/>
                             </connections>

@@ -11,7 +11,7 @@ import Foundation
 // MARK: - MovieDetail
 class MovieDetail: Codable {
 	let adult: Bool
-	let backdropPath: String
+	let backdropPath: String?
 	//	 let belongsToCollection: JSONNull?
 	let belongsToCollection: BelongsToCollection?
 	let budget: Int
@@ -51,7 +51,7 @@ class MovieDetail: Codable {
 		case voteCount = "vote_count"
 	}
 	
-	init(adult: Bool, backdropPath: String, belongsToCollection: BelongsToCollection?, budget: Int, genres: [Genre], homepage: String, id: Int, imdbID: String, originalLanguage: String, originalTitle: String, overview: String, popularity: Double, posterPath: String, productionCompanies: [ProductionCompany], productionCountries: [ProductionCountry], releaseDate: String, revenue: Int, runtime: Int, spokenLanguages: [SpokenLanguage], status: String, tagline: String, title: String, video: Bool, voteAverage: Double, voteCount: Int) {
+	init(adult: Bool, backdropPath: String?, belongsToCollection: BelongsToCollection?, budget: Int, genres: [Genre], homepage: String, id: Int, imdbID: String, originalLanguage: String, originalTitle: String, overview: String, popularity: Double, posterPath: String, productionCompanies: [ProductionCompany], productionCountries: [ProductionCountry], releaseDate: String, revenue: Int, runtime: Int, spokenLanguages: [SpokenLanguage], status: String, tagline: String, title: String, video: Bool, voteAverage: Double, voteCount: Int) {
 		self.adult = adult
 		self.backdropPath = backdropPath
 		self.belongsToCollection = belongsToCollection

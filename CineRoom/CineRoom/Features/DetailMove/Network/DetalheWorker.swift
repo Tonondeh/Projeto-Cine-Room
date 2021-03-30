@@ -7,12 +7,15 @@
 
 import Foundation
 import Alamofire
+import Firebase
 
 class DetalheWorker {
 	
 	// MARK: - Variable
 	private let apiKey: String = "api_key=f0ca6496aecedd1cfc6487c0d9849760"
 	private let urlBase: String = "https://api.themoviedb.org/3/movie/"
+	private let autenticacao = Auth.auth()
+
 		
 	// Método para buscar Detalhe do Filme
 	func loadMovieDetail(movieId: Int, completion: @escaping(_ success: MovieDetail?, _ error: NSError?) -> Void) {
@@ -124,6 +127,12 @@ class DetalheWorker {
 			}
 			
 		}
+		
+	}
+	
+	
+	// Método para gravar filme na WatchList
+	func setWatchList(movieID: Int?, name: String?, genre: String?, rating: String?, foto: String?, favorite: String?, watch: String?) {
 		
 	}
 		
