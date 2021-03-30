@@ -37,6 +37,7 @@ class DetalheFilmeVC: UIViewController {
 	}
 	
 	
+	// MARK: - Lifecycle
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
@@ -47,6 +48,18 @@ class DetalheFilmeVC: UIViewController {
 		loadMovieDetails()
 	}
 	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if segue.identifier == "segueAssistir" {
+			guard let assistirVC = segue.destination as? AssistirViewController else { return }
+			assistirVC.urlHomePage = sender as? String
+			return
+		}
+		if segue.identifier == "segueTrailer" {
+			guard let trailerVC = segue.destination as? TrailerViewController else { return }
+			trailerVC.videoKey = sender as? String
+			return
+		}
+	}
 	
 	
 	// MARK: - Function
@@ -160,6 +173,11 @@ class DetalheFilmeVC: UIViewController {
 	@IBAction func didTapAssistir(_ sender: UIButton) {
 		print(#function)
 		print("Ir para Tela Assistir Agora!")
+		let movie = self.controller.getMovieDetail()
+		
+		if movie?.homepage != "" {
+			self.performSegue(withIdentifier: "segueAssistir", sender: movie?.homepage)
+		}
 	}
 	
 	
@@ -206,6 +224,9 @@ extension DetalheFilmeVC: UITableViewDelegate, UITableViewDataSource {
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		print("Celula selecionada - \(indexPath.row)")
+		
+		let video = self.controller.getMovieVideos(indexPath: indexPath)
+		performSegue(withIdentifier: "segueTrailer", sender: video?.key)
 	}
 
 }

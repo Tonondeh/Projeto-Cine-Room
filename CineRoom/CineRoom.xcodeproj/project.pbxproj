@@ -35,6 +35,8 @@
 		BC8F423925EC59BB0040776A /* TrailerFilmeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC8F423725EC59BB0040776A /* TrailerFilmeTableViewCell.xib */; };
 		BC8F423E25EC5AF90040776A /* ElencoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8F423C25EC5AF90040776A /* ElencoCollectionViewCell.swift */; };
 		BC8F423F25EC5AF90040776A /* ElencoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC8F423D25EC5AF90040776A /* ElencoCollectionViewCell.xib */; };
+		BC9022CB26122398002AC985 /* TrailerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9022CA26122398002AC985 /* TrailerViewController.swift */; };
+		BC9022CE26122436002AC985 /* AssistirViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9022CD26122436002AC985 /* AssistirViewController.swift */; };
 		BC90FC9225E961880092A52B /* CriarConta.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC90FC9125E961880092A52B /* CriarConta.storyboard */; };
 		BC90FC9525E961990092A52B /* CriarContaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC90FC9425E961990092A52B /* CriarContaVC.swift */; };
 		BC90FC9825E961B60092A52B /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC90FC9725E961B60092A52B /* Alert.swift */; };
@@ -98,6 +100,8 @@
 		BC8F423725EC59BB0040776A /* TrailerFilmeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrailerFilmeTableViewCell.xib; sourceTree = "<group>"; };
 		BC8F423C25EC5AF90040776A /* ElencoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElencoCollectionViewCell.swift; sourceTree = "<group>"; };
 		BC8F423D25EC5AF90040776A /* ElencoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ElencoCollectionViewCell.xib; sourceTree = "<group>"; };
+		BC9022CA26122398002AC985 /* TrailerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailerViewController.swift; sourceTree = "<group>"; };
+		BC9022CD26122436002AC985 /* AssistirViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistirViewController.swift; sourceTree = "<group>"; };
 		BC90FC9125E961880092A52B /* CriarConta.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CriarConta.storyboard; sourceTree = "<group>"; };
 		BC90FC9425E961990092A52B /* CriarContaVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CriarContaVC.swift; sourceTree = "<group>"; };
 		BC90FC9725E961B60092A52B /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
@@ -262,6 +266,8 @@
 				BC1FE89226117713009AD5F2 /* CollectionViewCell */,
 				B2FD94F125EBFF5F000BDD6F /* DetalheFilme.storyboard */,
 				B2FD950125EBFFBC000BDD6F /* DetalheFilmeVC.swift */,
+				BC9022CA26122398002AC985 /* TrailerViewController.swift */,
+				BC9022CD26122436002AC985 /* AssistirViewController.swift */,
 			);
 			path = DetailMove;
 			sourceTree = "<group>";
@@ -579,6 +585,7 @@
 				132B69CF2611285500DB6516 /* Utils.swift in Sources */,
 				BCA744C025E948E000A5B402 /* WatchListTableViewCell.swift in Sources */,
 				BCE4A2C525FBD8E000CF398C /* MovieCredits.swift in Sources */,
+				BC9022CB26122398002AC985 /* TrailerViewController.swift in Sources */,
 				BCEF40E3260AAC830037443C /* Extension+ViewController.swift in Sources */,
 				BCE4A2C225FBD78C00CF398C /* MovieDetail.swift in Sources */,
 				BC209172260D38EC003CDD95 /* HomeWorker.swift in Sources */,
@@ -610,6 +617,7 @@
 				BC8F423E25EC5AF90040776A /* ElencoCollectionViewCell.swift in Sources */,
 				9FF0FB852604181700B58839 /* UserModel.swift in Sources */,
 				BC0387AC25FAF2F500EB56DE /* MovieTrending.swift in Sources */,
+				BC9022CE26122436002AC985 /* AssistirViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

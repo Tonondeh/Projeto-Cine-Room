@@ -224,11 +224,79 @@ formidáveis, Maxwell Lord e a Mulher-Leopardo, enquanto reencontra misteriosame
                         <outlet property="ratingFilmeLabel" destination="iWu-US-5v1" id="1qX-OG-WNd"/>
                         <outlet property="scrollView" destination="klQ-pw-kwt" id="d8B-Fj-Jjo"/>
                         <outlet property="tableView" destination="Os7-kU-Kwv" id="VlL-Lp-L4V"/>
+                        <segue destination="9k4-HM-IeU" kind="presentation" identifier="segueTrailer" modalPresentationStyle="fullScreen" id="sbU-pP-pBH"/>
+                        <segue destination="Wdt-94-DOl" kind="show" identifier="segueAssistir" id="AlF-RL-rcx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Xz-kP-0Dx" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3110" y="749"/>
+        </scene>
+        <!--Assistir View Controller-->
+        <scene sceneID="h1O-S8-3sz">
+            <objects>
+                <viewController id="Wdt-94-DOl" customClass="AssistirViewController" customModule="CineRoom" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fbw-LG-7aM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Spz-cY-VUz">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="QwQ-JC-otr"/>
+                        <color key="backgroundColor" name="backgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="QwQ-JC-otr" firstAttribute="trailing" secondItem="Spz-cY-VUz" secondAttribute="trailing" id="439-xk-sJu"/>
+                            <constraint firstItem="Spz-cY-VUz" firstAttribute="leading" secondItem="QwQ-JC-otr" secondAttribute="leading" id="8TU-MD-8Kx"/>
+                            <constraint firstItem="QwQ-JC-otr" firstAttribute="bottom" secondItem="Spz-cY-VUz" secondAttribute="bottom" id="8pd-ep-Mc4"/>
+                            <constraint firstItem="Spz-cY-VUz" firstAttribute="top" secondItem="QwQ-JC-otr" secondAttribute="top" id="XoW-KF-oXF"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Z3b-Ph-V9d"/>
+                    <connections>
+                        <outlet property="webView" destination="Spz-cY-VUz" id="sQL-Af-JYt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1gx-Me-kfu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3883" y="1107"/>
+        </scene>
+        <!--Trailer View Controller-->
+        <scene sceneID="UI7-2K-dvL">
+            <objects>
+                <viewController id="9k4-HM-IeU" customClass="TrailerViewController" customModule="CineRoom" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Abf-IG-eGa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wEB-8y-BMY">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="5Qy-Zs-t7G"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <constraints>
+                            <constraint firstItem="5Qy-Zs-t7G" firstAttribute="bottom" secondItem="wEB-8y-BMY" secondAttribute="bottom" id="ElS-ct-lD7"/>
+                            <constraint firstItem="5Qy-Zs-t7G" firstAttribute="trailing" secondItem="wEB-8y-BMY" secondAttribute="trailing" id="Itq-xS-liB"/>
+                            <constraint firstItem="wEB-8y-BMY" firstAttribute="top" secondItem="5Qy-Zs-t7G" secondAttribute="top" id="gkG-De-M3v"/>
+                            <constraint firstItem="wEB-8y-BMY" firstAttribute="leading" secondItem="5Qy-Zs-t7G" secondAttribute="leading" id="mu3-0H-oJX"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Kzi-w6-pZo"/>
+                    <connections>
+                        <outlet property="viTrailer" destination="wEB-8y-BMY" id="dAW-EJ-u2m"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ma6-ti-Inc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3883" y="408"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KfP-on-b8x">
@@ -264,6 +332,12 @@ formidáveis, Maxwell Lord e a Mulher-Leopardo, enquanto reencontra misteriosame
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
