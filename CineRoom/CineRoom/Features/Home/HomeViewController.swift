@@ -10,10 +10,10 @@ import UIKit
 
 
 // MARK: - Enum - CategoryMovie
-enum CategoryMovie {
-	case Trending
-	case Poupular
-	case NowPlaying
+enum CategoryMovie: String {
+	case Trending = "Tendências"
+	case Poupular = "Popular"
+	case NowPlaying = "Assistir agora"
 }
 
 class HomeViewController: UIViewController {
@@ -95,7 +95,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 			// Movie Popular [Cell Horizontal]
 			case 1:
 				let cellH = tableView.dequeueReusableCell(withIdentifier: HorizontalTableViewCell.identifier, for: indexPath) as? HorizontalTableViewCell
-				cellH?.delegate = self
+				cellH?.setupTitle(title: .Poupular, delegate: self)
 				
 				return cellH ?? UITableViewCell()
 				

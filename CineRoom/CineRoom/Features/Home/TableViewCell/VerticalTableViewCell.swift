@@ -19,7 +19,7 @@ class VerticalTableViewCell: UITableViewCell {
 	let controller: HomeController = HomeController()
 	private var category: CategoryMovie?
 	
-	weak var delegate:CellDelegate?
+	weak private var delegate:CellDelegate?
 	
 	
 	// MARK: - Lifecycle
@@ -44,6 +44,8 @@ class VerticalTableViewCell: UITableViewCell {
 
 	func setCategoryMovie(category: CategoryMovie, delegate: CellDelegate) {
 		self.delegate = delegate
+		self.titleLabel.text = category.rawValue
+		
 		if category == .Trending {
 			self.getLoadTreding()
 		} else if category == .NowPlaying {

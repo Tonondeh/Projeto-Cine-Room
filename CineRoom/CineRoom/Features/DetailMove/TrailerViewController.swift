@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import youtube_ios_player_helper
 
 class TrailerViewController: UIViewController {
 	
 	// MARK: - IBOutlet
-
+	@IBOutlet weak var playerView: YTPlayerView!
+	
 	
 	// MARK: - Variable
 	var videoKey: String?
@@ -26,6 +28,9 @@ class TrailerViewController: UIViewController {
 	
 	// MARK: - Function
 	private func preparePlayer() {
+		if let _videoKey = videoKey {
+			self.playerView.load(withVideoId: _videoKey)
+		}
 	}
 	
 }

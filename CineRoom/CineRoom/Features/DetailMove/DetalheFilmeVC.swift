@@ -26,6 +26,8 @@ class DetalheFilmeVC: UIViewController {
 	// MARK: - Variable
 	var movieID: Int?
 	let controller: DetalheController = DetalheController()
+	var isFavorito: Bool = false
+	var isQueroAssistir: Bool = false
 	
 	
 	// MARK: - Enum
@@ -48,6 +50,12 @@ class DetalheFilmeVC: UIViewController {
 		loadMovieDetails()
 	}
 	
+	override func viewDidDisappear(_ animated: Bool) {
+		super.viewDidDisappear(animated)
+		print(#function)
+		print("=== SAINDO DA TELA DETALHE===")
+	}
+	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "segueAssistir" {
 			guard let assistirVC = segue.destination as? AssistirViewController else { return }
@@ -68,8 +76,8 @@ class DetalheFilmeVC: UIViewController {
 	}
 	
 	private func configBarButtonItem() {
-		self.bookmarkBarButtonItem.tintColor = .black
-		self.heartBarButtonItem.tintColor = .black
+		self.changeBookmarkBarButtonItem(self.bookmarkBarButtonItem)
+		self.changeHeartBarButtonItem(self.heartBarButtonItem)
 	}
 	
 	private func configCollectionView() {
@@ -87,23 +95,26 @@ class DetalheFilmeVC: UIViewController {
 	}
 	
 	private func changeBookmarkBarButtonItem(_ button: UIBarButtonItem) {
+		print(#function)
 		let imageBookmark = UIImage(systemName: NameImage.bookmark.rawValue)
 		let imageBookmarkFill = UIImage(systemName: NameImage.bookmarkFill.rawValue)
 		
-		if button.image == imageBookmark {
+		if isQueroAssistir {
 			button.image = imageBookmarkFill
 			button.tintColor = .orange
 		} else {
 			button.image = imageBookmark
 			button.tintColor = .black
 		}
+		
 	}
 	
 	private func changeHeartBarButtonItem(_ button: UIBarButtonItem) {
+		print(#function)
 		let imageHeart = UIImage(systemName: NameImage.heart.rawValue)
 		let imageHeartFill = UIImage(systemName: NameImage.heartFill.rawValue)
 		
-		if button.image == imageHeart {
+		if isFavorito {
 			button.image = imageHeartFill
 			button.tintColor = .red
 		} else {
@@ -183,6 +194,8 @@ class DetalheFilmeVC: UIViewController {
 	
 	@IBAction func didTapCancelar(_ sender: UIBarButtonItem) {
 		dismiss(animated: true, completion: nil)
+		print(#function)
+		print("=== SAINDO DA TELA DETALHE===")
 	}
 	
 }

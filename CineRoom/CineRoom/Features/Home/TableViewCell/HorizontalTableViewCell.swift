@@ -16,7 +16,7 @@ class HorizontalTableViewCell: UITableViewCell {
 	// MARK: - Variable
 	static let identifier: String = "HorizontalTableViewCell"
 	let controller: HomeController = HomeController()
-	weak var delegate:CellDelegate?
+	weak private var delegate:CellDelegate?
 	
 	
 	// MARK: - Lifecyle
@@ -46,6 +46,10 @@ class HorizontalTableViewCell: UITableViewCell {
 		self.collectionView.dataSource 		= self
 		self.collectionView.backgroundColor	= UIColor(named: "backgroundColor")
 		self.collectionView.register(CartazHCollectionViewCell.nib(), forCellWithReuseIdentifier: CartazHCollectionViewCell.identifier)
+	}
+	
+	func setupTitle(title: CategoryMovie, delegate: CellDelegate) {
+		self.titleLabel.text = title.rawValue
 	}
 		
 }
