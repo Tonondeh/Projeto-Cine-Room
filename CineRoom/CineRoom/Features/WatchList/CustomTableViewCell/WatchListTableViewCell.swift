@@ -37,11 +37,15 @@ class WatchListTableViewCell: UITableViewCell {
 		self.filmeImageView.layer.cornerRadius = 15
 	}
 	
-	func configCell(filme: WatchListFilme) {
-		self.filmeImageView.image	= filme.filmeImage
-		self.nomeLabel.text 			= filme.nomeFilme
-		self.generoLabel.text 		= filme.generoFilme
-		self.ratingLabel.text 		= filme.ratingFilme
+	func configCell(filme: WatchModel?) {
+		
+		if let _filme = filme {
+			//			self.filmeImageView.image	= filme.filmeImage
+			self.nomeLabel.text = _filme.name
+			self.generoLabel.text = _filme.genre
+			self.ratingLabel.text = _filme.rating
+		}
+		
 	}
 	
 	

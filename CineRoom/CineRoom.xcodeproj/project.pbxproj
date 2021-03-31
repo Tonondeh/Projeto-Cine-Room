@@ -25,6 +25,8 @@
 		BC0387A625FAF21300EB56DE /* MovieNowPlaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0387A525FAF21300EB56DE /* MovieNowPlaying.swift */; };
 		BC0387A925FAF28F00EB56DE /* MoviePopular.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0387A825FAF28F00EB56DE /* MoviePopular.swift */; };
 		BC0387AC25FAF2F500EB56DE /* MovieTrending.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0387AB25FAF2F500EB56DE /* MovieTrending.swift */; };
+		BC1361C82613E64600F4263F /* WatchListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1361C72613E64600F4263F /* WatchListController.swift */; };
+		BC1361CC2613EF3400F4263F /* WatchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1361CB2613EF3400F4263F /* WatchModel.swift */; };
 		BC1FE87E2611182F009AD5F2 /* CineRoom.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BC1FE87C2611182F009AD5F2 /* CineRoom.xcdatamodeld */; };
 		BC1FE88126111B1C009AD5F2 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1FE88026111B1C009AD5F2 /* DataManager.swift */; };
 		BC1FE88726114F19009AD5F2 /* DetalheController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1FE88626114F19009AD5F2 /* DetalheController.swift */; };
@@ -90,6 +92,8 @@
 		BC0387A525FAF21300EB56DE /* MovieNowPlaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieNowPlaying.swift; sourceTree = "<group>"; };
 		BC0387A825FAF28F00EB56DE /* MoviePopular.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePopular.swift; sourceTree = "<group>"; };
 		BC0387AB25FAF2F500EB56DE /* MovieTrending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTrending.swift; sourceTree = "<group>"; };
+		BC1361C72613E64600F4263F /* WatchListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListController.swift; sourceTree = "<group>"; };
+		BC1361CB2613EF3400F4263F /* WatchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchModel.swift; sourceTree = "<group>"; };
 		BC1FE87D2611182F009AD5F2 /* CineRoom.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CineRoom.xcdatamodel; sourceTree = "<group>"; };
 		BC1FE88026111B1C009AD5F2 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		BC1FE88626114F19009AD5F2 /* DetalheController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalheController.swift; sourceTree = "<group>"; };
@@ -250,6 +254,7 @@
 		B2FD951025EC01B4000BDD6F /* WatchList */ = {
 			isa = PBXGroup;
 			children = (
+				BC1361C62613E62E00F4263F /* Controller */,
 				BC0387AE25FAF63A00EB56DE /* CustomTableViewCell */,
 				BCA744B825E947DE00A5B402 /* WatchList.storyboard */,
 				BCA744BB25E9487100A5B402 /* WatchListVC.swift */,
@@ -313,6 +318,7 @@
 				BCE4A2C425FBD8E000CF398C /* MovieCredits.swift */,
 				BCE4A2C725FBD97600CF398C /* MovieVideos.swift */,
 				9FF0FB842604181700B58839 /* UserModel.swift */,
+				BC1361CB2613EF3400F4263F /* WatchModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -324,6 +330,14 @@
 				BCA744BF25E948E000A5B402 /* WatchListTableViewCell.xib */,
 			);
 			path = CustomTableViewCell;
+			sourceTree = "<group>";
+		};
+		BC1361C62613E62E00F4263F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BC1361C72613E64600F4263F /* WatchListController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		BC1FE88526114EFC009AD5F2 /* Controller */ = {
@@ -580,6 +594,7 @@
 				BCBDA20D2607C8A400A86423 /* LoginController.swift in Sources */,
 				BCBDA2152607D62300A86423 /* CriarContaController.swift in Sources */,
 				BC1FE88C26114FE7009AD5F2 /* DetalheWorker.swift in Sources */,
+				BC1361C82613E64600F4263F /* WatchListController.swift in Sources */,
 				BCA744BC25E9487100A5B402 /* WatchListVC.swift in Sources */,
 				BCCCC6C62607DD7D001C0CD4 /* LoginWorker.swift in Sources */,
 				132B69CF2611285500DB6516 /* Utils.swift in Sources */,
@@ -589,6 +604,7 @@
 				BCEF40E3260AAC830037443C /* Extension+ViewController.swift in Sources */,
 				BCE4A2C225FBD78C00CF398C /* MovieDetail.swift in Sources */,
 				BC209172260D38EC003CDD95 /* HomeWorker.swift in Sources */,
+				BC1361CC2613EF3400F4263F /* WatchModel.swift in Sources */,
 				BC0387A125FAD71F00EB56DE /* Extension+TextField.swift in Sources */,
 				BC90FCA225E963200092A52B /* EsqueciSenhaViewController.swift in Sources */,
 				B2FD950D25EC0192000BDD6F /* ConfirmarSenhaViewController.swift in Sources */,

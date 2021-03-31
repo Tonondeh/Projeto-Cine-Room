@@ -26,8 +26,11 @@ class DetalheFilmeVC: UIViewController {
 	// MARK: - Variable
 	var movieID: Int?
 	let controller: DetalheController = DetalheController()
-	var isFavorito: Bool = false
-	var isQueroAssistir: Bool = false
+	var favorito: Bool?
+	var queroAssistir: Bool?
+	
+	private var isFavorito: Bool = false
+	private var isQueroAssistir: Bool = false
 	
 	
 	// MARK: - Enum
@@ -43,6 +46,8 @@ class DetalheFilmeVC: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		self.isFavorito = favorito ?? false
+		self.isQueroAssistir = queroAssistir ?? false
 		configScrollView()
 		configBarButtonItem()
 		configCollectionView()
@@ -54,6 +59,22 @@ class DetalheFilmeVC: UIViewController {
 		super.viewDidDisappear(animated)
 		print(#function)
 		print("=== SAINDO DA TELA DETALHE===")
+		
+		if isFavorito || isQueroAssistir{
+			print("==> Irá salvar. Favorito: \(isFavorito) e Assistir: \(isQueroAssistir)")
+		} else {
+			print("==> Irá salvar. Favorito: \(isFavorito) e Assistir: \(isQueroAssistir)")
+		}
+		
+		let watchItem: WatchModel = WatchModel(movieId: movieID,
+															name: self.nomeFilmeLabel.text,
+															genre: self.generoFilmeLabel.text,
+															rating: self.ratingFilmeLabel.text,
+															foto: "FOTO",
+															isFavorite: isFavorito,
+															isAssistir: isQueroAssistir)
+		
+		self.controller.updateWatchList(item: watchItem)
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -76,8 +97,8 @@ class DetalheFilmeVC: UIViewController {
 	}
 	
 	private func configBarButtonItem() {
-		self.bookmarkBarButtonItem.tintColor = .black
-		self.heartBarButtonItem.tintColor    = .black
+		self.changeBookmarkBarButtonItem(self.bookmarkBarButtonItem, value: isQueroAssistir)
+		self.changeHeartBarButtonItem(self.heartBarButtonItem, value: isFavorito)
 	}
 	
 	private func configCollectionView() {
@@ -94,35 +115,35 @@ class DetalheFilmeVC: UIViewController {
 		self.tableView.register(TrailerFilmeTableViewCell.nib(), forCellReuseIdentifier: TrailerFilmeTableViewCell.identifier)
 	}
 	
-	private func changeBookmarkBarButtonItem(_ button: UIBarButtonItem) {
+	private func changeBookmarkBarButtonItem(_ button: UIBarButtonItem, value: Bool) {
 		print(#function)
 		let imageBookmark = UIImage(systemName: NameImage.bookmark.rawValue)
 		let imageBookmarkFill = UIImage(systemName: NameImage.bookmarkFill.rawValue)
-		isQueroAssistir = !isQueroAssistir
 		
-		if isQueroAssistir {
+		if value {
 			button.image = imageBookmarkFill
 			button.tintColor = .orange
 		} else {
 			button.image = imageBookmark
 			button.tintColor = .black
 		}
+		isQueroAssistir = value
 		
 	}
 	
-	private func changeHeartBarButtonItem(_ button: UIBarButtonItem) {
+	private func changeHeartBarButtonItem(_ button: UIBarButtonItem, value: Bool) {
 		print(#function)
 		let imageHeart = UIImage(systemName: NameImage.heart.rawValue)
 		let imageHeartFill = UIImage(systemName: NameImage.heartFill.rawValue)
-		isFavorito = !isFavorito
-				
-		if isFavorito {
+		
+		if value {
 			button.image = imageHeartFill
 			button.tintColor = .red
 		} else {
 			button.image = imageHeart
 			button.tintColor = .black
 		}
+		isFavorito = value
 		
 	}
 	
@@ -175,11 +196,11 @@ class DetalheFilmeVC: UIViewController {
 	
 	// MARK: - Action
 	@IBAction func didTapBookmark(_ sender: UIBarButtonItem) {
-		self.changeBookmarkBarButtonItem(sender)
+		self.changeBookmarkBarButtonItem(sender, value: !isQueroAssistir)
 	}
 	
 	@IBAction func didTapHeart(_ sender: UIBarButtonItem) {
-		self.changeHeartBarButtonItem(sender)
+		self.changeHeartBarButtonItem(sender, value: !isFavorito)
 	}
 	
 	
@@ -243,5 +264,5 @@ extension DetalheFilmeVC: UITableViewDelegate, UITableViewDataSource {
 		let video = self.controller.getMovieVideos(indexPath: indexPath)
 		performSegue(withIdentifier: "segueTrailer", sender: video?.key)
 	}
-
+	
 }

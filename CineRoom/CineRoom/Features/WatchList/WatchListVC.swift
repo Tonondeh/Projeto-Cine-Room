@@ -7,14 +7,6 @@
 
 import UIKit
 
-struct WatchListFilme {
-	let filmeImage: UIImage
-	let nomeFilme: String
-	let generoFilme: String
-	let ratingFilme: String
-}
-
-
 class WatchListVC: UIViewController {
 	
 	// MARK: - IBOutlet
@@ -22,82 +14,51 @@ class WatchListVC: UIViewController {
 	@IBOutlet weak var tableView: UITableView!
 	
 	// MARK: - Variable
-	var quantidadeLinhas: Int = 0
-	var favoritosFilmes: [WatchListFilme] = [ WatchListFilme(filmeImage: UIImage(named: "filmeh1") ?? UIImage(),
-																				nomeFilme: "Filme H 01",
-																				generoFilme: "Ação, Aventura",
-																				ratingFilme: "6.9"),
-															WatchListFilme(filmeImage: UIImage(named: "filmeh2") ?? UIImage(),
-																				nomeFilme: "Filme H 02",
-																				generoFilme: "Aventura, Terror",
-																				ratingFilme: "7.4"),
-															WatchListFilme(filmeImage: UIImage(named: "filmeh3") ?? UIImage(),
-																				nomeFilme: "Filme H 03",
-																				generoFilme: "Horror, Terror",
-																				ratingFilme: "1.4"),
-															WatchListFilme(filmeImage: UIImage(named: "filmeh4") ?? UIImage(),
-																				nomeFilme: "Filme H 03",
-																				generoFilme: "Horror, Terror",
-																				ratingFilme: "1.4")
-	]
-	var queroAssistirFilmes: [WatchListFilme] = [ WatchListFilme(filmeImage: UIImage(named: "filmeh6") ?? UIImage(),
-																				nomeFilme: "Filme H 06",
-																				generoFilme: "Ação, Aventura",
-																				ratingFilme: "6.9"),
-															WatchListFilme(filmeImage: UIImage(named: "filmeh5") ?? UIImage(),
-																				nomeFilme: "Filme H 06",
-																				generoFilme: "Aventura, Terror",
-																				ratingFilme: "7.4")
-	]
-	var listaFilmes: [WatchListFilme] = []
-
+	private let controller: WatchListController = WatchListController()
 	
+	
+	// MARK: - Lifecycle
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		configTableView()
-		configSegmentedControl()
+		self.showSpinner()
+		self.configObserver()
 	}
 	
 	
 	// MARK: - Function
-	func configTableView() {
+	private func configObserver() {
+		self.controller.addObserveDatabase { ( _ ) in
+			self.configTableView()
+			self.removeSpinner()
+		}
+	}
+	
+	private func configTableView() {
 		self.tableView.delegate = self
 		self.tableView.dataSource = self
 		self.tableView.backgroundColor = UIColor(named: "backgroudColor")
 		self.tableView.register(WatchListTableViewCell.nib(), forCellReuseIdentifier: WatchListTableViewCell.identifier)
-	}
-	
-	func montaListaFilmes(index: Int) {
-		self.listaFilmes = index == 0 ? self.favoritosFilmes : self.queroAssistirFilmes
-	}
-	
-	func atualizaQtdLinhas(index: Int) {
-		self.quantidadeLinhas = index == 0 ? self.favoritosFilmes.count : self.queroAssistirFilmes.count
-	}
-	
-	func configSegmentedControl() {
-		self.atualizaQtdLinhas(index: self.listSegmented.selectedSegmentIndex)
-		self.montaListaFilmes(index: self.listSegmented.selectedSegmentIndex)
+		self.tableView.reloadData()
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "segueDetalheStoryboard" {
-			if let detalheVC = segue.destination as? DetalheFilmeVC {
-				detalheVC.navigationItem.title = "TESTE"
+			if let navVC = segue.destination as? UINavigationController,
+				let detalheVC = navVC.topViewController as? DetalheFilmeVC,
+				let item = sender as? WatchModel {
+				detalheVC.movieID = item.movieId
+				detalheVC.favorito = item.isFavorite
+				detalheVC.queroAssistir = item.isAssistir
 			}
 		}
 	}
 	
 	
-	
 	// MARK: - Action
 	@IBAction func didTapList(_ sender: UISegmentedControl) {
-		self.atualizaQtdLinhas(index: self.listSegmented.selectedSegmentIndex)
-		self.montaListaFilmes(index: self.listSegmented.selectedSegmentIndex)
 		self.tableView.reloadData()
 	}
-	
 	
 }
 
@@ -106,14 +67,18 @@ class WatchListVC: UIViewController {
 extension WatchListVC: UITableViewDelegate, UITableViewDataSource {
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return quantidadeLinhas
+		if self.listSegmented.selectedSegmentIndex == 0 {
+			return self.controller.countWathListFavorite ?? 0
+		} else {
+			return self.controller.countWathListAssistir ?? 0
+		}
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let filme = self.listaFilmes[indexPath.row]
 		let cell = tableView.dequeueReusableCell(withIdentifier: WatchListTableViewCell.identifier, for: indexPath) as? WatchListTableViewCell
 		
-		cell?.configCell(filme: filme)
+		cell?.configCell(filme: self.controller.getWatchItem(selection: self.listSegmented.selectedSegmentIndex,
+																			  indexPath: indexPath))
 		
 		return cell ?? UITableViewCell()
 	}
@@ -121,10 +86,9 @@ extension WatchListVC: UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		print("UISegmented atual: \(self.listSegmented.selectedSegmentIndex)")
 		print("Selecionado Indice: \(indexPath.row)")
+		let item = self.controller.getWatchItem(selection: self.listSegmented.selectedSegmentIndex, indexPath: indexPath)
 		
-		
-		self.performSegue(withIdentifier: "segueDetalheStoryboard", sender: self)
-		
+		self.performSegue(withIdentifier: "segueDetalheStoryboard", sender: item)
 	}
 	
 	

@@ -15,6 +15,7 @@ class DetalheWorker {
 	private let apiKey: String = "api_key=f0ca6496aecedd1cfc6487c0d9849760"
 	private let urlBase: String = "https://api.themoviedb.org/3/movie/"
 	private let autenticacao = Auth.auth()
+	private let db = Database.database().reference()
 
 		
 	// Método para buscar Detalhe do Filme
@@ -132,8 +133,65 @@ class DetalheWorker {
 	
 	
 	// Método para gravar filme na WatchList
-	func setWatchList(movieID: Int?, name: String?, genre: String?, rating: String?, foto: String?, favorite: String?, watch: String?) {
+	func setWatchItem(movieID: Int?, name: String?, genre: String?, rating: String?, foto: String?, favorite: String?, watch: String?) {
+		// Database Referencia
+		let _movieID: String = String(movieID ?? 0)
+		let watchlistDb = db.child("watchlist").child("usuarios").child(autenticacao.currentUser?.uid ?? "")
 		
+		// Registro a ser gravado
+		let watchMovie = [
+			"name": name,
+			"genre": genre,
+			"rating": rating,
+			"foto": foto,
+			"favorite": favorite,
+			"watch": watch
+		]
+		
+		// Criação de item da Database
+		watchlistDb.child(_movieID).setValue(watchMovie)
+		
+	}
+	
+	
+	// Método para deletar Filme Watch List
+	func deleteWatchItem(moveId: Int?) {
+		let id = String(moveId ?? 0)
+		let watchListId = db.child("watchlist").child("usuarios").child(autenticacao.currentUser?.uid ?? "")
+		watchListId.child(id).removeValue()
+	}
+	
+	
+	// Método para Observe da Database
+	func addObserveDatabase(completion: @escaping(_ success: [String:Any]? ) -> Void) {
+		let watchlistDb = db.child("watchlist").child("usuarios").child(autenticacao.currentUser?.uid ?? "")
+		
+		watchlistDb.observe(.value) { (snapshot) in
+			guard let watchList = snapshot.value as? [String:Any] else {
+				print("Erro na Snapshot")
+				completion(nil)
+				return
+			}
+			
+			print("WatchList: \(watchList)")
+			print("WatchList.Values: \(watchList.values)")
+			
+			for watch in watchList.values {
+				if let detalhe = watch as? Dictionary<String, String> {
+					print("Nome: \(String(describing: detalhe["name"]))")
+					print("Genero: \(String(describing: detalhe["genre"]))")
+					print("Rating: \(String(describing: detalhe["rating"]))")
+					print("Foto: \(String(describing: detalhe["foto"]))")
+					print("Favorito: \(String(describing: detalhe["favorito"]))")
+					print("Assistir: \(String(describing: detalhe["watch"]))")
+					print("-=-=-=-=-=-=-=-=-=-=-=-=---=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+				}
+			}
+			
+			completion(watchList)
+			
+		}
+
 	}
 		
 }

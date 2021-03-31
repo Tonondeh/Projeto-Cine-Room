@@ -118,14 +118,37 @@ class DetalheController {
 	
 	
 	// Método para gravar Watch List
-	func setWatchList(movieID: Int?, name: String?, genre: String?, rating: String?, foto: String?, favorite: String?, watch: String?) {
-		
+//	func setWatchList(movieID: Int?, name: String?, genre: String?, rating: String?, foto: String?, favorite: Bool, watch: Bool) {
+	func setWatchList(item: WatchModel) {
+//		let _favorite: String? = favorite ? "X" : ""
+//		let _watch: String?  = watch ? "X" : ""
+		let _favorite: String? = (item.isFavorite ?? false) ? "X" : ""
+		let _watch: String?  = (item.isAssistir ?? false) ? "X" : ""
+		DetalheWorker().setWatchItem(movieID: item.movieId,
+											  name: item.name,
+											  genre: item.genre,
+											  rating: item.rating,
+											  foto: item.foto,
+											  favorite: _favorite,
+											  watch: _watch)
+	}
+	
+	func deleteWatchItem(movieId: Int?) {
+		DetalheWorker().deleteWatchItem(moveId: movieId)
 	}
 	
 	
-
-	
-	
-
+	// Método para Atualizar a Watch List
+	func updateWatchList(item: WatchModel) {
+		
+		if item.isFavorite != nil && item.isAssistir != nil {
+			if item.isFavorite ?? false || item.isAssistir ?? false {
+				self.setWatchList(item: item)
+			} else {
+				self.deleteWatchItem(movieId: item.movieId)
+			}
+		}
+		
+	}
 	
 }
