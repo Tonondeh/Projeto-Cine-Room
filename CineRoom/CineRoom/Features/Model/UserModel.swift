@@ -7,13 +7,16 @@
 
 import Foundation
 
-class UserModel: Codable {
+struct UserModel {
 
-    let name: String
-    let fullname: String
-    let email: String
-    let cpf: Int
-    let birthAge: String
+    let cpf: Int64?
+    let dateBirth: Date?
+    let email: String?
+    let nameDisplay: String?
+    let nameFull: String?
+  
+   
+   
     
 }
 

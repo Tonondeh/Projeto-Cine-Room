@@ -64,8 +64,8 @@ class HomeViewController: UIViewController {
 		else {return self.nameUserLabel.text = "Olá 😍" }
 		
 		self.controller.loadUserData(email: email) { (success) in
-			if let email = success {
-				self.nameUserLabel.text = "Olá, \(email) !"
+			if let user = success {
+                self.nameUserLabel.text = "Olá, \(user.nameDisplay) !"
 			} else {
 				self.nameUserLabel.text = "Olá 😍"
 			}

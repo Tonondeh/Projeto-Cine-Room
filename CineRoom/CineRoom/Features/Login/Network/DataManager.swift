@@ -26,7 +26,7 @@ class DataManager {
 		self.saveUser()
 	}
 	
-	func loadUserData(email: String,completion: @escaping(_ success:String?) ->Void){
+	func loadUserData(email: String,completion: @escaping(_ success:UserData?) ->Void){
 		let request = UserData.fetchRequest() as NSFetchRequest<UserData>
 		let predicate = NSPredicate(format: "email == %@", email)
 		request.predicate = predicate
@@ -35,7 +35,7 @@ class DataManager {
 			let userData =  try self.managedContext.fetch(request)
 			
 			for user in userData {
-				completion(user.nameDisplay)
+				completion(user)
 			}
 			
 		} catch let error as NSError {
