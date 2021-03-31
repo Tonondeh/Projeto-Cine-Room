@@ -35,9 +35,11 @@ class PerfilController {
         LoginWorker().logOut()
     }
     
-    func saveUser(){
+    func upDateUser( userUpdate:UserModel? ){
         
     }
+  
+  
     
     
     

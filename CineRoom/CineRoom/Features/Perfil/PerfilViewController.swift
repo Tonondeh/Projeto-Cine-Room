@@ -31,7 +31,7 @@ class PerfilViewController: UIViewController {
     var imagePicker:UIImagePickerController = UIImagePickerController()
     
     var controller = PerfilController()
-    
+    private var user: UserModel?
     
     
     
@@ -44,15 +44,17 @@ class PerfilViewController: UIViewController {
         self.configImageView()
         self.controller.loadUserDefault()
         
-        // Povoar Text Fields com Coredata
+        // Povoar Text Fields com Coredata - Nao funcionou.
         
-        let user = self.controller.getUser()
+        user = self.controller.getUser()
     
         
         self.nomeTextField.text = user?.nameDisplay
         self.nomeCompletoTextField.text = user?.nameFull
         self.emailTextField.text = user?.email
         self.cpfTextField.text = "\(user?.cpf)"
+        
+        
         
      
         
@@ -167,19 +169,24 @@ class PerfilViewController: UIViewController {
     }
     
     @IBAction func salvarTappedButton(_ sender: UIButton) {
-//        self.mudarFotoButton.isHidden = true
-//        self.salvarButton.isHidden = true
-        
         self.unlockTextfield(block: true)
-//
-//        self.nomeTextField.isEnabled = false
-//        self.nomeCompletoTextField.isEnabled = false
-//        self.cpfTextField.isEnabled = false
-//        self.nascimentoDataPicker.isEnabled = false
-//
         
+        let userUpDate: UserModel = UserModel(cpf: 10, dateBirth: Date(), email: self.emailTextField.text, nameDisplay: self.nomeTextField.text, nameFull: self.nomeCompletoTextField.text)
         
-        
+        if user != userUpDate {
+            
+            print("campos diferentes")
+            
+            self.controller.upDateUser(userUpdate: userUpDate)
+      
+            
+            
+        } else {
+            
+            print("campos iguais")
+        }
+
+    
         
     }
     

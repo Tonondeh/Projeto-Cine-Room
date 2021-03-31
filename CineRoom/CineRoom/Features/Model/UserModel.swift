@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct UserModel {
+struct UserModel: Equatable {
 
-    let cpf: Int64?
-    let dateBirth: Date?
-    let email: String?
-    let nameDisplay: String?
-    let nameFull: String?
+    var cpf: Int64?
+    var dateBirth: Date?
+    var email: String?
+    var nameDisplay: String?
+    var nameFull: String?
   
    
    

@@ -8,6 +8,8 @@
 import UIKit
 import CoreData
 
+
+
 class DataManager {
 	
 	/// Reference to Managed Object Context
@@ -55,5 +57,27 @@ class DataManager {
 			print(error.localizedDescription)
 		}
 	}
+    
+
+    
+    func upDateUser( userUpdate:UserModel? ){
+        
+        let userCoreData: UserData = UserData(context: self.managedContext)
+      
+        
+        if let cpf = userUpdate?.cpf {
+            userCoreData.cpf = cpf
+        }
+        
+        userCoreData.dateBirth = userUpdate?.dateBirth
+        userCoreData.email = userUpdate?.email
+        userCoreData.nameDisplay = userUpdate?.nameDisplay
+        userCoreData.nameFull = userUpdate?.nameFull
+        
+        self.saveUser()
+        
+     
+        
+    }
 	
 }
