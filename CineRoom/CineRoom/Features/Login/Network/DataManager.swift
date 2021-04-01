@@ -8,6 +8,8 @@
 import UIKit
 import CoreData
 
+
+
 class DataManager {
 	
 	/// Reference to Managed Object Context
@@ -26,7 +28,7 @@ class DataManager {
 		self.saveUser()
 	}
 	
-	func loadUserData(email: String,completion: @escaping(_ success:String?) ->Void){
+	func loadUserData(email: String,completion: @escaping(_ success:UserData?) ->Void){
 		let request = UserData.fetchRequest() as NSFetchRequest<UserData>
 		let predicate = NSPredicate(format: "email == %@", email)
 		request.predicate = predicate
@@ -35,7 +37,7 @@ class DataManager {
 			let userData =  try self.managedContext.fetch(request)
 			
 			for user in userData {
-				completion(user.nameDisplay)
+				completion(user)
 			}
 			
 		} catch let error as NSError {
@@ -55,5 +57,27 @@ class DataManager {
 			print(error.localizedDescription)
 		}
 	}
+    
+
+    
+    func upDateUser( userUpdate:UserModel? ){
+        
+        let userCoreData: UserData = UserData(context: self.managedContext)
+      
+        
+        if let cpf = userUpdate?.cpf {
+            userCoreData.cpf = cpf
+        }
+        
+        userCoreData.dateBirth = userUpdate?.dateBirth
+        userCoreData.email = userUpdate?.email
+        userCoreData.nameDisplay = userUpdate?.nameDisplay
+        userCoreData.nameFull = userUpdate?.nameFull
+        
+        self.saveUser()
+        
+     
+        
+    }
 	
 }

@@ -22,9 +22,7 @@ class PerfilViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var cpfTextField: UITextField!
     @IBOutlet weak var nascimentoDataPicker: UIDatePicker!
-   
     @IBOutlet weak var editarButton: UIButton!
-    
     @IBOutlet weak var mudarFotoButton: UIButton!
     @IBOutlet weak var salvarButton: UIButton!
     
@@ -32,24 +30,69 @@ class PerfilViewController: UIViewController {
     
     var imagePicker:UIImagePickerController = UIImagePickerController()
     
+    var controller = PerfilController()
+    private var user: UserModel?
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      
-        
-        self.mudarFotoButton.isHidden = true
-        self.salvarButton.isHidden = true
         self.configTextField()
         self.configImagePicker()
         self.salvarButton.layer.cornerRadius = 5
-        self.nomeTextField.isEnabled = false
-        self.nomeCompletoTextField.isEnabled = false
-        self.emailTextField.isEnabled = false
-        self.cpfTextField.isEnabled = false
-        self.nascimentoDataPicker.isEnabled = false
+        self.unlockTextfield(block: true)
+        self.configImageView()
+        self.controller.loadUserDefault()
+        
+        // Povoar Text Fields com Coredata - Nao funcionou.
+        
+        user = self.controller.getUser()
+    
+        
+        self.nomeTextField.text = user?.nameDisplay
+        self.nomeCompletoTextField.text = user?.nameFull
+        self.emailTextField.text = user?.email
+        self.cpfTextField.text = "\(user?.cpf)"
+        
+        
+        
+     
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+    }
+    
+    
+    @IBAction func tappedLogOutButton(_ sender: UIButton) {
+        
+        self.controller.logOut()
+        
+        performSegue(withIdentifier: "voltarLogin", sender: nil)
+        
+    }
+    
+    
+    
+    func unlockTextfield (block:Bool) {
+        if block == true{
+            self.nomeTextField.isEnabled = false
+            self.nomeCompletoTextField.isEnabled = false
+            self.emailTextField.isEnabled = false
+            self.cpfTextField.isEnabled = false
+            self.nascimentoDataPicker.isEnabled = false
+            self.mudarFotoButton.isHidden = true
+            self.salvarButton.isHidden = true
+            
+        } else {
+            self.nomeTextField.isEnabled = true
+            self.nomeCompletoTextField.isEnabled = true
+            self.emailTextField.isEnabled = false
+            self.cpfTextField.isEnabled = true
+            self.nascimentoDataPicker.isEnabled = true
+            self.mudarFotoButton.isHidden = false
+            self.salvarButton.isHidden = false
+        }
         
     }
     
@@ -95,6 +138,16 @@ class PerfilViewController: UIViewController {
         self.imagePicker.delegate = self
     }
     
+    func configImageView(){
+        self.perfilImageView.backgroundColor = .lightGray
+        self.perfilImageView.tintColor = .darkGray
+        self.perfilImageView.layer.cornerRadius = self.perfilImageView.frame.height/2
+        self.perfilImageView.image = UIImage(systemName: "person.circle")
+        self.perfilImageView.contentMode = .scaleToFill
+      
+        
+    }
+    
     func configTextField(){
         self.emailTextField.delegate = self
         self.nomeTextField.delegate = self
@@ -107,32 +160,33 @@ class PerfilViewController: UIViewController {
     
     
     
+    
     @IBAction func editPerfilTappedButton(_ sender: UIButton) {
-        self.mudarFotoButton.isHidden = false
-        self.salvarButton.isHidden = false
-        
-        
-        self.nomeTextField.isEnabled = true
-        self.nomeCompletoTextField.isEnabled = true
-        self.cpfTextField.isEnabled = true
-        self.nascimentoDataPicker.isEnabled = true
-        
+        self.unlockTextfield(block: false)
         
         
         
     }
     
     @IBAction func salvarTappedButton(_ sender: UIButton) {
-        self.mudarFotoButton.isHidden = true
-        self.salvarButton.isHidden = true
-        self.nomeTextField.isEnabled = false
-        self.nomeCompletoTextField.isEnabled = false
-        self.cpfTextField.isEnabled = false
-        self.nascimentoDataPicker.isEnabled = false
+        self.unlockTextfield(block: true)
         
+        let userUpDate: UserModel = UserModel(cpf: 10, dateBirth: Date(), email: self.emailTextField.text, nameDisplay: self.nomeTextField.text, nameFull: self.nomeCompletoTextField.text)
         
-        
-        
+        if user != userUpDate {
+            
+            print("campos diferentes")
+            
+            self.controller.upDateUser(userUpdate: userUpDate)
+      
+            
+            
+        } else {
+            
+            print("campos iguais")
+        }
+
+    
         
     }
     
@@ -149,8 +203,11 @@ class PerfilViewController: UIViewController {
 extension PerfilViewController: UITextFieldDelegate {
     
     
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.layer.borderColor = UIColor.blue.cgColor
+        
+        
         
     }
     
@@ -171,6 +228,8 @@ extension PerfilViewController: UITextFieldDelegate {
 
     
     func textFieldDidEndEditing(_ textField: UITextField) {
+       
+        
         
     }
     
@@ -217,11 +276,25 @@ extension PerfilViewController: UINavigationControllerDelegate,UIImagePickerCont
         
         self.perfilImageView.image = imagemRecuperada ?? UIImage()
         
+        
         picker.dismiss(animated: true, completion: nil)
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
 
-// pintar borda. O escreve e o app vai validando. Label. 1234
+
+
+
 
 
 

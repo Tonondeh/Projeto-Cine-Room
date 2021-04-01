@@ -7,13 +7,16 @@
 
 import Foundation
 
-class UserModel: Codable {
+struct UserModel: Equatable {
 
-    let name: String
-    let fullname: String
-    let email: String
-    let cpf: Int
-    let birthAge: String
+    var cpf: Int64?
+    var dateBirth: Date?
+    var email: String?
+    var nameDisplay: String?
+    var nameFull: String?
+  
+   
+   
     
 }
 
