@@ -24,8 +24,9 @@ class DetalheFilmeVC: UIViewController {
 	
 	
 	// MARK: - Variable
-	var movieID: Int?
 	let controller: DetalheController = DetalheController()
+	var movieID: Int?
+	var backdrop: String?
 	var favorito: Bool?
 	var queroAssistir: Bool?
 	
@@ -46,13 +47,16 @@ class DetalheFilmeVC: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		self.showSpinner()
+		
+		self.clearData()
 		self.isFavorito = favorito ?? false
 		self.isQueroAssistir = queroAssistir ?? false
+		loadMovieDetails()
 		configScrollView()
 		configBarButtonItem()
 		configCollectionView()
 		configTableView()
-		loadMovieDetails()
 	}
 	
 	override func viewDidDisappear(_ animated: Bool) {
@@ -60,17 +64,11 @@ class DetalheFilmeVC: UIViewController {
 		print(#function)
 		print("=== SAINDO DA TELA DETALHE===")
 		
-		if isFavorito || isQueroAssistir{
-			print("==> Irá salvar. Favorito: \(isFavorito) e Assistir: \(isQueroAssistir)")
-		} else {
-			print("==> Irá salvar. Favorito: \(isFavorito) e Assistir: \(isQueroAssistir)")
-		}
-		
 		let watchItem: WatchModel = WatchModel(movieId: movieID,
 															name: self.nomeFilmeLabel.text,
 															genre: self.generoFilmeLabel.text,
 															rating: self.ratingFilmeLabel.text,
-															foto: "FOTO",
+															foto: self.backdrop,
 															isFavorite: isFavorito,
 															isAssistir: isQueroAssistir)
 		
@@ -94,6 +92,14 @@ class DetalheFilmeVC: UIViewController {
 	// MARK: - Function
 	private func configScrollView() {
 		self.scrollView.delaysContentTouches = true
+	}
+	
+	private func clearData() {
+		self.nomeFilmeLabel.text = nil
+		self.generoFilmeLabel.text = nil
+		self.ratingFilmeLabel.text = nil
+		self.overviewFilmeLabel.text = nil
+		self.duracaoFilmeLabel.text = nil
 	}
 	
 	private func configBarButtonItem() {
@@ -148,48 +154,50 @@ class DetalheFilmeVC: UIViewController {
 	}
 	
 	private func loadMovieDetails() {
+		guard let id = self.movieID else { return }
 		
-		if let id = self.movieID {
-			
-			self.controller.loadMovieDetail(movieId: id) { (success, error) in
-				if success {
-					if let detail = self.controller.getMovieDetail() {
-						self.nomeFilmeLabel.text = detail.title
-						self.generoFilmeLabel.text = self.controller.getGenres()
-						self.ratingFilmeLabel.text = "\(detail.voteAverage)"
-						self.overviewFilmeLabel.text = detail.overview
-						self.duracaoFilmeLabel.text = self.controller.convertMinHour(value: detail.runtime)
-						
-						if detail.homepage == "" {
-							self.assistirFilmeButton.isEnabled = false
-						}
-					}
+		// Chamada de API Get Detail
+		self.controller.loadMovieDetail(movieId: id) { (success, error) in
+			if success {
+				if let detail = self.controller.getMovieDetail() {
+					self.nomeFilmeLabel.text = detail.title
+					self.generoFilmeLabel.text = self.controller.getGenres()
+					self.ratingFilmeLabel.text = "\(detail.voteAverage)"
+					self.overviewFilmeLabel.text = detail.overview
+					self.duracaoFilmeLabel.text = self.controller.convertMinHour(value: detail.runtime)
 					
-				} else {
-					print("Erro ao chamar o detalhe")
-					self.dismiss(animated: true, completion: nil)
+					if detail.homepage == "" {
+						self.assistirFilmeButton.isEnabled = false
+					}
 				}
+				
+			} else {
+				print("Erro ao chamar o detalhe")
+				self.dismiss(animated: true, completion: nil)
 			}
-			
-			self.controller.loadMovieCredit(movieId: id) { (success, error) in
-				if success {
-					print("Encontrou Credits")
-					self.collectionView.reloadData()
-				} else {
-					print("Não encontrou Credits")
-				}
-			}
-			
-			self.controller.loadMovieVideo(movieId: id) { (success, error) in
-				if success {
-					print("Encontrou Videos")
-					self.tableView.reloadData()
-				} else {
-					print("Não encontrou Videos")
-				}
-			}
-			
 		}
+		
+		// Chamada de API Get Credit
+		self.controller.loadMovieCredit(movieId: id) { (success, error) in
+			if success {
+				print("Encontrou Credits")
+				self.collectionView.reloadData()
+			} else {
+				print("Não encontrou Credits")
+			}
+		}
+		
+		// Chamada de API Get Videos
+		self.controller.loadMovieVideo(movieId: id) { (success, error) in
+			if success {
+				print("Encontrou Videos")
+				self.tableView.reloadData()
+			} else {
+				print("Não encontrou Videos")
+			}
+		}
+		
+		self.removeSpinner()
 		
 	}
 	

@@ -172,26 +172,23 @@ class DetalheWorker {
 				completion(nil)
 				return
 			}
-			
-			print("WatchList: \(watchList)")
-			print("WatchList.Values: \(watchList.values)")
-			
-			for watch in watchList.values {
-				if let detalhe = watch as? Dictionary<String, String> {
-					print("Nome: \(String(describing: detalhe["name"]))")
-					print("Genero: \(String(describing: detalhe["genre"]))")
-					print("Rating: \(String(describing: detalhe["rating"]))")
-					print("Foto: \(String(describing: detalhe["foto"]))")
-					print("Favorito: \(String(describing: detalhe["favorito"]))")
-					print("Assistir: \(String(describing: detalhe["watch"]))")
-					print("-=-=-=-=-=-=-=-=-=-=-=-=---=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
-				}
-			}
+						
+//			for watch in watchList.values {
+//				if let detalhe = watch as? Dictionary<String, String> {
+//					print("Nome: \(String(describing: detalhe["name"]))")
+//					print("Genero: \(String(describing: detalhe["genre"]))")
+//					print("Rating: \(String(describing: detalhe["rating"]))")
+//					print("Foto: \(String(describing: detalhe["foto"]))")
+//					print("Favorito: \(String(describing: detalhe["favorito"]))")
+//					print("Assistir: \(String(describing: detalhe["watch"]))")
+//					print("-=-=-=-=-=-=-=-=-=-=-=-=---=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+//				}
+//			}
 			
 			completion(watchList)
 			
 		}
 
 	}
-		
+	
 }

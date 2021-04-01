@@ -16,7 +16,7 @@ class HorizontalTableViewCell: UITableViewCell {
 	// MARK: - Variable
 	static let identifier: String = "HorizontalTableViewCell"
 	let controller: HomeController = HomeController()
-	weak private var delegate:CellDelegate?
+	weak private var delegate: CellDelegate?
 	
 	
 	// MARK: - Lifecyle
@@ -49,6 +49,7 @@ class HorizontalTableViewCell: UITableViewCell {
 	}
 	
 	func setupTitle(title: CategoryMovie, delegate: CellDelegate) {
+		self.delegate = delegate
 		self.titleLabel.text = title.rawValue
 	}
 		
@@ -77,7 +78,7 @@ extension HorizontalTableViewCell: UICollectionViewDelegate, UICollectionViewDat
 		print("Clicado em Celula Horizontal: \(indexPath.row)")
 		let movieID = self.controller.getMoviePopular(indexPath: indexPath)
 		
-		self.delegate?.selectedCell(indexPath: indexPath, id: movieID?.id)
+		self.delegate?.selectedCell(indexPath: indexPath, id: movieID?.id, backdrop: movieID?.backdropPath)
 	}
 	
 }

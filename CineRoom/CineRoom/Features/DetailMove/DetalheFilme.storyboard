@@ -34,7 +34,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fantasia, Ação, Aventura" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dth-XS-XcG">
-                                                        <rect key="frame" x="20" y="49" width="173" height="18"/>
+                                                        <rect key="frame" x="20" y="49" width="303" height="18"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                         <color key="textColor" name="secondColor"/>
                                                         <nil key="highlightedColor"/>
@@ -61,6 +61,9 @@ formidáveis, Maxwell Lord e a Mulher-Leopardo, enquanto reencontra misteriosame
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="02h 31m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hNH-dB-k6r">
                                                         <rect key="frame" x="333" y="44" width="61" height="18"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="61" id="Qsp-o0-yVO"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                         <color key="textColor" name="secondColor"/>
                                                         <nil key="highlightedColor"/>
@@ -80,6 +83,7 @@ formidáveis, Maxwell Lord e a Mulher-Leopardo, enquanto reencontra misteriosame
                                                     <constraint firstItem="o6w-hL-tee" firstAttribute="top" secondItem="phA-wd-FV9" secondAttribute="top" constant="15" id="3fY-jh-Gzf"/>
                                                     <constraint firstItem="xlA-5X-Bsu" firstAttribute="leading" secondItem="o6w-hL-tee" secondAttribute="trailing" constant="10" id="53a-XA-XNq"/>
                                                     <constraint firstItem="iWu-US-5v1" firstAttribute="leading" secondItem="xlA-5X-Bsu" secondAttribute="trailing" constant="3" id="73g-LA-khe"/>
+                                                    <constraint firstItem="hNH-dB-k6r" firstAttribute="leading" secondItem="Dth-XS-XcG" secondAttribute="trailing" constant="10" id="DVo-FU-HIY"/>
                                                     <constraint firstItem="iWu-US-5v1" firstAttribute="top" secondItem="phA-wd-FV9" secondAttribute="top" constant="15" id="OU4-Lo-AuC"/>
                                                     <constraint firstItem="ByK-DC-e11" firstAttribute="top" secondItem="Dth-XS-XcG" secondAttribute="bottom" constant="15" id="SPt-QN-sZH"/>
                                                     <constraint firstAttribute="trailing" secondItem="iWu-US-5v1" secondAttribute="trailing" constant="20" id="Y6q-LT-OZf"/>

@@ -50,6 +50,7 @@ class WatchListVC: UIViewController {
 				detalheVC.movieID = item.movieId
 				detalheVC.favorito = item.isFavorite
 				detalheVC.queroAssistir = item.isAssistir
+				detalheVC.backdrop = item.foto
 			}
 		}
 	}

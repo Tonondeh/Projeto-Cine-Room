@@ -24,6 +24,7 @@ class HomeViewController: UIViewController {
 	
 	// MARK: - Variable
 	var controller: HomeController = HomeController()
+	private var backdrop: String?
 	
 	
 	// MARK: - Lifecycle
@@ -43,9 +44,8 @@ class HomeViewController: UIViewController {
 			guard let detNavigation = segue.destination as? UINavigationController,
 					let detVC = detNavigation.topViewController as? DetalheFilmeVC
 			else { return }
-			
 			detVC.movieID = sender as? Int
-
+			detVC.backdrop = self.backdrop
 		}
 	}
 	
@@ -116,9 +116,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 // MARK: - Extension CellDelegate
 extension HomeViewController: CellDelegate {
 	
-	func selectedCell(indexPath: IndexPath, id: Int?) {
-		performSegue(withIdentifier: "SegueDetalheStoryBoard", sender: id)
+	func selectedCell(indexPath: IndexPath, id: Int?, backdrop: String?) {
 		print("Clicado em Section: \(indexPath.section) - Celula: \(indexPath.row)")
+		self.backdrop = backdrop
+		performSegue(withIdentifier: "SegueDetalheStoryBoard", sender: id)
 	}
 	
 }

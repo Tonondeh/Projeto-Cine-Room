@@ -8,5 +8,5 @@
 import Foundation
 
 protocol CellDelegate: class {
-	func selectedCell(indexPath: IndexPath, id: Int?)
+	func selectedCell(indexPath: IndexPath, id: Int?, backdrop: String?)
 }
