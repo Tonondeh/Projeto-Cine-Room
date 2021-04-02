@@ -36,6 +36,8 @@ class EsqueciSenhaViewController: UIViewController {
         Auth.auth().sendPasswordReset(withEmail: email) { error in
             callback?(error)
         }
+        
+        
     }
     
     
@@ -54,12 +56,15 @@ class EsqueciSenhaViewController: UIViewController {
                     if _error?.code == 17011 {
                         print("Email invalido")
                         Alert.showInvalidEmailAlert(on: self)
+                        
                     }
                 }
             }
 
 		} else {
-			print("Erro na validação")
+            self.emailTextField.shake()
+            Alert.showWrongAlert(on: self)
+            print("Erro na validação")
 		}
 		
 	}
@@ -74,5 +79,7 @@ extension EsqueciSenhaViewController: UITextFieldDelegate {
 		textField.resignFirstResponder()
 		return true
 	}
-	
+    
 }
+
+
