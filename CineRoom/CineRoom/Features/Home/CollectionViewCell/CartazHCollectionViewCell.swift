@@ -57,7 +57,7 @@ class CartazHCollectionViewCell: UICollectionViewCell {
 			self.loadImage(url: url)
 		}
 		self.titleHMovieLabel.text = movie?.title
-		self.dataHMovieLabel.text = movie?.releaseDate
+		self.dataHMovieLabel.text = convertData(movie?.releaseDate ?? "")
 	}
 	
 }

@@ -43,7 +43,7 @@ class CartazVCollectionViewCell: UICollectionViewCell {
 		let urlString: String = urlBaseImage + (movie?.posterPath ?? "")
 		
 		self.titleVMovieLabel.text = movie?.title
-		self.dataVMovieLabel.text  = movie?.releaseDate
+		self.dataVMovieLabel.text  = convertData(movie?.releaseDate ?? "")
 		
 		if let url: URL = URL(string: urlString) {
 			self.loadImage(url: url)
@@ -54,7 +54,7 @@ class CartazVCollectionViewCell: UICollectionViewCell {
 		let urlString: String = urlBaseImage + (movie?.posterPath ?? "")
 		
 		self.titleVMovieLabel.text = movie?.title
-		self.dataVMovieLabel.text  = movie?.releaseDate
+		self.dataVMovieLabel.text  = convertData(movie?.releaseDate ?? "")
 		
 		if let url: URL = URL(string: urlString) {
 			self.loadImage(url: url)
