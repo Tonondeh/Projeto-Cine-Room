@@ -75,12 +75,15 @@ class LoginViewController: UIViewController {
 					Utils.saveUserDefaults(value: self.emailtextField.text, key: "email")
 					self.performSegue(withIdentifier: "segueHome", sender: nil)
 				} else {
-					print("=== erro LOGIN FIREBASE")
+                    Alert.showWrongAlert(on: self) 
+                    print("=== erro LOGIN FIREBASE")
 				}
 				self.removeSpinner()
 			}
 			
 		} else {
+            self.emailtextField.shake()
+            self.senhaTextField.shake()
 			print("Entrada errada")
 		}
 	}

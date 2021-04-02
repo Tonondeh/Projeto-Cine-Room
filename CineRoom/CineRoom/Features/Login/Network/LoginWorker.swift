@@ -143,4 +143,10 @@ class LoginWorker: NSObject {
         
     }
     
+    func sendPasswordReset(withEmail email: String? , _ callback: ((Error?) -> ())? = nil){
+        handle.sendPasswordReset(withEmail: email ?? "" ) { error in
+            callback?(error)
+        }
+        
+    }
 }

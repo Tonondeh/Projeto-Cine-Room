@@ -71,9 +71,9 @@ extension UITextField {
 		
 	}
     
-    func validateCPF() -> Bool {
-        return false
-    }
+//    func validateCPF() -> Bool {
+//        return false
+//    }
 	
     func inputToolbar()-> UIToolbar {
         let toolbar = UIToolbar()
@@ -91,6 +91,36 @@ extension UITextField {
         
         return toolbar
     }
+    
+    func shake() {
+
+        let animation = CABasicAnimation(keyPath: "position")
+        animation.duration = 0.05
+        animation.repeatCount = 3
+        animation.autoreverses = true
+        animation.fromValue = CGPoint(x: self.center.x - 12.0, y: self.center.y)
+        animation.toValue = CGPoint(x: self.center.x + 12.0, y: self.center.y)
+        layer.add(animation, forKey: "position")
+        
+        let color = CABasicAnimation(keyPath: "borderColor")
+        color.fromValue = UIColor.red.cgColor
+//        color.toValue = UIColor.clear
+        color.duration = 2
+        color.repeatCount = 1
+        
+        layer.add(color, forKey: "borderColor")
+      
+        let border = CABasicAnimation(keyPath: "borderWidth")
+        border.fromValue = 3
+        border.toValue = 0
+        border.duration = 2
+        border.repeatCount = 1
+//        layer.borderWidth = 3
+        layer.add(border, forKey: "borderWidth")
+        
+        
+    }
+    
     
     @objc
     func finish() {

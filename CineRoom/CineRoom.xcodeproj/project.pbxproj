@@ -20,7 +20,6 @@
 		B27DEAF425EBF9E800E501F5 /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27DEAF225EBF9E800E501F5 /* PerfilViewController.swift */; };
 		B2FD94F325EBFF5F000BDD6F /* DetalheFilme.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2FD94F125EBFF5F000BDD6F /* DetalheFilme.storyboard */; };
 		B2FD950225EBFFBC000BDD6F /* DetalheFilmeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FD950125EBFFBC000BDD6F /* DetalheFilmeVC.swift */; };
-		B2FD950D25EC0192000BDD6F /* ConfirmarSenhaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC90FC9B25E9630B0092A52B /* ConfirmarSenhaViewController.swift */; };
 		B2FD951B25EC0E0B000BDD6F /* Perfil.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2FD951A25EC0E0B000BDD6F /* Perfil.storyboard */; };
 		BC0387A125FAD71F00EB56DE /* Extension+TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0387A025FAD71F00EB56DE /* Extension+TextField.swift */; };
 		BC0387A625FAF21300EB56DE /* MovieNowPlaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0387A525FAF21300EB56DE /* MovieNowPlaying.swift */; };
@@ -115,7 +114,6 @@
 		BC90FC9125E961880092A52B /* CriarConta.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CriarConta.storyboard; sourceTree = "<group>"; };
 		BC90FC9425E961990092A52B /* CriarContaVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CriarContaVC.swift; sourceTree = "<group>"; };
 		BC90FC9725E961B60092A52B /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
-		BC90FC9B25E9630B0092A52B /* ConfirmarSenhaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmarSenhaViewController.swift; sourceTree = "<group>"; };
 		BC90FCA125E963200092A52B /* EsqueciSenhaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EsqueciSenhaViewController.swift; sourceTree = "<group>"; };
 		BCA744B825E947DE00A5B402 /* WatchList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WatchList.storyboard; sourceTree = "<group>"; };
 		BCA744BB25E9487100A5B402 /* WatchListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListVC.swift; sourceTree = "<group>"; };
@@ -244,7 +242,6 @@
 			children = (
 				BCBDA20F2607CEB900A86423 /* Controller */,
 				BC90FCA125E963200092A52B /* EsqueciSenhaViewController.swift */,
-				BC90FC9B25E9630B0092A52B /* ConfirmarSenhaViewController.swift */,
 				9F78B78725EC1DA40001228D /* EsqueciSenha.storyboard */,
 			);
 			path = ForgetPassword;
@@ -623,7 +620,6 @@
 				BC1361CC2613EF3400F4263F /* WatchModel.swift in Sources */,
 				BC0387A125FAD71F00EB56DE /* Extension+TextField.swift in Sources */,
 				BC90FCA225E963200092A52B /* EsqueciSenhaViewController.swift in Sources */,
-				B2FD950D25EC0192000BDD6F /* ConfirmarSenhaViewController.swift in Sources */,
 				BC90FC9525E961990092A52B /* CriarContaVC.swift in Sources */,
 				BC0387A925FAF28F00EB56DE /* MoviePopular.swift in Sources */,
 				D3694EC825EBFCBD00D57CFB /* HomeViewController.swift in Sources */,
