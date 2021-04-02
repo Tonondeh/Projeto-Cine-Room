@@ -62,10 +62,7 @@ class PerfilViewController: UIViewController {
             self.nascimentoDataPicker.isEnabled = false
             self.mudarFotoButton.isHidden = true
             self.salvarButton.isHidden = true
-            //self.nascimentoDataPicker.tintColor = .yellow
-            //self.nascimentoDataPicker.backgroundColor =
-           // self.nascimentoDataPicker.
-            self.nascimentoDataPicker.setValue(UIColor.purple, forKey:  "textColor")
+           
            
             
             
@@ -80,8 +77,6 @@ class PerfilViewController: UIViewController {
             self.nascimentoDataPicker.isEnabled = true
             self.mudarFotoButton.isHidden = false
             self.salvarButton.isHidden = false
-            //self.nascimentoDataPicker.tintColor = .yellow
-            self.nascimentoDataPicker.setValue(UIColor.green, forKey:  "textColor")
             
             
         }
@@ -149,7 +144,7 @@ class PerfilViewController: UIViewController {
                     } else if self.nomeCompletoTextField.isEditing{
                         self.view.frame.origin.y -= 180
                     } else if self.nomeTextField.isEditing{
-                        self.view.frame.origin.y -= 100
+                        self.view.frame.origin.y -= keyboardSize.height
                     } else {
                         self.view.frame.origin.y -= keyboardSize.height
                     }
