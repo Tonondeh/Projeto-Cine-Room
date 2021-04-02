@@ -13,15 +13,7 @@ class WatchListController {
 	private var watchListDic: [String:Any]?
 	private var watchListFavorite = [WatchModel]()
 	private var watchListAssistir = [WatchModel]()
-	
-	var countWathListFavorite: Int? {
-		return self.watchListFavorite.count
-	}
-	
-	var countWathListAssistir: Int? {
-		return self.watchListAssistir.count
-	}
-	
+
 	
 	// MARK: - Function
 	
@@ -109,5 +101,36 @@ class WatchListController {
 			return self.watchListAssistir[indexPath.row]
 		}
 	}
+	
+	
+	// Método para retornar count Favorite
+	func countWathListFavorite() -> Int {
+		if self.watchListFavorite.count == 0 {
+			return 1
+		} else {
+			return self.watchListFavorite.count
+		}
+	}
+	
+	
+	// Método para retornar count Assistir
+	func countWathListAssistir() -> Int {
+		if self.watchListAssistir.count == 0 {
+			return 1
+		} else {
+			return self.watchListAssistir.count
+		}
+	}
+	
+	
+	// Método para verificar se está vazio
+	func checkEmptyWatchList(selection: Int) -> Bool {
+		if selection == 0 {
+			return self.watchListFavorite.count == 0 ? true : false
+		} else {
+			return self.watchListAssistir.count == 0 ? true : false
+		}
+	}
+	
 	
 }

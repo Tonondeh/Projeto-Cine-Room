@@ -16,8 +16,8 @@ class DetalheWorker {
 	private let urlBase: String = "https://api.themoviedb.org/3/movie/"
 	private let autenticacao = Auth.auth()
 	private let db = Database.database().reference()
-
-		
+	
+	
 	// Método para buscar Detalhe do Filme
 	func loadMovieDetail(movieId: Int, completion: @escaping(_ success: MovieDetail?, _ error: NSError?) -> Void) {
 		
@@ -172,23 +172,85 @@ class DetalheWorker {
 				completion(nil)
 				return
 			}
-						
-//			for watch in watchList.values {
-//				if let detalhe = watch as? Dictionary<String, String> {
-//					print("Nome: \(String(describing: detalhe["name"]))")
-//					print("Genero: \(String(describing: detalhe["genre"]))")
-//					print("Rating: \(String(describing: detalhe["rating"]))")
-//					print("Foto: \(String(describing: detalhe["foto"]))")
-//					print("Favorito: \(String(describing: detalhe["favorito"]))")
-//					print("Assistir: \(String(describing: detalhe["watch"]))")
-//					print("-=-=-=-=-=-=-=-=-=-=-=-=---=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
-//				}
-//			}
+			
+			//			for watch in watchList.values {
+			//				if let detalhe = watch as? Dictionary<String, String> {
+			//					print("Nome: \(String(describing: detalhe["name"]))")
+			//					print("Genero: \(String(describing: detalhe["genre"]))")
+			//					print("Rating: \(String(describing: detalhe["rating"]))")
+			//					print("Foto: \(String(describing: detalhe["foto"]))")
+			//					print("Favorito: \(String(describing: detalhe["favorito"]))")
+			//					print("Assistir: \(String(describing: detalhe["watch"]))")
+			//					print("-=-=-=-=-=-=-=-=-=-=-=-=---=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+			//				}
+			//			}
 			
 			completion(watchList)
 			
 		}
+		
+	}
+	
+	
+	// Método para recuperar informações do Filme Firebase
+	func selectionMovieItem(movieId: Int?, completion: @escaping(_ success: WatchModel? ) -> Void) {
+		guard let _id = movieId else { return completion(nil) }
+		
+		let id: String = String(_id)
+		let movieItem = db.child("watchlist").child("usuarios").child(autenticacao.currentUser?.uid ?? "")
+		
+		movieItem.child(id).getData { (error, snapshot) in
+			
+			guard let watchList = snapshot.value as? [String:Any] else {
+				print("Erro na Snapshot")
+				completion(nil)
+				return
+			}
+			
+			print("===> Movie ID: \(id)")
+			print("Watch List: \(watchList)")
+			
+			for watchItem	in watchList {
+				if watchItem.key == id {
+					print("Encontrou Filme")
+					let value = watchItem.value as? [String: Any]
+					
+					if let item = value as? Dictionary<String, String> {
+						let isFavorite: Bool?
+						let isAssistir: Bool?
+						
+						if item["favorite"] == "" {
+							isFavorite = false
+						} else {
+							isFavorite = true
+						}
 
+						if item["watch"] == "" {
+							isAssistir = false
+						} else {
+							isAssistir = true
+						}
+						
+						let watchModel: WatchModel? = WatchModel(movieId: Int(watchItem.key),
+																			  name: item["name"],
+																			  genre: item["genre"],
+																			  rating: item["rating"],
+																			  foto: item["foto"],
+																			  isFavorite: isFavorite,
+																			  isAssistir: isAssistir)
+						completion(watchModel)
+					}
+					
+				} else {
+					print("Não encontrou!!")
+				}
+				
+			}
+			completion(nil)
+			
+		}
+		
+		
 	}
 	
 }

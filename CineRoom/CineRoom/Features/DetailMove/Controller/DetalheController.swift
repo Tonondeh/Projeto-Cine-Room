@@ -118,10 +118,7 @@ class DetalheController {
 	
 	
 	// Método para gravar Watch List
-//	func setWatchList(movieID: Int?, name: String?, genre: String?, rating: String?, foto: String?, favorite: Bool, watch: Bool) {
 	func setWatchList(item: WatchModel) {
-//		let _favorite: String? = favorite ? "X" : ""
-//		let _watch: String?  = watch ? "X" : ""
 		let _favorite: String? = (item.isFavorite ?? false) ? "X" : ""
 		let _watch: String?  = (item.isAssistir ?? false) ? "X" : ""
 		DetalheWorker().setWatchItem(movieID: item.movieId,
@@ -149,6 +146,15 @@ class DetalheController {
 			}
 		}
 		
+	}
+	
+	
+	// Método para recuperar informações do Filme Firebase
+	func selectionMovieItem(movieId: Int?, completion: @escaping(_ success: WatchModel?) -> Void) {
+		DetalheWorker().selectionMovieItem(movieId: movieId) { (success) in
+			print(#function)
+			completion(success)
+		}
 	}
 	
 	
