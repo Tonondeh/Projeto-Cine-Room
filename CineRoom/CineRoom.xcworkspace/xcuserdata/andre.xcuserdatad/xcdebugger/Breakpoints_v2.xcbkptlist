@@ -14,10 +14,10 @@
             filePath = "CineRoom/Features/Login/CreatAccount/CriarContaVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "479"
-            endingLineNumber = "479"
-            landmarkName = "didTapFacebook(_:)"
-            landmarkType = "7">
+            startingLineNumber = "246"
+            endingLineNumber = "246"
+            landmarkName = "Life Cycle"
+            landmarkType = "19">
             <Locations>
                <Location
                   uuid = "A1A6C97A-BB36-46F3-9A87-1910812F844A - 4d9037a812c09ca0"
@@ -62,8 +62,8 @@
             filePath = "CineRoom/Features/Login/CreatAccount/CriarContaVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "517"
-            endingLineNumber = "517"
+            startingLineNumber = "284"
+            endingLineNumber = "284"
             landmarkName = "CriarContaVC"
             landmarkType = "3">
          </BreakpointContent>
@@ -78,10 +78,10 @@
             filePath = "CineRoom/Features/Login/CreatAccount/CriarContaVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "532"
-            endingLineNumber = "532"
-            landmarkName = "startSignInWithAppleFlow()"
-            landmarkType = "7">
+            startingLineNumber = "299"
+            endingLineNumber = "299"
+            landmarkName = "CriarContaVC"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -94,10 +94,10 @@
             filePath = "CineRoom/Features/Login/CreatAccount/CriarContaVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "632"
-            endingLineNumber = "632"
-            landmarkName = "authorizationController(controller:didCompleteWithAuthorization:)"
-            landmarkType = "7">
+            startingLineNumber = "399"
+            endingLineNumber = "399"
+            landmarkName = "CriarContaVC"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -110,8 +110,8 @@
             filePath = "CineRoom/Features/Login/CreatAccount/CriarContaVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "520"
-            endingLineNumber = "520"
+            startingLineNumber = "287"
+            endingLineNumber = "287"
             landmarkName = "CriarContaVC"
             landmarkType = "3">
          </BreakpointContent>

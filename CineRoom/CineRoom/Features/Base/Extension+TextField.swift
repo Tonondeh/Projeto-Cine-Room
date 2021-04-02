@@ -71,9 +71,9 @@ extension UITextField {
 		
 	}
     
-    func validateCPF() -> Bool {
-        return false
-    }
+//    func validateCPF() -> Bool {
+//        return false
+//    }
 	
     func inputToolbar()-> UIToolbar {
         let toolbar = UIToolbar()
