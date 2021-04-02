@@ -14,14 +14,9 @@ class PerfilController {
     func loadUserDefault() {
         guard let email = (Utils.getUserDefaults(key: "email")) as? String else { return }
         
-        
         DataManager().loadUserData(email: email) { (user) in
-          
-           
-            
             if user != nil {
                 self.usuario = UserModel(cpf: user?.cpf, dateBirth: user?.dateBirth, email: user?.email, nameDisplay: user?.nameDisplay, nameFull: user?.nameFull)
-           
             }
         }
         
@@ -35,18 +30,8 @@ class PerfilController {
         LoginWorker().logOut()
     }
     
-    func upDateUser( userUpdate:UserModel? ){
-        
+    func updateUser(userUpdate: UserModel?) {
+		DataManager().updateUser(userUpdate: userUpdate)
     }
-  
-  
-    
-    
-    
-    
     
 }
-
-
-
-
