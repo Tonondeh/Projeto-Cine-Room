@@ -43,6 +43,7 @@ class PerfilViewController: UIViewController {
 		self.unlockTextfield(block: true)
 		self.configImageView()
 		self.configNotificationCenter()
+        
 		
 	}
 	
@@ -51,21 +52,28 @@ class PerfilViewController: UIViewController {
 	private func unlockTextfield (block:Bool) {
 		if block == true{
 			self.nomeTextField.isEnabled = false
+            self.nomeTextField.backgroundColor = .lightGray
 			self.nomeCompletoTextField.isEnabled = false
+            self.nomeCompletoTextField.backgroundColor = .lightGray
 			self.emailTextField.isEnabled = false
 			self.cpfTextField.isEnabled = false
+            self.cpfTextField.backgroundColor = .lightGray
 			self.nascimentoDataPicker.isEnabled = false
 			self.mudarFotoButton.isHidden = true
 			self.salvarButton.isHidden = true
 			
 		} else {
 			self.nomeTextField.isEnabled = true
+            self.nomeTextField.backgroundColor = .white
 			self.nomeCompletoTextField.isEnabled = true
+            self.nomeCompletoTextField.backgroundColor = .white
 			self.emailTextField.isEnabled = false
 			self.cpfTextField.isEnabled = true
+            self.cpfTextField.backgroundColor = .white
 			self.nascimentoDataPicker.isEnabled = true
 			self.mudarFotoButton.isHidden = false
 			self.salvarButton.isHidden = false
+            
 		}
 		
 	}
@@ -89,11 +97,23 @@ class PerfilViewController: UIViewController {
 		self.nomeCompletoTextField.text = user?.nameFull
 		self.emailTextField.text = user?.email
 		
-		// TODO: Tratar o CPF
-//		self.cpfTextField.text = "\(user?.cpf)"
+		// Tratar o CPF
+        let cpf = String(user?.cpf ?? 123)
+        var characters = Array(cpf)
+        characters.insert(".", at: 3)
+        characters.insert(".", at: 7)
+        characters.insert("-", at: 11)
+        
+
+        let masked = String(characters)
+        print("cpf masked: ",masked)
+        
+      
+        
+        self.cpfTextField.text = masked
 		
 		// TODO: Tratar Data Nascimento
-//		self.nascimentoDataPicker.date = user?.dateBirth
+		self.nascimentoDataPicker.date = user?.dateBirth ?? Date()
 		
 	}
 	
@@ -104,13 +124,10 @@ class PerfilViewController: UIViewController {
 				
 				if self.cpfTextField.isEditing {
 					self.view.frame.origin.y -= 200
-					print("Entrou em CPF")
 				} else if self.nomeCompletoTextField.isEditing{
-					self.view.frame.origin.y -= 200
-					print("Entrou em nome completo")
+					self.view.frame.origin.y -= 180
 				} else if self.nomeTextField.isEditing{
 					self.view.frame.origin.y -= 100
-					print("Entrou em nome")
 				} else {
 					self.view.frame.origin.y -= keyboardSize.height
 				}
@@ -158,20 +175,32 @@ class PerfilViewController: UIViewController {
 	
 	@IBAction func editPerfilTappedButton(_ sender: UIButton) {
 		self.unlockTextfield(block: false)
+        
 	}
 	
 	@IBAction func salvarTappedButton(_ sender: UIButton) {
 		self.unlockTextfield(block: true)
 		
-		// TODO: Tratar CPF [retirar os . e -]
+	
+        let cpf = self.cpfTextField.text
+        let cpfString = cpf?.replacingOccurrences(of: ".", with: "").replacingOccurrences(of: "-", with: "")
+        let cpfNumber = Int64(cpfString ?? "") ?? 0
+        
 		// TODO: Tratar Data Nascimento
+        
+       
+        
+		let userUpDate: UserModel = UserModel(
+            
+            
+            cpf:  cpfNumber ,
+            dateBirth: self.nascimentoDataPicker.date,
+            email: self.emailTextField.text,
+            nameDisplay: self.nomeTextField.text,
+            nameFull: self.nomeCompletoTextField.text)
 		
-		let userUpDate: UserModel = UserModel(cpf: 10,
-														  dateBirth: nil,
-														  email: self.emailTextField.text,
-														  nameDisplay: self.nomeTextField.text,
-														  nameFull: self.nomeCompletoTextField.text)
-		
+        
+        
 		if user != userUpDate {
 			print("===>> campos diferentes")
 			self.controller.updateUser(userUpdate: userUpDate)
@@ -194,18 +223,17 @@ extension PerfilViewController: UITextFieldDelegate {
 	
 	func textFieldDidBeginEditing(_ textField: UITextField) {
 		textField.layer.borderColor = UIColor.blue.cgColor
+        
 	}
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+    }
 	
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-		let nextTag = textField.tag + 1
+        textField.resignFirstResponder()
+
 		
-		if let nextResponder = textField.superview?.viewWithTag(nextTag) {
-			nextResponder.becomeFirstResponder()
-		} else {
-			textField.resignFirstResponder()
-		}
-		
-		return false
 	}
 	
 	
