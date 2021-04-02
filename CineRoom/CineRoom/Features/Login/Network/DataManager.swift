@@ -62,13 +62,11 @@ class DataManager {
 		
 		let userCoreData: UserData = UserData(context: self.managedContext)
 		
-		// TODO: Tratar CPF
+	
 		// TODO: Tratar Data Nascimento
 		
-		//        if let cpf = userUpdate?.cpf {
-		//            userCoreData.cpf = cpf
-		//        }
-		
+	
+        userCoreData.cpf = userUpdate?.cpf ?? 0
 		userCoreData.dateBirth = userUpdate?.dateBirth
 		userCoreData.email = userUpdate?.email
 		userCoreData.nameDisplay = userUpdate?.nameDisplay
