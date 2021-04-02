@@ -48,15 +48,13 @@ class DetalheFilmeVC: UIViewController {
 		super.viewDidLoad()
 		
 		self.showSpinner()
-		
 		self.clearData()
-		self.isFavorito = favorito ?? false
-		self.isQueroAssistir = queroAssistir ?? false
-		loadMovieDetails()
-		configScrollView()
-		configBarButtonItem()
-		configCollectionView()
-		configTableView()
+		self.configHeartBookmark()
+		self.loadMovieDetails()
+		self.configScrollView()
+		self.configBarButtonItem()
+		self.configCollectionView()
+		self.configTableView()
 	}
 	
 	override func viewDidDisappear(_ animated: Bool) {
@@ -90,6 +88,21 @@ class DetalheFilmeVC: UIViewController {
 	
 	
 	// MARK: - Function
+	private func configHeartBookmark() {
+		if favorito == nil && queroAssistir == nil {
+			self.controller.selectionMovieItem(movieId: movieID) { (success) in
+				if success != nil {
+					self.isFavorito = success?.isFavorite ?? false
+					self.isQueroAssistir = success?.isAssistir ?? false
+					self.configBarButtonItem()
+				}
+			}
+		} else {
+			self.isFavorito = favorito ?? false
+			self.isQueroAssistir = queroAssistir ?? false
+		}
+	}
+	
 	private func configScrollView() {
 		self.scrollView.delaysContentTouches = true
 	}

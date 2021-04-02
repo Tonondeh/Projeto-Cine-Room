@@ -48,6 +48,8 @@
 		BCA744BC25E9487100A5B402 /* WatchListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA744BB25E9487100A5B402 /* WatchListVC.swift */; };
 		BCA744C025E948E000A5B402 /* WatchListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA744BE25E948E000A5B402 /* WatchListTableViewCell.swift */; };
 		BCA744C125E948E000A5B402 /* WatchListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCA744BF25E948E000A5B402 /* WatchListTableViewCell.xib */; };
+		BCB8B0682616A08000D559D9 /* WatchListEmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB8B0662616A08000D559D9 /* WatchListEmptyCell.swift */; };
+		BCB8B0692616A08000D559D9 /* WatchListEmptyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCB8B0672616A08000D559D9 /* WatchListEmptyCell.xib */; };
 		BCBDA20D2607C8A400A86423 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBDA20C2607C8A400A86423 /* LoginController.swift */; };
 		BCBDA2112607CED200A86423 /* ForgetPassController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBDA2102607CED200A86423 /* ForgetPassController.swift */; };
 		BCBDA2152607D62300A86423 /* CriarContaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBDA2142607D62300A86423 /* CriarContaController.swift */; };
@@ -118,6 +120,8 @@
 		BCA744BB25E9487100A5B402 /* WatchListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListVC.swift; sourceTree = "<group>"; };
 		BCA744BE25E948E000A5B402 /* WatchListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListTableViewCell.swift; sourceTree = "<group>"; };
 		BCA744BF25E948E000A5B402 /* WatchListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WatchListTableViewCell.xib; sourceTree = "<group>"; };
+		BCB8B0662616A08000D559D9 /* WatchListEmptyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListEmptyCell.swift; sourceTree = "<group>"; };
+		BCB8B0672616A08000D559D9 /* WatchListEmptyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WatchListEmptyCell.xib; sourceTree = "<group>"; };
 		BCBDA20C2607C8A400A86423 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		BCBDA2102607CED200A86423 /* ForgetPassController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPassController.swift; sourceTree = "<group>"; };
 		BCBDA2142607D62300A86423 /* CriarContaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriarContaController.swift; sourceTree = "<group>"; };
@@ -333,6 +337,8 @@
 			children = (
 				BCA744BE25E948E000A5B402 /* WatchListTableViewCell.swift */,
 				BCA744BF25E948E000A5B402 /* WatchListTableViewCell.xib */,
+				BCB8B0662616A08000D559D9 /* WatchListEmptyCell.swift */,
+				BCB8B0672616A08000D559D9 /* WatchListEmptyCell.xib */,
 			);
 			path = CustomTableViewCell;
 			sourceTree = "<group>";
@@ -515,6 +521,7 @@
 				9F78B78825EC1DA40001228D /* EsqueciSenha.storyboard in Resources */,
 				BCA744C125E948E000A5B402 /* WatchListTableViewCell.xib in Resources */,
 				D33C608425EC6AB000773E6B /* Home.storyboard in Resources */,
+				BCB8B0692616A08000D559D9 /* WatchListEmptyCell.xib in Resources */,
 				13FFA77925EB2493008053C0 /* Login.storyboard in Resources */,
 				B2FD94F325EBFF5F000BDD6F /* DetalheFilme.storyboard in Resources */,
 				D3694EBD25EBFB6C00D57CFB /* CartazHCollectionViewCell.xib in Resources */,
@@ -638,6 +645,7 @@
 				BC20916E260D362B003CDD95 /* HomeController.swift in Sources */,
 				BC8F423E25EC5AF90040776A /* ElencoCollectionViewCell.swift in Sources */,
 				9FF0FB852604181700B58839 /* UserModel.swift in Sources */,
+				BCB8B0682616A08000D559D9 /* WatchListEmptyCell.swift in Sources */,
 				BC0387AC25FAF2F500EB56DE /* MovieTrending.swift in Sources */,
 				BC9022CE26122436002AC985 /* AssistirViewController.swift in Sources */,
 			);

@@ -19,7 +19,7 @@ class VerticalTableViewCell: UITableViewCell {
 	let controller: HomeController = HomeController()
 	private var category: CategoryMovie?
 	
-	weak private var delegate:CellDelegate?
+	weak private var delegate: CellDelegate?
 	
 	
 	// MARK: - Lifecycle

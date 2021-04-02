@@ -25,6 +25,7 @@ class HomeViewController: UIViewController {
 	// MARK: - Variable
 	var controller: HomeController = HomeController()
 	private var backdrop: String?
+	private var watchItem: WatchModel?
 	
 	
 	// MARK: - Lifecycle
@@ -46,6 +47,8 @@ class HomeViewController: UIViewController {
 			else { return }
 			detVC.movieID = sender as? Int
 			detVC.backdrop = self.backdrop
+			detVC.favorito = self.watchItem?.isFavorite
+			detVC.queroAssistir = self.watchItem?.isAssistir
 		}
 	}
 	
@@ -119,7 +122,7 @@ extension HomeViewController: CellDelegate {
 	func selectedCell(indexPath: IndexPath, id: Int?, backdrop: String?) {
 		print("Clicado em Section: \(indexPath.section) - Celula: \(indexPath.row)")
 		self.backdrop = backdrop
-		performSegue(withIdentifier: "SegueDetalheStoryBoard", sender: id)
+		self.performSegue(withIdentifier: "SegueDetalheStoryBoard", sender: id)
 	}
 	
 }

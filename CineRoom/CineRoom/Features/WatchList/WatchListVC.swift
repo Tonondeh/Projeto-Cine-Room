@@ -39,6 +39,7 @@ class WatchListVC: UIViewController {
 		self.tableView.dataSource = self
 		self.tableView.backgroundColor = UIColor(named: "backgroudColor")
 		self.tableView.register(WatchListTableViewCell.nib(), forCellReuseIdentifier: WatchListTableViewCell.identifier)
+		self.tableView.register(WatchListEmptyCell.nib(), forCellReuseIdentifier: WatchListEmptyCell.identifier)
 		self.tableView.reloadData()
 	}
 	
@@ -69,19 +70,27 @@ extension WatchListVC: UITableViewDelegate, UITableViewDataSource {
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		if self.listSegmented.selectedSegmentIndex == 0 {
-			return self.controller.countWathListFavorite ?? 0
+			return self.controller.countWathListFavorite()
 		} else {
-			return self.controller.countWathListAssistir ?? 0
+			return self.controller.countWathListAssistir()
 		}
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: WatchListTableViewCell.identifier, for: indexPath) as? WatchListTableViewCell
+		let watchListSelection = self.listSegmented.selectedSegmentIndex
 		
-		cell?.configCell(filme: self.controller.getWatchItem(selection: self.listSegmented.selectedSegmentIndex,
-																			  indexPath: indexPath))
+		if self.controller.checkEmptyWatchList(selection: watchListSelection) {
+			let cell = tableView.dequeueReusableCell(withIdentifier: WatchListEmptyCell.identifier, for: indexPath) as? WatchListEmptyCell
+			return cell ?? UITableViewCell()
+			
+		} else {
+		 let cell = tableView.dequeueReusableCell(withIdentifier: WatchListTableViewCell.identifier, for: indexPath) as? WatchListTableViewCell
+			cell?.configCell(filme: self.controller.getWatchItem(selection: self.listSegmented.selectedSegmentIndex,
+																				  indexPath: indexPath))
+			return cell ?? UITableViewCell()
+			
+		}
 		
-		return cell ?? UITableViewCell()
 	}
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -91,6 +100,5 @@ extension WatchListVC: UITableViewDelegate, UITableViewDataSource {
 		
 		self.performSegue(withIdentifier: "segueDetalheStoryboard", sender: item)
 	}
-	
 	
 }
