@@ -63,6 +63,7 @@ class PerfilViewController: UIViewController {
             self.mudarFotoButton.isHidden = true
             self.salvarButton.isHidden = true
            
+           
             
             
         } else {
@@ -76,7 +77,6 @@ class PerfilViewController: UIViewController {
             self.nascimentoDataPicker.isEnabled = true
             self.mudarFotoButton.isHidden = false
             self.salvarButton.isHidden = false
-            self.nascimentoDataPicker.setValue(UIColor.green, forKey:  "textColor")
             
             
         }
@@ -129,7 +129,7 @@ class PerfilViewController: UIViewController {
             
           
             
-
+            // TODO: Tratar Data Nascimento
             self.nascimentoDataPicker.date = user?.dateBirth ?? Date()
             
         }
@@ -144,7 +144,7 @@ class PerfilViewController: UIViewController {
                     } else if self.nomeCompletoTextField.isEditing{
                         self.view.frame.origin.y -= 180
                     } else if self.nomeTextField.isEditing{
-                        self.view.frame.origin.y -= 100
+                        self.view.frame.origin.y -= keyboardSize.height
                     } else {
                         self.view.frame.origin.y -= keyboardSize.height
                     }
@@ -203,6 +203,10 @@ class PerfilViewController: UIViewController {
             let cpf = self.cpfTextField.text
             let cpfString = cpf?.replacingOccurrences(of: ".", with: "").replacingOccurrences(of: "-", with: "")
             let cpfNumber = Int64(cpfString ?? "") ?? 0
+            
+            // TODO: Tratar Data Nascimento
+            
+            
             
             let userUpDate: UserModel = UserModel(
                 
