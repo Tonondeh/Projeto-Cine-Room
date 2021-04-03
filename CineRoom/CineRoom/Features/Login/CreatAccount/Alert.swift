@@ -18,7 +18,7 @@ struct Alert {
 	
 	
 	static func showIncompleteFormAlert(on vc: UIViewController) {
-		showBasicAlert(on: vc, with: "Cadastro incompleto", message: "Por favor, preencher todos os campos")
+		showBasicAlert(on: vc, with: "Cadastro incompleto", message: "Sua senha deve conter pelo menos 6 números.")
 	}
 	
 	static func showInvalidEmailAlert(on vc: UIViewController) {
@@ -28,13 +28,6 @@ struct Alert {
     static func showWrongAlert(on vc: UIViewController) {
         showBasicAlert(on: vc, with: "Dados Incorretos", message: "Por favor, verifique os dados !!!")
     }
-    
-    static func showWorgnEmail(on vc: UIViewController) {
-        showBasicAlert(on: vc, with: "Email incorreto", message: "E-mail invalido, digite um E-mail válido.")
-    }
-    
-    
-    
-    
 }
+
 

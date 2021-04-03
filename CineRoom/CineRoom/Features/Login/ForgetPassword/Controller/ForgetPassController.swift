@@ -26,3 +26,5 @@ class ForgetPassController {
                 completion(false)
             }
         }
+    }
+}
