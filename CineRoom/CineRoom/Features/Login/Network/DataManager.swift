@@ -61,10 +61,6 @@ class DataManager {
 	func updateUser(userUpdate: UserModel?) {
 		
 		let userCoreData: UserData = UserData(context: self.managedContext)
-		
-	
-		// TODO: Tratar Data Nascimento
-		
 	
         userCoreData.cpf = userUpdate?.cpf ?? 0
 		userCoreData.dateBirth = userUpdate?.dateBirth

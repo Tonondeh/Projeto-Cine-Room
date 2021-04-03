@@ -247,9 +247,6 @@ class CriarContaVC: UIViewController {
 		}
 	}
 
-    
-    
-    // Adapted from https://auth0.com/docs/api-auth/tutorials/nonce#generate-a-cryptographically-random-nonce
     private func randomNonceString(length: Int = 32) -> String {
       precondition(length > 0)
       let charset: Array<Character> =
@@ -287,7 +284,6 @@ class CriarContaVC: UIViewController {
     // Unhashed nonce.
     fileprivate var currentNonce: String?
 
-//    @available(iOS 13, *)
     func startSignInWithAppleFlow() {
       let nonce = randomNonceString()
       currentNonce = nonce
@@ -298,11 +294,9 @@ class CriarContaVC: UIViewController {
 
       let authorizationController = ASAuthorizationController(authorizationRequests: [request])
       authorizationController.delegate = self
-//      authorizationController.presentationContextProvider = self
       authorizationController.performRequests()
     }
 
-//    @available(iOS 13, *)
     private func sha256(_ input: String) -> String {
       let inputData = Data(input.utf8)
       let hashedData = SHA256.hash(data: inputData)
@@ -312,10 +306,6 @@ class CriarContaVC: UIViewController {
 
       return hashString
     }
-    
-    
-    
-
 }
 
 
@@ -367,9 +357,6 @@ extension CriarContaVC: CriarContaProtocol {
 
 
 extension CriarContaVC: ASAuthorizationControllerDelegate {
-    
-//    @available(iOS 13.0, *)
-//    extension MainViewController: ASAuthorizationControllerDelegate {
 
       func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
@@ -384,22 +371,6 @@ extension CriarContaVC: ASAuthorizationControllerDelegate {
             print("Unable to serialize token string from data: \(appleIDToken.debugDescription)")
             return
           }
-          // Initialize a Firebase credential.
-//          let credential = OAuthProvider.credential(withProviderID: "apple.com",
-//                                                    IDToken: idTokenString,
-//                                                    rawNonce: nonce)
-          // Sign in with Firebase.
-//          Auth.auth().signIn(with: credential) { (authResult, error) in
-//            if error {
-//              // Error. If error.code == .MissingOrInvalidNonce, make sure
-//              // you're sending the SHA256-hashed nonce as a hex string with
-//              // your request to Apple.
-//              print(error.localizedDescription)
-//              return
-//            }
-//            // User is signed in to Firebase with Apple.
-//            // ...
-//          }
         }
       }
 
@@ -409,5 +380,3 @@ extension CriarContaVC: ASAuthorizationControllerDelegate {
       }
 
     }
-    
-//}

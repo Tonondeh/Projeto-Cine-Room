@@ -80,13 +80,6 @@ extension CriarContaController: GIDSignInDelegate {
 			print("Nome: \(String(describing: user.profile.name))")
 			print("Email: \(String(describing: user.profile.email))")
 
-			// Obter a Imagem do Profile Google
-			//			let data = try? Data(contentsOf: _imagem)
-			//			if let imageData = data {
-			//				self.profileImageView.image = UIImage(data: imageData)
-			//			}
-
-			// Autenticacao com o Firebase
 			guard let authentication = user.authentication else { return }
 			let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
 																		  accessToken: authentication.accessToken)

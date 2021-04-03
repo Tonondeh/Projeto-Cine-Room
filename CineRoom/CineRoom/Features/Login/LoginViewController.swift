@@ -87,10 +87,8 @@ class LoginViewController: UIViewController {
 			print("Entrada errada")
 		}
 	}
-	
 }
-
-
+    
 // MARK: - Extension TextField
 extension LoginViewController: UITextFieldDelegate {
 	

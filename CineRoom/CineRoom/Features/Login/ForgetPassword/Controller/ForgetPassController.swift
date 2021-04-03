@@ -26,17 +26,3 @@ class ForgetPassController {
                 completion(false)
             }
         }
-//        LoginWorker(). (withEmail: emailTextField.text ?? "") { (error) in
-//            if error == nil {
-//                print("Tela Login")
-//            }else{
-//                let _error = error as NSError?
-//                if _error?.code == 17011 {
-//                    print("Email invalido")
-//                    Alert.showInvalidEmailAlert(on: self)
-//
-//                }
-//            }
-//        }
-    }
-}

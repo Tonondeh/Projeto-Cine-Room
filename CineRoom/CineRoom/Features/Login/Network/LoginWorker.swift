@@ -15,7 +15,6 @@ class LoginWorker: NSObject {
     
     private let handle = Auth.auth()
     
-    
     func createUserFirebase(email: String?, password: String?, completion: @escaping(_ success: Bool) -> Void) {
         
         // Verificar o que retornar para Controller
@@ -27,24 +26,37 @@ class LoginWorker: NSObject {
         
         handle.createUser(withEmail: _email, password: _password) { (authResult, error) in
             
-            if error != nil {
-                completion(false)
-            }
-            
-            if authResult == nil {
-                completion(false)
-            } else {
+            if error == nil {
                 completion(true)
+                
+            } else {
+                completion(false)
+                let erroR = error as NSError?
+                if let codigoErro = erroR?.code {
+                    
+                    var mensagemErro:String?
+                    
+                    let erroTexto = codigoErro
+                    
+                    switch erroTexto {
+                    case 17008 :
+                        mensagemErro = "E-mail invalido, digite um E-mail válido."
+                        break
+                    case 17007 :
+                        mensagemErro = "Esse e-mail já está sendo usado por outra pessoa, digite outro e-mail!!"
+                        break
+                    default:
+                        mensagemErro = "Dados digitados estão invalidos"
+                    }
+                    print(mensagemErro)
+                }
             }
-            
         }
-        
     }
     
     func signInCredential(credential: AuthCredential, completion: @escaping(_ success: Bool) -> Void) {
         
         handle.signIn(with: credential) { (authResult, error) in
-            //		Auth.auth().signIn(with: credential) { (authResult, error) in
             
             if error != nil {
                 print("Error> \(String(describing: error?.localizedDescription))")
