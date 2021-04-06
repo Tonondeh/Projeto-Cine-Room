@@ -360,14 +360,14 @@ extension CriarContaVC: ASAuthorizationControllerDelegate {
 
       func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
-          guard let nonce = currentNonce else {
+          guard let _ = currentNonce else {
             fatalError("Invalid state: A login callback was received, but no login request was sent.")
           }
           guard let appleIDToken = appleIDCredential.identityToken else {
             print("Unable to fetch identity token")
             return
           }
-          guard let idTokenString = String(data: appleIDToken, encoding: .utf8) else {
+          guard let _ = String(data: appleIDToken, encoding: .utf8) else {
             print("Unable to serialize token string from data: \(appleIDToken.debugDescription)")
             return
           }

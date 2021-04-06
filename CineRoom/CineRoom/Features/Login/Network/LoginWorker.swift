@@ -34,7 +34,7 @@ class LoginWorker: NSObject {
                 let erroR = error as NSError?
                 if let codigoErro = erroR?.code {
                     
-                    var mensagemErro:String?
+						let mensagemErro: String?
                     
                     let erroTexto = codigoErro
                     
@@ -48,7 +48,7 @@ class LoginWorker: NSObject {
                     default:
                         mensagemErro = "Dados digitados estão invalidos"
                     }
-                    print(mensagemErro)
+						print(mensagemErro!)
                 }
             }
         }

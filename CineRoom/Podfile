@@ -13,5 +13,6 @@ target 'CineRoom' do
 	pod 'FBSDKLoginKit'
 	pod 'Alamofire', '~> 5.4'
 	pod 'youtube-ios-player-helper'
+	pod 'lottie-ios'
 
 end
