@@ -70,11 +70,7 @@ extension UITextField {
 		}
 		
 	}
-    
-//    func validateCPF() -> Bool {
-//        return false
-//    }
-	
+    	
     func inputToolbar()-> UIToolbar {
         let toolbar = UIToolbar()
         toolbar.barStyle = .default
@@ -93,7 +89,6 @@ extension UITextField {
     }
     
     func shake() {
-
         let animation = CABasicAnimation(keyPath: "position")
         animation.duration = 0.05
         animation.repeatCount = 3
@@ -104,7 +99,6 @@ extension UITextField {
         
         let color = CABasicAnimation(keyPath: "borderColor")
         color.fromValue = UIColor.red.cgColor
-//        color.toValue = UIColor.clear
         color.duration = 2
         color.repeatCount = 1
         
@@ -115,10 +109,7 @@ extension UITextField {
         border.toValue = 0
         border.duration = 2
         border.repeatCount = 1
-//        layer.borderWidth = 3
         layer.add(border, forKey: "borderWidth")
-        
-        
     }
     
     
@@ -128,5 +119,3 @@ extension UITextField {
     }
 		
 }
-
-// pintar em vermelho, ou colocar no label o que falta.

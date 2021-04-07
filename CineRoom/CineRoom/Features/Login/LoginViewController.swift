@@ -23,17 +23,16 @@ class LoginViewController: UIViewController {
 	// MARK: - Lifecycle
 	override func viewDidLoad() {
 		super.viewDidLoad()
-	
+		
 		configTextField()
 		configButton()
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-
-		// TODO: Colocar um Loading....
+		
 		self.showSpinner()
-
+		
 		self.controller.addStateDidChangeListener { (success) in
 			if success {
 				self.performSegue(withIdentifier: "segueHome", sender: nil)
@@ -75,20 +74,26 @@ class LoginViewController: UIViewController {
 					Utils.saveUserDefaults(value: self.emailtextField.text, key: "email")
 					self.performSegue(withIdentifier: "segueHome", sender: nil)
 				} else {
-                    Alert.showWrongAlert(on: self) 
-                    print("=== erro LOGIN FIREBASE")
+					Alert.showWrongAlert(on: self)
+					// TODO: Tratar como UIView Animation
+					print("=== erro LOGIN FIREBASE")
 				}
 				self.removeSpinner()
 			}
 			
 		} else {
-            self.emailtextField.shake()
-            self.senhaTextField.shake()
 			print("Entrada errada")
+			
+			if !self.emailtextField.validateEmail() {
+				self.emailtextField.shake()
+			}
+			if !self.senhaTextField.validatePassword() {
+				self.senhaTextField.shake()
+			}
 		}
 	}
 }
-    
+
 // MARK: - Extension TextField
 extension LoginViewController: UITextFieldDelegate {
 	

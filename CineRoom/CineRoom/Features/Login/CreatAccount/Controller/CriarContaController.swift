@@ -26,9 +26,9 @@ class CriarContaController: NSObject {
 		}
 	}
 	
-	func createUserFirebase(email: String?, password: String?, completion: @escaping(_ success: Bool) -> Void) {
-		LoginWorker().createUserFirebase(email: email, password: password) { (success) in
-			completion(success)
+	func createUserFirebase(email: String?, password: String?, completion: @escaping(_ success: Bool, _ errorCode: Int?) -> Void) {
+		LoginWorker().createUserFirebase(email: email, password: password) { (success, errorCode) in
+			completion(success, errorCode)
 		}
 	}
 	

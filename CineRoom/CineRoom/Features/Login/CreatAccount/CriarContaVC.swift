@@ -196,7 +196,7 @@ class CriarContaVC: UIViewController {
 			
 			self.showSpinner()
 			
-			self.controller.createUserFirebase(email: emailTextField.text, password: senhaTextField.text) { (success) in
+			self.controller.createUserFirebase(email: emailTextField.text, password: senhaTextField.text) { (success, errorCode) in
 				if success {
 					print("=== SUCESSO AO CRIAR CONTA NO FIREBASE ===")
 					
@@ -209,12 +209,29 @@ class CriarContaVC: UIViewController {
 					self.performSegue(withIdentifier: "segueHomeStoryboard", sender: nil)
 				} else {
 					print("=== ERRO AO CRIAR CONTA NO FIREBASE ===")
+					Alert.showErrorCreateUserFirebase(on: self, code: errorCode)
 				}
 				self.removeSpinner()
 			}
 			
 		} else {
-			Alert.showIncompleteFormAlert(on: self)
+			print("Dados Entrada Errado")
+			if !self.nomeTextField.validateName() {
+				self.nomeTextField.shake()
+			}
+			if !self.emailTextField.validateEmail() {
+				self.emailTextField.shake()
+			}
+			if !self.senhaTextField.validatePassword() {
+				self.senhaTextField.shake()
+			}
+			if !self.confirmaSenhaTextField.validatePassword() {
+				self.confirmaSenhaTextField.shake()
+			}
+			if self.senhaTextField.text != self.confirmaSenhaTextField.text {
+				self.senhaTextField.shake()
+				self.confirmaSenhaTextField.shake()
+			}
 		}
 		
 	}
@@ -278,7 +295,6 @@ class CriarContaVC: UIViewController {
 
       return result
     }
-    
     
 
     // Unhashed nonce.

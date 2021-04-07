@@ -133,4 +133,10 @@ class WatchListController {
 	}
 	
 	
+	// Método para Atualizar a Watch List
+	func updateWatchList(item: WatchModel) {
+		DetalheController().updateWatchList(item: item)
+	}
+	
+	
 }

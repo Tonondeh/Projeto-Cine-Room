@@ -20,7 +20,8 @@ class WatchListVC: UIViewController {
 	// MARK: - Lifecycle
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
+				
+		self.tabBarController?.tabBar.isHidden = true
 		self.showSpinner()
 		self.configObserver()
 	}
@@ -31,6 +32,7 @@ class WatchListVC: UIViewController {
 		self.controller.addObserveDatabase { ( _ ) in
 			self.configTableView()
 			self.removeSpinner()
+			self.tabBarController?.tabBar.isHidden = false
 		}
 	}
 	
@@ -84,7 +86,7 @@ extension WatchListVC: UITableViewDelegate, UITableViewDataSource {
 			return cell ?? UITableViewCell()
 			
 		} else {
-		 let cell = tableView.dequeueReusableCell(withIdentifier: WatchListTableViewCell.identifier, for: indexPath) as? WatchListTableViewCell
+			let cell = tableView.dequeueReusableCell(withIdentifier: WatchListTableViewCell.identifier, for: indexPath) as? WatchListTableViewCell
 			cell?.configCell(filme: self.controller.getWatchItem(selection: self.listSegmented.selectedSegmentIndex,
 																				  indexPath: indexPath))
 			return cell ?? UITableViewCell()
@@ -99,6 +101,40 @@ extension WatchListVC: UITableViewDelegate, UITableViewDataSource {
 		let item = self.controller.getWatchItem(selection: self.listSegmented.selectedSegmentIndex, indexPath: indexPath)
 		
 		self.performSegue(withIdentifier: "segueDetalheStoryboard", sender: item)
+	}
+	
+	func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+		
+		if editingStyle == .delete {
+			print("Swipe para deletar")
+			
+			let alertController = UIAlertController(title: "Você tem certeza?", message: "Deseja realmente tirar esse filme da sua lista?", preferredStyle: .alert)
+			let buttonOK = UIAlertAction(title: "OK", style: .default) { (alert) in
+				print("Clicou em deletar filme")
+				
+				var movie = self.controller.getWatchItem(selection: self.listSegmented.selectedSegmentIndex,
+																	  indexPath: indexPath)
+				
+				if self.listSegmented.selectedSegmentIndex == 0 {
+					movie?.isFavorite = false
+				} else {
+					movie?.isAssistir = false
+				}
+				
+				if let _movie = movie {
+					self.controller.updateWatchList(item: _movie)
+				}
+				
+				tableView.reloadData()
+			}
+			let buttonCancel = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
+			
+			alertController.addAction(buttonOK)
+			alertController.addAction(buttonCancel)
+			
+			self.present(alertController, animated: true, completion: nil)
+		}
+		
 	}
 	
 }

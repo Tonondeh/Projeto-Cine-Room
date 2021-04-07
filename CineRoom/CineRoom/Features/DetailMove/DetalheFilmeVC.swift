@@ -167,10 +167,16 @@ class DetalheFilmeVC: UIViewController {
 	}
 	
 	private func loadMovieDetails() {
+		var detail: Bool = false
+		var credit: Bool = false
+		var video: Bool = false
+		
 		guard let id = self.movieID else { return }
 		
 		// Chamada de API Get Detail
 		self.controller.loadMovieDetail(movieId: id) { (success, error) in
+			detail = true
+			
 			if success {
 				if let detail = self.controller.getMovieDetail() {
 					self.nomeFilmeLabel.text = detail.title
@@ -188,29 +194,43 @@ class DetalheFilmeVC: UIViewController {
 				print("Erro ao chamar o detalhe")
 				self.dismiss(animated: true, completion: nil)
 			}
+			
+			if detail && credit && video {
+				self.removeSpinner()
+			}
 		}
 		
 		// Chamada de API Get Credit
 		self.controller.loadMovieCredit(movieId: id) { (success, error) in
+			credit = true
+			
 			if success {
 				print("Encontrou Credits")
 				self.collectionView.reloadData()
 			} else {
 				print("Não encontrou Credits")
 			}
+			
+			if detail && credit && video {
+				self.removeSpinner()
+			}
 		}
 		
 		// Chamada de API Get Videos
 		self.controller.loadMovieVideo(movieId: id) { (success, error) in
+			video = true
+			
 			if success {
 				print("Encontrou Videos")
 				self.tableView.reloadData()
 			} else {
 				print("Não encontrou Videos")
 			}
+			
+			if detail && credit && video {
+				self.removeSpinner()
+			}
 		}
-		
-		self.removeSpinner()
 		
 	}
 	

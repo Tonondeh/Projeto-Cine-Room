@@ -254,7 +254,6 @@
 			isa = PBXGroup;
 			children = (
 				BCBDA2132607D60500A86423 /* Controller */,
-				BC90FC9725E961B60092A52B /* Alert.swift */,
 				BC90FC9425E961990092A52B /* CriarContaVC.swift */,
 				BC90FC9125E961880092A52B /* CriarConta.storyboard */,
 			);
@@ -313,6 +312,7 @@
 		BC03879F25FAD6FD00EB56DE /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				BC90FC9725E961B60092A52B /* Alert.swift */,
 				BC0387A025FAD71F00EB56DE /* Extension+TextField.swift */,
 				BCEF40E2260AAC830037443C /* Extension+ViewController.swift */,
 				D33AA6E326176A4400E128DA /* DataFormatter.swift */,

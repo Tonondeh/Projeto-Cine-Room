@@ -12,153 +12,123 @@ import GoogleSignIn
 
 
 class LoginWorker: NSObject {
-    
-    private let handle = Auth.auth()
-    
-    func createUserFirebase(email: String?, password: String?, completion: @escaping(_ success: Bool) -> Void) {
-        
-        // Verificar o que retornar para Controller
-        // Dados do User.
-        
-        guard let _email = email, let _password = password else {
-            return completion(false)
-        }
-        
-        handle.createUser(withEmail: _email, password: _password) { (authResult, error) in
-            
-            if error == nil {
-                completion(true)
-                
-            } else {
-                completion(false)
-                let erroR = error as NSError?
-                if let codigoErro = erroR?.code {
-                    
-						let mensagemErro: String?
-                    
-                    let erroTexto = codigoErro
-                    
-                    switch erroTexto {
-                    case 17008 :
-                        mensagemErro = "E-mail invalido, digite um E-mail válido."
-                        break
-                    case 17007 :
-                        mensagemErro = "Esse e-mail já está sendo usado por outra pessoa, digite outro e-mail!!"
-                        break
-                    default:
-                        mensagemErro = "Dados digitados estão invalidos"
-                    }
-						print(mensagemErro!)
-                }
-            }
-        }
-    }
-    
-    func signInCredential(credential: AuthCredential, completion: @escaping(_ success: Bool) -> Void) {
-        
-        handle.signIn(with: credential) { (authResult, error) in
-            
-            if error != nil {
-                print("Error> \(String(describing: error?.localizedDescription))")
-                completion(false)
-            } else {
-                
-                if authResult == nil {
-                    print("Error> \(String(describing: error?.localizedDescription))")
-                    completion(false)
-                } else {
-                    completion(true)
-                }
-                
-            }
-        }
-        
-    }
-    
-    func signIn(email: String?, password: String?, completion: @escaping(_ success: Bool) -> Void) {
-        
-        // Verificar o que retornar para Controller
-        // Dados do User.
-        
-        guard let _email = email, let _password = password else {
-            return completion(false)
-        }
-        
-        handle.signIn(withEmail: _email, password: _password) { (authResult, error) in
-            if error != nil {
-                completion(false)
-            } else {
-                
-                if authResult == nil {
-                    completion(false)
-                } else {
-                    completion(true)
-                }
-                
-            }
-        }
-        
-    }
-    
-    func logOut() {
-        
-        do {
-            try handle.signOut()
-        }  catch{
-            print("erro ao sair") }
-        
-        
-        
-        
-    }
-    
-    func addStateDidChangeListener(completion: @escaping(_ success: User?) -> Void) {
-        
-        // Verificar o que retornar para Controller
-        // Dados do User.
-        
-        handle.addStateDidChangeListener { (auth, user) in
-            if user == nil {
-                completion(nil)
-            } else {
-                
-                completion(user)
-            }
-        }
-    }
-    
-    func removeStateDidChangeListener() {
-        Auth.auth().removeStateDidChangeListener(handle)
-    }
-    
-    func signInFacebook(viewController: UIViewController, completion: @escaping(_ success: AuthCredential?) -> Void) {
-        let loginManager = LoginManager()
-        
-        loginManager.logIn(permissions: ["public_profile", "email"], from: viewController) { (loginResult, error) in
-            
-            if let _error = error {
-                print("Erro no LogIn Facebook")
-                print(_error.localizedDescription)
-                completion(nil)
-                return
-            }
-            
-            if let _token = loginResult?.token {
-                let credential = FacebookAuthProvider.credential(withAccessToken: _token.tokenString)
-                completion(credential)
-            } else {
-                completion(nil)
-            }
-            
-        }
-        
-        
-    }
-    
-    func sendPasswordReset(withEmail email: String? , _ callback: ((Error?) -> ())? = nil){
-        handle.sendPasswordReset(withEmail: email ?? "" ) { error in
-            callback?(error)
-        }
-        
-    }
+	
+	private let handle = Auth.auth()
+	
+	func createUserFirebase(email: String?, password: String?, completion: @escaping(_ success: Bool, _ errorCode: Int?) -> Void) {
+		
+		guard let _email = email, let _password = password else {
+			return completion(false, nil)
+		}
+		
+		handle.createUser(withEmail: _email, password: _password) { (authResult, error) in
+			
+			if error == nil {
+				completion(true, nil)
+				
+			} else {
+				let _error = error as NSError?
+				completion(false, _error?.code)
+			}
+		}
+	}
+	
+	func signInCredential(credential: AuthCredential, completion: @escaping(_ success: Bool) -> Void) {
+		
+		handle.signIn(with: credential) { (authResult, error) in
+			
+			if error != nil {
+				print("Error> \(String(describing: error?.localizedDescription))")
+				completion(false)
+			} else {
+				
+				if authResult == nil {
+					print("Error> \(String(describing: error?.localizedDescription))")
+					completion(false)
+				} else {
+					completion(true)
+				}
+				
+			}
+		}
+		
+	}
+	
+	func signIn(email: String?, password: String?, completion: @escaping(_ success: Bool) -> Void) {
+		
+		guard let _email = email, let _password = password else {
+			return completion(false)
+		}
+		
+		handle.signIn(withEmail: _email, password: _password) { (authResult, error) in
+			if error != nil {
+				completion(false)
+			} else {
+				
+				if authResult == nil {
+					completion(false)
+				} else {
+					completion(true)
+				}
+				
+			}
+		}
+		
+	}
+	
+	func logOut() {
+		do {
+			try handle.signOut()
+		}  catch{
+			print("erro ao sair")
+			
+		}
+	}
+	
+	func addStateDidChangeListener(completion: @escaping(_ success: User?) -> Void) {
+		
+		handle.addStateDidChangeListener { (auth, user) in
+			if user == nil {
+				completion(nil)
+			} else {
+				
+				completion(user)
+			}
+		}
+	}
+	
+	func removeStateDidChangeListener() {
+		Auth.auth().removeStateDidChangeListener(handle)
+	}
+	
+	func signInFacebook(viewController: UIViewController, completion: @escaping(_ success: AuthCredential?) -> Void) {
+		let loginManager = LoginManager()
+		
+		loginManager.logIn(permissions: ["public_profile", "email"], from: viewController) { (loginResult, error) in
+			
+			if let _error = error {
+				print("Erro no LogIn Facebook")
+				print(_error.localizedDescription)
+				completion(nil)
+				return
+			}
+			
+			if let _token = loginResult?.token {
+				let credential = FacebookAuthProvider.credential(withAccessToken: _token.tokenString)
+				completion(credential)
+			} else {
+				completion(nil)
+			}
+			
+		}
+		
+		
+	}
+	
+	func sendPasswordReset(withEmail email: String? , _ callback: ((Error?) -> ())? = nil){
+		handle.sendPasswordReset(withEmail: email ?? "" ) { error in
+			callback?(error)
+		}
+		
+	}
 }

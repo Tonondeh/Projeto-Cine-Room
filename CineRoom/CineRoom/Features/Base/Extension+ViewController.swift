@@ -6,25 +6,34 @@
 //
 
 import UIKit
+import Lottie
 
 fileprivate var aView: UIView?
+fileprivate var animationView: AnimationView?
 
 extension UIViewController {
 	
 	func showSpinner() {
 		aView = UIView(frame: self.view.bounds)
-		aView?.backgroundColor = UIColor.lightGray
+		aView?.backgroundColor = UIColor(named: "backgroundColor")
 		
-		let ai = UIActivityIndicatorView(style: .large)
-		ai.center = aView!.center
-		ai.startAnimating()
-		aView?.addSubview(ai)
-		self.view.addSubview(aView!)
+		animationView = AnimationView()
+		animationView?.animation = Animation.named("movie-theatre")
+		animationView?.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
+		animationView?.center = view.center
+		animationView?.contentMode = .scaleAspectFit
+		animationView?.loopMode = .loop
+		animationView?.animationSpeed = 2.0
+		animationView?.play()
+		
+		aView?.addSubview(animationView ?? AnimationView())
+		self.view.addSubview(aView ?? UIView())
 	}
 	
 	func removeSpinner() {
 		aView?.removeFromSuperview()
 		aView = nil
+		animationView?.stop()
 	}
 	
 }

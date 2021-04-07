@@ -13,6 +13,6 @@ struct WatchModel {
 	let genre: String?
 	let rating: String?
 	let foto: String?
-	let isFavorite: Bool?
-	let isAssistir: Bool?
+	var isFavorite: Bool?
+	var isAssistir: Bool?
 }
