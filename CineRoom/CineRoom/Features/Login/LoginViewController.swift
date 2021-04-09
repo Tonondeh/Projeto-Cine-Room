@@ -74,9 +74,11 @@ class LoginViewController: UIViewController {
 					Utils.saveUserDefaults(value: self.emailtextField.text, key: "email")
 					self.performSegue(withIdentifier: "segueHome", sender: nil)
 				} else {
-					Alert.showWrongAlert(on: self)
-					// TODO: Tratar como UIView Animation
 					print("=== erro LOGIN FIREBASE")
+//					Alert.showWrongAlert(on: self)
+					// TODO: Tratar como UIView Animation
+					self.showAlertAnimation()
+					
 				}
 				self.removeSpinner()
 			}

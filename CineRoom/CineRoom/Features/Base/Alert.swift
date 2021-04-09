@@ -38,8 +38,8 @@ struct Alert {
 				
 			case 17008:
 				print("==>> Erro na criacao de User no Firebase - Code 17008")
-			showBasicAlert(on: vc, with: "Erro na criação de usuário",
-								message: "E-mail invalido, digite um E-mail válido.")
+				showBasicAlert(on: vc, with: "Erro na criação de usuário",
+									message: "E-mail invalido, digite um E-mail válido.")
 				
 			case 17026:
 				print("==>> Erro na criacao de User no Firebase - Code 17007")
