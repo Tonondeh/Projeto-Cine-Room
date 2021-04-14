@@ -58,16 +58,25 @@ extension UITextField {
 	
 	func validatePassword() -> Bool {
 		let password = self.text ?? ""
+        
+        
 		
 		if password == "" {
 			return false
 		}
 		
-		if password.count < 6 {
-			return false
-		} else {
-			return true
-		}
+        if !CharacterSet(charactersIn: "0123456789").isSuperset(of: CharacterSet(charactersIn: password)) {
+            print("aceita somente sumeros")
+            return false
+        }
+        
+        if password.count < 6 {
+            return false
+        } else {
+            return true
+        }
+        
+       
 		
 	}
     	
