@@ -99,11 +99,11 @@ extension UITextField {
     
     func shake() {
         let animation = CABasicAnimation(keyPath: "position")
-        animation.duration = 0.05
+        animation.duration = 0.03
         animation.repeatCount = 3
         animation.autoreverses = true
-        animation.fromValue = CGPoint(x: self.center.x - 12.0, y: self.center.y)
-        animation.toValue = CGPoint(x: self.center.x + 12.0, y: self.center.y)
+        animation.fromValue = CGPoint(x: self.center.x - 5.0, y: self.center.y)
+        animation.toValue = CGPoint(x: self.center.x + 5.0, y: self.center.y)
         layer.add(animation, forKey: "position")
         
         let color = CABasicAnimation(keyPath: "borderColor")
