@@ -39,7 +39,7 @@ class PerfilViewController: UIViewController {
 		self.configTextField()
 		self.getDataUser()
 		self.configImagePicker()
-		self.salvarButton.layer.cornerRadius = 5
+        self.salvarButton.layer.cornerRadius = ButtonEdges.corner.rawValue
 		self.unlockTextfield(block: true)
 		self.configImageView()
 		self.configNotificationCenter()

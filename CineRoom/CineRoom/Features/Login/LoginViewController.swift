@@ -7,6 +7,15 @@
 
 import UIKit
 
+enum SegueName : String {
+    case home = "segueHome"
+}
+
+enum ButtonEdges : CGFloat {
+    case corner = 5
+}
+
+
 class LoginViewController: UIViewController {
 	
 	// MARK: - IBOutlet
@@ -24,8 +33,8 @@ class LoginViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		configTextField()
-		configButton()
+        self.configTextField()
+        self.configButton()
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
@@ -35,7 +44,7 @@ class LoginViewController: UIViewController {
 		
 		self.controller.addStateDidChangeListener { (success) in
 			if success {
-				self.performSegue(withIdentifier: "segueHome", sender: nil)
+                self.performSegue(withIdentifier: SegueName.home.rawValue, sender: nil)
 			}
 			self.removeSpinner()
 		}
@@ -55,8 +64,8 @@ class LoginViewController: UIViewController {
 	}
 	
 	private func configButton() {
-		self.createAccountButton.layer.cornerRadius	= 5
-		self.connectButton.layer.cornerRadius 		 	= 5
+        self.createAccountButton.layer.cornerRadius	= ButtonEdges.corner.rawValue
+		self.connectButton.layer.cornerRadius = ButtonEdges.corner.rawValue
 	}
 	
 	
@@ -72,11 +81,9 @@ class LoginViewController: UIViewController {
 				if success {
 					print("=== LOGIN FIREBASE")
 					Utils.saveUserDefaults(value: self.emailtextField.text, key: "email")
-					self.performSegue(withIdentifier: "segueHome", sender: nil)
+                    self.performSegue(withIdentifier: SegueName.home.rawValue, sender: nil)
 				} else {
 					print("=== erro LOGIN FIREBASE")
-//					Alert.showWrongAlert(on: self)
-					// TODO: Tratar como UIView Animation
 					self.showAlertAnimation()
 					
 				}
@@ -84,13 +91,15 @@ class LoginViewController: UIViewController {
 			}
 			
 		} else {
-			print("Entrada errada")
+		
 			
 			if !self.emailtextField.validateEmail() {
 				self.emailtextField.shake()
+                print("Entrada errada - e-mail")
 			}
 			if !self.senhaTextField.validatePassword() {
 				self.senhaTextField.shake()
+                print("Entrada errada - senha")
 			}
 		}
 	}

@@ -39,7 +39,7 @@ extension UIViewController {
 	func showAlertAnimation() {
 		let someView = UIView()
 		someView.backgroundColor = .red
-		someView.frame = CGRect(x: 0, y: view.frame.maxY, width: view.frame.width, height: 0)
+        someView.frame = CGRect(x: 0, y: self.view.frame.maxY, width: self.view.frame.width, height: 0)
 		view.addSubview(someView)
 		
 		UIView.animate(withDuration: 1, delay: 0, options: []) {
