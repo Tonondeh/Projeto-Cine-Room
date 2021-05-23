@@ -37,18 +37,18 @@ class LoginViewController: UIViewController {
         self.configButton()
 	}
 	
-	override func viewWillAppear(_ animated: Bool) {
-		super.viewWillAppear(animated)
-		
-		self.showSpinner()
-		
-		self.controller.addStateDidChangeListener { (success) in
-			if success {
-                self.performSegue(withIdentifier: SegueName.home.rawValue, sender: nil)
-			}
-			self.removeSpinner()
-		}
-	}
+//	override func viewWillAppear(_ animated: Bool) {
+//		super.viewWillAppear(animated)
+//		
+//		self.showSpinner()
+//		
+//		self.controller.addStateDidChangeListener { (success) in
+//			if success {
+//                self.performSegue(withIdentifier: SegueName.home.rawValue, sender: nil)
+//			}
+//			self.removeSpinner()
+//		}
+//	}
 	
 	override func viewWillDisappear(_ animated: Bool) {
 		super.viewWillDisappear(animated)
