@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Mq6-vd-NUQ">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Esqueci Senha View Controller-->
+        <scene sceneID="fGd-oh-lWg">
+            <objects>
+                <viewController id="Mq6-vd-NUQ" customClass="EsqueciSenhaViewController" customModule="CineRoom" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qGi-vU-Pxk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.30000001192092896" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="filmev4" translatesAutoresizingMaskIntoConstraints="NO" id="FYm-G3-84G">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="349-6r-0Np">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BZ6-lO-YBu" userLabel="Top View">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="272"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoApp-Parceria" translatesAutoresizingMaskIntoConstraints="NO" id="Aa9-QH-tFu">
+                                                <rect key="frame" x="28" y="28" width="358" height="216"/>
+                                            </imageView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailingMargin" secondItem="Aa9-QH-tFu" secondAttribute="trailing" constant="20" id="4zt-4W-3Ve"/>
+                                            <constraint firstItem="Aa9-QH-tFu" firstAttribute="leading" secondItem="BZ6-lO-YBu" secondAttribute="leadingMargin" constant="20" id="cCe-Ca-Kht"/>
+                                            <constraint firstItem="Aa9-QH-tFu" firstAttribute="top" secondItem="BZ6-lO-YBu" secondAttribute="topMargin" constant="20" id="n2y-YK-b8o"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="Aa9-QH-tFu" secondAttribute="bottom" constant="20" id="uQO-IP-bcN"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KoE-OO-nbC" userLabel="Middle View">
+                                        <rect key="frame" x="0.0" y="273" width="414" height="272"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Digite seu email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nCr-Q0-Ihp">
+                                                <rect key="frame" x="20" y="144" width="374" height="24"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="cineroom@cineroom" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gUx-34-AHj">
+                                                <rect key="frame" x="20" y="188" width="374" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="gUx-34-AHj" firstAttribute="leading" secondItem="KoE-OO-nbC" secondAttribute="leading" constant="20" id="6hd-CL-d1K"/>
+                                            <constraint firstAttribute="trailing" secondItem="gUx-34-AHj" secondAttribute="trailing" constant="20" id="Clv-Ce-rlx"/>
+                                            <constraint firstItem="nCr-Q0-Ihp" firstAttribute="leading" secondItem="KoE-OO-nbC" secondAttribute="leading" constant="20" id="HMy-y2-SJN"/>
+                                            <constraint firstItem="gUx-34-AHj" firstAttribute="top" secondItem="nCr-Q0-Ihp" secondAttribute="bottom" constant="20" id="Job-Gl-gj9"/>
+                                            <constraint firstAttribute="bottom" secondItem="gUx-34-AHj" secondAttribute="bottom" constant="50" id="T9J-hq-UNa"/>
+                                            <constraint firstAttribute="trailing" secondItem="nCr-Q0-Ihp" secondAttribute="trailing" constant="20" id="cTr-dd-Gbs"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y0x-Qg-r6T" userLabel="Bottom View">
+                                        <rect key="frame" x="0.0" y="546" width="414" height="272"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvb-5u-f8D">
+                                                <rect key="frame" x="20" y="111" width="374" height="50"/>
+                                                <color key="backgroundColor" name="secondColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="bvW-jH-ZpO"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <state key="normal" title="Continuar">
+                                                    <color key="titleColor" name="backgroundColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="tappedContinuarButton:" destination="Mq6-vd-NUQ" eventType="touchUpInside" id="Xlf-w2-qZp"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="wvb-5u-f8D" firstAttribute="leading" secondItem="y0x-Qg-r6T" secondAttribute="leading" constant="20" id="RQw-El-z0g"/>
+                                            <constraint firstItem="wvb-5u-f8D" firstAttribute="centerY" secondItem="y0x-Qg-r6T" secondAttribute="centerY" id="rsd-Xt-hRt"/>
+                                            <constraint firstAttribute="trailing" secondItem="wvb-5u-f8D" secondAttribute="trailing" constant="20" id="sYZ-0l-yAL"/>
+                                            <constraint firstAttribute="trailing" secondItem="wvb-5u-f8D" secondAttribute="trailing" constant="20" id="xgS-OU-K1Z"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3Kf-JG-seK"/>
+                        <color key="backgroundColor" name="backgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="FYm-G3-84G" secondAttribute="bottom" id="5pI-xd-9PV"/>
+                            <constraint firstItem="FYm-G3-84G" firstAttribute="top" secondItem="qGi-vU-Pxk" secondAttribute="top" id="F0Y-gr-YQa"/>
+                            <constraint firstItem="FYm-G3-84G" firstAttribute="leading" secondItem="qGi-vU-Pxk" secondAttribute="leading" id="H8e-Da-nLn"/>
+                            <constraint firstItem="349-6r-0Np" firstAttribute="top" secondItem="3Kf-JG-seK" secondAttribute="top" id="SbR-py-gKo"/>
+                            <constraint firstItem="FYm-G3-84G" firstAttribute="trailing" secondItem="qGi-vU-Pxk" secondAttribute="trailing" id="dnf-rP-H5e"/>
+                            <constraint firstItem="349-6r-0Np" firstAttribute="trailing" secondItem="3Kf-JG-seK" secondAttribute="trailing" id="gBH-G4-Awb"/>
+                            <constraint firstItem="349-6r-0Np" firstAttribute="leading" secondItem="3Kf-JG-seK" secondAttribute="leading" id="jeP-Nd-Sgw"/>
+                            <constraint firstItem="349-6r-0Np" firstAttribute="bottom" secondItem="3Kf-JG-seK" secondAttribute="bottom" id="m49-Td-LaK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="continuarButton" destination="wvb-5u-f8D" id="QVy-gY-LQc"/>
+                        <outlet property="emailTextField" destination="gUx-34-AHj" id="1E6-Ha-Pqv"/>
+                        <segue destination="qAh-cd-D2W" kind="presentation" identifier="LoginSegue" modalPresentationStyle="fullScreen" id="vzH-xj-FOI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oMC-Yn-8YI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="980" y="115"/>
+        </scene>
+        <!--Login-->
+        <scene sceneID="faw-fV-v6L">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Login" id="qAh-cd-D2W" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OBq-aa-BlZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1591" y="42"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="LogoApp-Parceria" width="235" height="262"/>
+        <image name="filmev4" width="500" height="750"/>
+        <namedColor name="backgroundColor">
+            <color red="0.0080000003799796104" green="0.15299999713897705" blue="0.3529999852180481" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="secondColor">
+            <color red="0.98000001907348633" green="0.6589999794960022" blue="0.4779999852180481" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WatchListTableViewCell" rowHeight="146" id="tNb-fr-2qU" customClass="WatchListTableViewCell" customModule="CineRoom" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="492" height="146"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="tNb-fr-2qU" id="htu-Hl-Fgf">
+                <rect key="frame" x="0.0" y="0.0" width="492" height="146"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NUc-8l-RMi">
+                        <rect key="frame" x="5" y="5" width="482" height="135"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="C8t-2y-UP3">
+                                <rect key="frame" x="10" y="10" width="200" height="115"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="fwB-yx-K2K"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wonder Woman 1984" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Yfl-EX-qZJ">
+                                <rect key="frame" x="215" y="10" width="262" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" name="mainColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fantasia, Ação, Aventura" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="oBB-ip-94b">
+                                <rect key="frame" x="215" y="44" width="262" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" name="secondColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="0a7-1d-diz">
+                                <rect key="frame" x="215" y="78" width="24" height="21.5"/>
+                                <color key="tintColor" red="0.95294117649999999" green="0.98431372549999996" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="LLA-29-zcl"/>
+                                    <constraint firstAttribute="height" constant="24" id="lLQ-sd-OsS"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dau-dk-Fj6">
+                                <rect key="frame" x="244" y="78.5" width="34" height="21"/>
+                                <color key="tintColor" red="1" green="0.9916588717" blue="0.33310535250000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <color key="textColor" name="secondColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.15436795079999999" green="0.23319477259999999" blue="0.48312367090000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="oBB-ip-94b" firstAttribute="top" secondItem="Yfl-EX-qZJ" secondAttribute="bottom" constant="10" id="0hZ-sI-13i"/>
+                            <constraint firstItem="Yfl-EX-qZJ" firstAttribute="leading" secondItem="C8t-2y-UP3" secondAttribute="trailing" constant="5" id="B2m-fb-tqp"/>
+                            <constraint firstAttribute="trailing" secondItem="Yfl-EX-qZJ" secondAttribute="trailing" constant="5" id="DAH-dg-i1s"/>
+                            <constraint firstItem="oBB-ip-94b" firstAttribute="leading" secondItem="C8t-2y-UP3" secondAttribute="trailing" constant="5" id="EB8-VU-Gez"/>
+                            <constraint firstItem="C8t-2y-UP3" firstAttribute="top" secondItem="NUc-8l-RMi" secondAttribute="top" constant="10" id="Hch-oy-9a6"/>
+                            <constraint firstItem="Dau-dk-Fj6" firstAttribute="centerY" secondItem="0a7-1d-diz" secondAttribute="centerY" id="Ixg-kb-HBi"/>
+                            <constraint firstItem="0a7-1d-diz" firstAttribute="top" secondItem="oBB-ip-94b" secondAttribute="bottom" constant="15" id="LOS-c9-h8j"/>
+                            <constraint firstItem="0a7-1d-diz" firstAttribute="leading" secondItem="C8t-2y-UP3" secondAttribute="trailing" constant="5" id="W0e-ry-x6A"/>
+                            <constraint firstItem="C8t-2y-UP3" firstAttribute="leading" secondItem="NUc-8l-RMi" secondAttribute="leading" constant="10" id="XvZ-Kl-1nz"/>
+                            <constraint firstAttribute="bottom" secondItem="C8t-2y-UP3" secondAttribute="bottom" constant="10" id="Zf4-uF-oVC"/>
+                            <constraint firstItem="Dau-dk-Fj6" firstAttribute="leading" secondItem="0a7-1d-diz" secondAttribute="trailing" constant="5" id="eTj-1W-XMF"/>
+                            <constraint firstAttribute="trailing" secondItem="oBB-ip-94b" secondAttribute="trailing" constant="5" id="iEd-iu-qtP"/>
+                            <constraint firstAttribute="height" constant="135" id="llX-hA-awQ"/>
+                            <constraint firstItem="Yfl-EX-qZJ" firstAttribute="top" secondItem="NUc-8l-RMi" secondAttribute="top" constant="10" id="ohI-3q-uuI"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" name="backgroundColor"/>
+                <constraints>
+                    <constraint firstItem="NUc-8l-RMi" firstAttribute="top" secondItem="htu-Hl-Fgf" secondAttribute="top" constant="5" id="AqJ-jr-brM"/>
+                    <constraint firstItem="NUc-8l-RMi" firstAttribute="leading" secondItem="htu-Hl-Fgf" secondAttribute="leading" constant="5" id="MpZ-Gp-pzy"/>
+                    <constraint firstAttribute="bottom" secondItem="NUc-8l-RMi" secondAttribute="bottom" constant="5" id="WvZ-zQ-HFD"/>
+                    <constraint firstAttribute="trailing" secondItem="NUc-8l-RMi" secondAttribute="trailing" constant="5" id="pyo-CG-47t"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="2lC-ql-yP4"/>
+            <connections>
+                <outlet property="backgroundCellView" destination="NUc-8l-RMi" id="FRI-0N-QeW"/>
+                <outlet property="filmeImageView" destination="C8t-2y-UP3" id="byi-OB-ms5"/>
+                <outlet property="generoLabel" destination="oBB-ip-94b" id="8EA-Xt-ax0"/>
+                <outlet property="nomeLabel" destination="Yfl-EX-qZJ" id="aGr-jk-oqu"/>
+                <outlet property="ratingLabel" destination="Dau-dk-Fj6" id="L26-bG-dVU"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="46.875"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="star.square" catalog="system" width="128" height="114"/>
+        <namedColor name="backgroundColor">
+            <color red="0.0080000003799796104" green="0.15299999713897705" blue="0.3529999852180481" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="mainColor">
+            <color red="1" green="0.4309999942779541" blue="0.18799999356269836" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="secondColor">
+            <color red="0.98000001907348633" green="0.6589999794960022" blue="0.4779999852180481" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
