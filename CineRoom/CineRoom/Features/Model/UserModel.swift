@@ -8,17 +8,9 @@
 import Foundation
 
 struct UserModel: Equatable {
-
     var cpf: Int64?
     var dateBirth: Date?
     var email: String?
     var nameDisplay: String?
     var nameFull: String?
-  
-   
-   
-    
 }
-
-
-// usar pod para validar o CPF.

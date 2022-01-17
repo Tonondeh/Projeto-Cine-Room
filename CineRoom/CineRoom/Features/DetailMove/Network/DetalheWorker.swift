@@ -15,7 +15,7 @@ class DetalheWorker {
 	private let apiKey: String = "api_key=f0ca6496aecedd1cfc6487c0d9849760"
 	private let urlBase: String = "https://api.themoviedb.org/3/movie/"
 	private let autenticacao = Auth.auth()
-	private let db = Database.database().reference()
+	private let database = Database.database().reference()
 	
 	
 	// Método para buscar Detalhe do Filme
@@ -41,7 +41,8 @@ class DetalheWorker {
 			guard let data = response.data else { return completion(nil, nil) }
 			
 			do {
-				let movie: MovieDetail = try MovieDetail(data: data)
+//				let movie: MovieDetail = try MovieDetail(data: data)
+				let movie = try JSONDecoder().decode(MovieDetail.self, from: data)
 				print("==> Sucesso na busca de MovieDetail")
 				completion(movie, nil)
 				
@@ -79,7 +80,8 @@ class DetalheWorker {
 			guard let data = response.data else { return completion(nil, nil) }
 			
 			do {
-				let credits: MovieCredits = try MovieCredits(data: data)
+//				let credits: MovieCredits = try MovieCredits(data: data)
+				let credits = try JSONDecoder().decode(MovieCredits.self, from: data)
 				print("==> Sucesso na busca de Movie Credit")
 				completion(credits, nil)
 				
@@ -117,7 +119,8 @@ class DetalheWorker {
 			guard let data = response.data else { return completion(nil, nil) }
 			
 			do {
-				let videos: MovieVideos = try MovieVideos(data: data)
+//				let videos: MovieVideos = try MovieVideos(data: data)
+				let videos = try JSONDecoder().decode(MovieVideos.self, from: data)
 				print("==> Sucesso na busca de Movie Videos")
 				completion(videos, nil)
 				
@@ -135,8 +138,8 @@ class DetalheWorker {
 	// Método para gravar filme na WatchList
 	func setWatchItem(movieID: Int?, name: String?, genre: String?, rating: String?, foto: String?, favorite: String?, watch: String?) {
 		// Database Referencia
-		let _movieID: String = String(movieID ?? 0)
-		let watchlistDb = db.child("watchlist").child("usuarios").child(autenticacao.currentUser?.uid ?? "")
+		let movieID: String = String(movieID ?? 0)
+		let watchlistDb = database.child("watchlist").child("usuarios").child(autenticacao.currentUser?.uid ?? "")
 		
 		// Registro a ser gravado
 		let watchMovie = [
@@ -149,7 +152,7 @@ class DetalheWorker {
 		]
 		
 		// Criação de item da Database
-		watchlistDb.child(_movieID).setValue(watchMovie)
+		watchlistDb.child(movieID).setValue(watchMovie)
 		
 	}
 	
@@ -157,14 +160,14 @@ class DetalheWorker {
 	// Método para deletar Filme Watch List
 	func deleteWatchItem(moveId: Int?) {
 		let id = String(moveId ?? 0)
-		let watchListId = db.child("watchlist").child("usuarios").child(autenticacao.currentUser?.uid ?? "")
+		let watchListId = database.child("watchlist").child("usuarios").child(autenticacao.currentUser?.uid ?? "")
 		watchListId.child(id).removeValue()
 	}
 	
 	
 	// Método para Observe da Database
 	func addObserveDatabase(completion: @escaping(_ success: [String:Any]? ) -> Void) {
-		let watchlistDb = db.child("watchlist").child("usuarios").child(autenticacao.currentUser?.uid ?? "")
+		let watchlistDb = database.child("watchlist").child("usuarios").child(autenticacao.currentUser?.uid ?? "")
 		
 		watchlistDb.observe(.value) { (snapshot) in
 			guard let watchList = snapshot.value as? [String:Any] else {
@@ -181,12 +184,12 @@ class DetalheWorker {
 	
 	// Método para recuperar informações do Filme Firebase
 	func selectionMovieItem(movieId: Int?, completion: @escaping(_ success: WatchModel? ) -> Void) {
-		guard let _id = movieId else { return completion(nil) }
+		guard let id = movieId else { return completion(nil) }
 		
-		let id: String = String(_id)
-		let movieItem = db.child("watchlist").child("usuarios").child(autenticacao.currentUser?.uid ?? "")
+		let idString: String = String(id)
+		let movieItem = database.child("watchlist").child("usuarios").child(autenticacao.currentUser?.uid ?? "")
 		
-		movieItem.child(id).getData { (error, snapshot) in
+		movieItem.child(idString).getData { (error, snapshot) in
 			
 			guard let watchList = snapshot.value as? [String:Any] else {
 				print("Erro na Snapshot")
@@ -194,11 +197,11 @@ class DetalheWorker {
 				return
 			}
 			
-			print("===> Movie ID: \(id)")
+			print("===> Movie ID: \(idString)")
 			print("Watch List: \(watchList)")
 			
 			for watchItem	in watchList {
-				if watchItem.key == id {
+				if watchItem.key == idString {
 					print("Encontrou Filme")
 					let value = watchItem.value as? [String: Any]
 					

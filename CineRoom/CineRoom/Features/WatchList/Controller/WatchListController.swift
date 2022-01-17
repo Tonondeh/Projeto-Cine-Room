@@ -46,10 +46,10 @@ class WatchListController {
 			
 			if let watchItem = value.value as? Dictionary<String, String> {
 				print("watchItem: \(watchItem)")
-				let _favorito = watchItem["favorite"] ?? ""
-				let _assistir = watchItem["watch"] ?? ""
+				let favorito = watchItem["favorite"] ?? ""
+				let assistir = watchItem["watch"] ?? ""
 				
-				if _favorito == "X" && _assistir == "X" {
+				if favorito == "X" && assistir == "X" {
 					// Dados Watch List Favorito
 					self.watchListFavorite.append(WatchModel(movieId: movieId,
 																			name: watchItem["name"],
@@ -67,7 +67,7 @@ class WatchListController {
 																			isFavorite: true,
 																			isAssistir: true))
 					
-				} else if _favorito == "X" {
+				} else if favorito == "X" {
 					// Dados Watch List Favorito
 					self.watchListFavorite.append(WatchModel(movieId: movieId,
 																			name: watchItem["name"],
@@ -105,7 +105,7 @@ class WatchListController {
 	
 	// Método para retornar count Favorite
 	func countWathListFavorite() -> Int {
-		if self.watchListFavorite.count == 0 {
+		if self.watchListFavorite.isEmpty {
 			return 1
 		} else {
 			return self.watchListFavorite.count
@@ -115,7 +115,7 @@ class WatchListController {
 	
 	// Método para retornar count Assistir
 	func countWathListAssistir() -> Int {
-		if self.watchListAssistir.count == 0 {
+		if self.watchListAssistir.isEmpty {
 			return 1
 		} else {
 			return self.watchListAssistir.count
@@ -126,9 +126,9 @@ class WatchListController {
 	// Método para verificar se está vazio
 	func checkEmptyWatchList(selection: Int) -> Bool {
 		if selection == 0 {
-			return self.watchListFavorite.count == 0 ? true : false
+			return self.watchListFavorite.isEmpty ? true : false
 		} else {
-			return self.watchListAssistir.count == 0 ? true : false
+			return self.watchListAssistir.isEmpty ? true : false
 		}
 	}
 	

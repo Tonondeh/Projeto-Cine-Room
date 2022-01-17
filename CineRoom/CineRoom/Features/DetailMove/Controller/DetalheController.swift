@@ -56,7 +56,7 @@ class DetalheController {
 			if genre == "" {
 				genre = detGenre.name
 			} else {
-				genre = genre + ", " + detGenre.name
+				genre = "\(genre), \(detGenre.name)"
 			}
 		}
 		return genre
@@ -119,15 +119,15 @@ class DetalheController {
 	
 	// Método para gravar Watch List
 	func setWatchList(item: WatchModel) {
-		let _favorite: String? = (item.isFavorite ?? false) ? "X" : ""
-		let _watch: String?  = (item.isAssistir ?? false) ? "X" : ""
+		let favorite: String? = (item.isFavorite ?? false) ? "X" : ""
+		let watch: String?  = (item.isAssistir ?? false) ? "X" : ""
 		DetalheWorker().setWatchItem(movieID: item.movieId,
 											  name: item.name,
 											  genre: item.genre,
 											  rating: item.rating,
 											  foto: item.foto,
-											  favorite: _favorite,
-											  watch: _watch)
+											  favorite: favorite,
+											  watch: watch)
 	}
 	
 	func deleteWatchItem(movieId: Int?) {

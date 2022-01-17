@@ -36,7 +36,8 @@ class HomeWorker {
 			guard let data = response.data else { return completion(nil, nil) }
 			
 			do {
-				let movie: MovieTrending = try MovieTrending(data: data)
+//				let movie: MovieTrending = try MovieTrending(data: data)
+				let movie = try JSONDecoder().decode(MovieTrending.self, from: data)
 				print("==> Sucesso na busca de Movie Trending")
 				completion(movie, nil)
 				
@@ -73,7 +74,8 @@ class HomeWorker {
 			guard let data = response.data else { return completion(nil, nil) }
 			
 			do {
-				let movie: MoviePopular = try MoviePopular(data: data)
+//				let movie: MoviePopular = try MoviePopular(data: data)
+				let movie = try JSONDecoder().decode(MoviePopular.self, from: data)
 				print("==> Sucesso na busca de Movie Popular")
 				completion(movie, nil)
 				
@@ -110,7 +112,8 @@ class HomeWorker {
 			guard let data = response.data else { return completion(nil, nil) }
 			
 			do {
-				let movie: MovieNowPlaying = try MovieNowPlaying(data: data)
+//				let movie: MovieNowPlaying = try MovieNowPlaying(data: data)
+				let movie = try JSONDecoder().decode(MovieNowPlaying.self, from: data)
 				print("==> Sucesso na busca de Movie Now Playing")
 				completion(movie, nil)
 				
