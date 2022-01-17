@@ -188,15 +188,14 @@
 		65E8D31725E89BE50078BBE9 /* CineRoom */ = {
 			isa = PBXGroup;
 			children = (
-				6565AC55260ADBF600CD3583 /* CineRoom.entitlements */,
+				BCC36BE32794939E00D13530 /* AppDelegate */,
 				B2FD950925EC013A000BDD6F /* Features */,
-				65E8D31825E89BE50078BBE9 /* AppDelegate.swift */,
-				65E8D31A25E89BE50078BBE9 /* SceneDelegate.swift */,
-				65E8D32125E89BEA0078BBE9 /* Assets.xcassets */,
-				BC489127261D24B900DA0BED /* movie-theatre.json */,
 				65E8D32325E89BEA0078BBE9 /* LaunchScreen.storyboard */,
+				BC489127261D24B900DA0BED /* movie-theatre.json */,
+				65E8D32125E89BEA0078BBE9 /* Assets.xcassets */,
 				65E8D32625E89BEA0078BBE9 /* Info.plist */,
 				BCBDA2192607D91C00A86423 /* GoogleService-Info.plist */,
+				6565AC55260ADBF600CD3583 /* CineRoom.entitlements */,
 				BC1FE87C2611182F009AD5F2 /* CineRoom.xcdatamodeld */,
 			);
 			path = CineRoom;
@@ -440,6 +439,15 @@
 				BCBDA2142607D62300A86423 /* CriarContaController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		BCC36BE32794939E00D13530 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				65E8D31825E89BE50078BBE9 /* AppDelegate.swift */,
+				65E8D31A25E89BE50078BBE9 /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
 			sourceTree = "<group>";
 		};
 		BCCCC6C42607DD5A001C0CD4 /* Network */ = {
