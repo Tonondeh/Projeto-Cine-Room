@@ -16,3 +16,10 @@ target 'CineRoom' do
 	pod 'lottie-ios'
 
 end
+
+target 'CineRoomTests' do
+	
+	# Pods for CineRoomTests
+	pod 'SnapshotTesting', '~> 1.9'
+	
+end

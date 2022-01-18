@@ -104,6 +104,7 @@ PODS:
   - nanopb/decode (2.30908.0)
   - nanopb/encode (2.30908.0)
   - PromisesObjC (1.2.12)
+  - SnapshotTesting (1.9.0)
   - youtube-ios-player-helper (1.0.3)
 
 DEPENDENCIES:
@@ -114,6 +115,7 @@ DEPENDENCIES:
   - Firebase/Database
   - GoogleSignIn
   - lottie-ios
+  - SnapshotTesting (~> 1.9)
   - youtube-ios-player-helper
 
 SPEC REPOS:
@@ -139,6 +141,7 @@ SPEC REPOS:
     - lottie-ios
     - nanopb
     - PromisesObjC
+    - SnapshotTesting
     - youtube-ios-player-helper
 
 SPEC CHECKSUMS:
@@ -163,8 +166,9 @@ SPEC CHECKSUMS:
   lottie-ios: 106e92eaf11fbed0a76590b4cdb9b5ec26123ff7
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
+  SnapshotTesting: 6141c48b6aa76ead61431ca665c14ab9a066c53b
   youtube-ios-player-helper: 0185c57db23c80d63d6ca11251d110abb8a4ca61
 
-PODFILE CHECKSUM: c35905829475cffa7725cd7e4a1b41d27d047d03
+PODFILE CHECKSUM: 3239d5dbc5f3e466fd792089e592778668503db9
 
 COCOAPODS: 1.10.1
