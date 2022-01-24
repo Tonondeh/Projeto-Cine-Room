@@ -40,12 +40,12 @@ class ElencoCollectionViewCell: UICollectionViewCell {
 	}
 	
 	func configCell(cast: Cast?) {
-		guard let _cast = cast else { return }
-		self.nomeElencoLabel.text = _cast.originalName
-		self.nomeArtElencolabel.text = _cast.character
+		guard let cast = cast else { return }
+		self.nomeElencoLabel.text = cast.originalName
+		self.nomeArtElencolabel.text = cast.character
 		
-		if _cast.profilePath != nil {
-			let urlString: String = urlBaseImage + (_cast.profilePath ?? "")
+		if cast.profilePath != nil {
+			let urlString: String = urlBaseImage + (cast.profilePath ?? "")
 			if let url: URL = URL(string: urlString) {
 				self.loadImage(url: url)
 			}

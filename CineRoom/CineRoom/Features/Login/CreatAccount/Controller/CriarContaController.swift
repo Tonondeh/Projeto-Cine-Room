@@ -41,8 +41,8 @@ class CriarContaController: NSObject {
 	func signInFacebook(viewController: UIViewController, completion: @escaping(_ success: Bool) -> Void) {
 		
 		LoginWorker().signInFacebook(viewController: viewController) { (credential) in
-			if let _credential = credential {
-				self.signInCredential(credential: _credential) { (success) in
+			if let credential = credential {
+				self.signInCredential(credential: credential) { (success) in
 					completion(success)
 				}
 			} else {

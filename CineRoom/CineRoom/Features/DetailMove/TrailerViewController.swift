@@ -28,8 +28,8 @@ class TrailerViewController: UIViewController {
 	
 	// MARK: - Function
 	private func preparePlayer() {
-		if let _videoKey = videoKey {
-			self.playerView.load(withVideoId: _videoKey)
+		if let videoKey = videoKey {
+			self.playerView.load(withVideoId: videoKey)
 		}
 	}
 	

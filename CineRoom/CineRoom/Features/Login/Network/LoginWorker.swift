@@ -17,18 +17,18 @@ class LoginWorker: NSObject {
 	
 	func createUserFirebase(email: String?, password: String?, completion: @escaping(_ success: Bool, _ errorCode: Int?) -> Void) {
 		
-		guard let _email = email, let _password = password else {
+		guard let email = email, let password = password else {
 			return completion(false, nil)
 		}
 		
-		handle.createUser(withEmail: _email, password: _password) { (authResult, error) in
+		handle.createUser(withEmail: email, password: password) { (authResult, error) in
 			
 			if error == nil {
 				completion(true, nil)
 				
 			} else {
-				let _error = error as NSError?
-				completion(false, _error?.code)
+				let error = error as NSError?
+				completion(false, error?.code)
 			}
 		}
 	}
@@ -56,11 +56,11 @@ class LoginWorker: NSObject {
 	
 	func signIn(email: String?, password: String?, completion: @escaping(_ success: Bool) -> Void) {
 		
-		guard let _email = email, let _password = password else {
+		guard let email = email, let password = password else {
 			return completion(false)
 		}
 		
-		handle.signIn(withEmail: _email, password: _password) { (authResult, error) in
+		handle.signIn(withEmail: email, password: password) { (authResult, error) in
 			if error != nil {
 				completion(false)
 			} else {
@@ -106,15 +106,15 @@ class LoginWorker: NSObject {
 		
 		loginManager.logIn(permissions: ["public_profile", "email"], from: viewController) { (loginResult, error) in
 			
-			if let _error = error {
+			if let error = error {
 				print("Erro no LogIn Facebook")
-				print(_error.localizedDescription)
+				print(error.localizedDescription)
 				completion(nil)
 				return
 			}
 			
-			if let _token = loginResult?.token {
-				let credential = FacebookAuthProvider.credential(withAccessToken: _token.tokenString)
+			if let token = loginResult?.token {
+				let credential = FacebookAuthProvider.credential(withAccessToken: token.tokenString)
 				completion(credential)
 			} else {
 				completion(nil)

@@ -121,8 +121,8 @@ extension WatchListVC: UITableViewDelegate, UITableViewDataSource {
 					movie?.isAssistir = false
 				}
 				
-				if let _movie = movie {
-					self.controller.updateWatchList(item: _movie)
+				if let movie = movie {
+					self.controller.updateWatchList(item: movie)
 				}
 				
 				tableView.reloadData()
