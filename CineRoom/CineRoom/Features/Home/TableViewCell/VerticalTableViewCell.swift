@@ -46,9 +46,9 @@ class VerticalTableViewCell: UITableViewCell {
 		self.delegate = delegate
 		self.titleLabel.text = category.rawValue
 		
-		if category == .Trending {
+		if category == .trending {
 			self.getLoadTreding()
-		} else if category == .NowPlaying {
+		} else if category == .nowPlaying {
 			self.getLoadNowPlaying()
 		}
 		self.category = category
@@ -76,9 +76,9 @@ extension VerticalTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
 	
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 		switch self.category {
-			case .Trending:
+			case .trending:
 				return self.controller.resultsMovieTrending
-			case .NowPlaying:
+			case .nowPlaying:
 				return self.controller.resultsMovieNowPlaying
 			default:
 				return 0
@@ -89,9 +89,9 @@ extension VerticalTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
 		let cellV = collectionView.dequeueReusableCell(withReuseIdentifier: CartazVCollectionViewCell.identifier, for: indexPath) as? CartazVCollectionViewCell
 		
 		switch self.category {
-			case .Trending:
+			case .trending:
 				cellV?.configCellTrending(movie: self.controller.getMovieTrending(indexPath: indexPath))
-			case .NowPlaying:
+			case .nowPlaying:
 				cellV?.configCellNowPlaying(movie: self.controller.getMovieNowPlaying(indexPath: indexPath))
 			default:
 				break
@@ -105,11 +105,11 @@ extension VerticalTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
 		print("Clicado em Celula Vertical: \(indexPath.row)")
 		
 		switch self.category {
-			case .Trending:
+			case .trending:
 				let movie = self.controller.getMovieTrending(indexPath: indexPath)
 				movieID = movie?.id
 				backdrop = movie?.backdropPath
-			case .NowPlaying:
+			case .nowPlaying:
 				let movie = self.controller.getMovieNowPlaying(indexPath: indexPath)
 				movieID = movie?.id
 				backdrop = movie?.backdropPath

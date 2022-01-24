@@ -480,6 +480,7 @@
 				65E8D31325E89BE50078BBE9 /* Resources */,
 				986753E9C55A39A1D93FA324 /* [CP] Embed Pods Frameworks */,
 				3DB9C25CAA24AA64B613D22B /* [CP] Copy Pods Resources */,
+				BC0655DE2795F12000AA901A /* Run SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -607,6 +608,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CineRoom/Pods-CineRoom-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		BC0655DE2795F12000AA901A /* Run SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

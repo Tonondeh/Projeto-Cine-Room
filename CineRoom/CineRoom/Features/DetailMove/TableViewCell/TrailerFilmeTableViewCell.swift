@@ -36,8 +36,8 @@ class TrailerFilmeTableViewCell: UITableViewCell {
 	}
 	
 	func configCell(video: ResultVideos?) {
-		guard let _video = video else { return }
-		self.nomeTrailerLabel.text = _video.name
+		guard let video = video else { return }
+		self.nomeTrailerLabel.text = video.name
 	}
 	
 }

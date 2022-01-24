@@ -209,7 +209,7 @@ class CriarContaVC: UIViewController {
 					self.performSegue(withIdentifier: "segueHomeStoryboard", sender: nil)
 				} else {
 					print("=== ERRO AO CRIAR CONTA NO FIREBASE ===")
-					Alert.showErrorCreateUserFirebase(on: self, code: errorCode)
+					Alert.showErrorCreateUserFirebase(onVC: self, code: errorCode)
 				}
 				self.removeSpinner()
 			}

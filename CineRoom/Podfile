@@ -14,5 +14,6 @@ target 'CineRoom' do
 	pod 'Alamofire', '~> 5.4'
 	pod 'youtube-ios-player-helper'
 	pod 'lottie-ios'
+	#pod 'SwiftLint'
 
 end

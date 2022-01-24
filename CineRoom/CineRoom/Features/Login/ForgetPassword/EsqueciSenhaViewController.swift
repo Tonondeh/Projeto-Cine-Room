@@ -46,7 +46,7 @@ class EsqueciSenhaViewController: UIViewController {
                 if success {
                     self.performSegue(withIdentifier: "LoginSegue", sender: nil)
                 }else{
-                    Alert.showInvalidEmailAlert(on: self)
+                    Alert.showInvalidEmailAlert(onVC: self)
                     print("Deu Ruim")
                 }
                 
